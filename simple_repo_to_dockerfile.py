@@ -85,7 +85,7 @@ def main():
     environment = ExtendedLocalEnvironment()
     
     # Load dockerfile generation config
-    config_path = Path(__file__).parent / "mini-swe-agent" / "src" / "minisweagent" / "config" / "dockerfile_generation.yaml"
+    config_path = Path(__file__).parent / "dockerfile_generation.yaml"
     config_data = yaml.safe_load(config_path.read_text())["agent"]
     
     agent = DefaultAgent(
