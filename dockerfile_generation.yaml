@@ -31,22 +31,23 @@ agent:
        - Appropriate base image
        - Git clone of the repository
        - Dependency installation
-       - Test execution to verify the build
+       - Test execution to verify the build (use verbose mode for detailed test output)
        - Proper working directory and entrypoint
     7. Create a test_commands.json file in the agent-result/$repo_folder_name directory containing:
-       - test_command: The specific test command used (e.g., "npm test", "pytest", "cargo test")
+       - test_command: The specific test command used in verbose mode (e.g., "npm test -- --verbose", "pytest -v", "cargo test -- --nocapture")
        - test_framework: The detected test framework (e.g., "jest", "mocha", "pytest", "go_test", "cargo", "maven")
+          - If unable to determine the test framework, set it to "unknown"
        - language: The programming language (e.g., "javascript", "python", "go", "rust", "java")
     8. Remove the cloned repository directory to save space (e.g., `rm -rf agent-result/$repo_folder_name`).
 
     ## Important Guidelines
 
     - Use `git clone https://github.com/{{task}}.git` instead of COPY commands
-    - Choose minimal base images when possible (e.g., node:18-slim, python:3.11-slim)
+    - Choose minimal base images when possible (e.g., node:18-slim, python:3.11-slim), but make sure the version is supported by the repository
     - Install only necessary system dependencies
-    - Run tests as part of the build to verify everything works
     - Create the Dockerfile in agent-result/$repo_folder_name directory
     - Make sure the final container can be used for development or CI/CD
+    - Always use verbose mode for test commands to show detailed test output and low-level details
 
     ## Important Rules
 
@@ -82,7 +83,7 @@ agent:
     WORKDIR /app
     RUN git clone https://github.com/expressjs/express.git .
     RUN npm install
-    RUN npm test
+    RUN npm test -- --verbose
     CMD ["/bin/bash"]
     EOF
     ```
@@ -92,7 +93,7 @@ agent:
     ```bash
     cat <<'EOF' > agent-result/expressjs-express/test_commands.json
     {
-      "test_command": "npm test",
+      "test_command": "npm test -- --verbose",
       "test_framework": "mocha", 
       "language": "javascript"
     }

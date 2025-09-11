@@ -1,0 +1,5 @@
+{
+  "test_command": "cargo test --all-features --verbose",
+  "test_framework": "cargo",
+  "language": "rust"
+}

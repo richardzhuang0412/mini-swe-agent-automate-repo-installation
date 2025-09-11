@@ -1,5 +1,0 @@
-{
-  "test_command": "npm test",
-  "test_framework": "mocha",
-  "language": "javascript"
-}

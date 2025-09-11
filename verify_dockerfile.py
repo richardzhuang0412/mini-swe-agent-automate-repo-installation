@@ -9,6 +9,7 @@ This is a companion tool to repo_to_dockerfile.py
 import sys
 import subprocess
 import argparse
+import json
 from pathlib import Path
 from typing import Tuple, Optional
 import threading
@@ -140,10 +141,86 @@ def verify_dockerfile(dockerfile_path: Path, image_name: str = None, show_progre
         else:
             print(f"⚠️  Command '{' '.join(test_cmd)}' failed (this may be expected)")
     
+    # Step 4: Run tests and collect output
+    print("\n4️⃣  Running tests and collecting output...")
+    test_success = run_tests_and_collect_output(dockerfile_path, image_name)
+    
     print(f"\n🎉 Dockerfile verification completed successfully!")
     print(f"🐳 Image '{image_name}' is ready to use")
     
     return True
+
+def run_tests_and_collect_output(dockerfile_path: Path, image_name: str) -> bool:
+    """Run tests from test_commands.json and save output to test_output.txt."""
+    dockerfile_dir = dockerfile_path.parent
+    test_commands_path = dockerfile_dir / "test_commands.json"
+    test_output_path = dockerfile_dir / "test_output.txt"
+    
+    # Check if test_commands.json exists
+    if not test_commands_path.exists():
+        print(f"⚠️  No test_commands.json found at {test_commands_path}")
+        print("   Skipping test output collection")
+        return True
+    
+    try:
+        # Load test configuration
+        with open(test_commands_path, 'r') as f:
+            test_config = json.load(f)
+        
+        test_command = test_config.get('test_command', '')
+        test_framework = test_config.get('test_framework', '')
+        language = test_config.get('language', '')
+        
+        if not test_command:
+            print("⚠️  No test_command found in test_commands.json")
+            print("   Skipping test output collection")
+            return True
+            
+        print(f"🧪 Found test configuration:")
+        print(f"   Command: {test_command}")
+        print(f"   Framework: {test_framework}")
+        print(f"   Language: {language}")
+        
+        # Run the test command in the Docker container
+        print(f"🔄 Running test command in container...")
+        
+        # Split the command into parts for Docker execution
+        test_cmd_parts = test_command.split()
+        docker_cmd = ["docker", "run", "--rm", image_name] + test_cmd_parts
+        
+        print(f"   Executing: {' '.join(docker_cmd)}")
+        
+        # Run with extended timeout for tests
+        exit_code, output = run_command(docker_cmd, timeout=600)  # 10 minutes
+        
+        # Save the output regardless of success/failure
+        print(f"💾 Saving test output to {test_output_path}")
+        with open(test_output_path, 'w', encoding='utf-8') as f:
+            f.write(output)
+        
+        if exit_code == 0:
+            print("✅ Tests completed successfully")
+        else:
+            print(f"⚠️  Tests completed with exit code {exit_code}")
+            print("   (This may be expected if there are test failures)")
+        
+        print(f"📊 Test output captured ({len(output)} characters)")
+        
+        # Show a preview of the output
+        lines = output.split('\n')
+        preview_lines = lines[:5] + (['...'] if len(lines) > 10 else []) + lines[-5:]
+        print("📋 Test output preview:")
+        for line in preview_lines:
+            print(f"   {line}")
+            
+        return True
+        
+    except json.JSONDecodeError as e:
+        print(f"❌ Error parsing test_commands.json: {e}")
+        return False
+    except Exception as e:
+        print(f"❌ Error running tests: {e}")
+        return False
 
 def cleanup_image(image_name: str) -> None:
     """Remove the test Docker image."""
@@ -159,7 +236,7 @@ def cleanup_image(image_name: str) -> None:
 def main():
     """Main CLI interface for Dockerfile verification."""
     parser = argparse.ArgumentParser(
-        description="Verify generated Dockerfiles build and run correctly"
+        description="Verify generated Dockerfiles build and run correctly, and collect test output"
     )
     parser.add_argument("dockerfile_path", help="Path to Dockerfile")
     parser.add_argument("--image-name", help="Docker image name for testing")

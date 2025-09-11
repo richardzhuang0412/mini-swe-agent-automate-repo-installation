@@ -1,0 +1,1695 @@
+yarn run v1.22.22
+$ vitest --reporter=verbose
+
+ RUN  v1.6.1 /app
+
+stdout | vitest.setup.js:8:9
+Using React 18.3.1 + ReactDOM 18.3.1
+
+stdout | vitest.setup.js:8:9
+Using React 18.3.1 + ReactDOM 18.3.1
+
+stdout | vitest.setup.js:8:9
+Using React 18.3.1 + ReactDOM 18.3.1
+
+stdout | vitest.setup.js:8:9
+Using React 18.3.1 + ReactDOM 18.3.1
+
+stdout | vitest.setup.js:8:9
+Using React 18.3.1 + ReactDOM 18.3.1
+
+stdout | vitest.setup.js:8:9
+Using React 18.3.1 + ReactDOM 18.3.1
+
+stdout | vitest.setup.js:8:9
+Using React 18.3.1 + ReactDOM 18.3.1
+
+stdout | vitest.setup.js:8:9
+Using React 18.3.1 + ReactDOM 18.3.1
+
+stdout | vitest.setup.js:8:9
+Using React 18.3.1 + ReactDOM 18.3.1
+
+stdout | vitest.setup.js:8:9
+Using React 18.3.1 + ReactDOM 18.3.1
+
+stdout | vitest.setup.js:8:9
+Using React 18.3.1 + ReactDOM 18.3.1
+
+stdout | vitest.setup.js:8:9
+Using React 18.3.1 + ReactDOM 18.3.1
+
+stdout | vitest.setup.js:8:9
+Using React 18.3.1 + ReactDOM 18.3.1
+
+stdout | vitest.setup.js:8:9
+Using React 18.3.1 + ReactDOM 18.3.1
+
+ ✓ tests/layout/resolveAttachments.test.ts > resolveAttachments > should return same string if no attributes present
+ ✓ tests/layout/resolveAttachments.test.ts > resolveAttachments > should return same string if no attachment present
+ ✓ tests/layout/resolveAttachments.test.ts > resolveAttachments > should return same string if no attachment code point present
+ ✓ tests/layout/resolveAttachments.test.ts > resolveAttachments > should return same string if attachment code point present but no attachment
+ ✓ tests/layout/resolveAttachments.test.ts > resolveAttachments > should not mutate passed string
+ ✓ tests/layout/resolveAttachments.test.ts > resolveAttachments > should change attachment glyph position appropiately
+ ✓ tests/layout/resolveAttachments.test.ts > resolveAttachments > should change attachment glyph position appropiately when ligature is present before
+ ✓ tests/layout/resolveAttachments.test.ts > resolveAttachments > should change attachment glyph position appropiately when ligature is present after
+ ✓ tests/layout/wrapWords.test.ts > wrapWords > when engine provided > should return no syllables when empty string provided
+ ✓ tests/layout/wrapWords.test.ts > wrapWords > when engine provided > should return syllables when single run string
+ ✓ tests/layout/wrapWords.test.ts > wrapWords > when engine provided > should return syllables when multipe runs string
+ ✓ tests/layout/wrapWords.test.ts > wrapWords > when engine provided > should return mutated string if engine changes string value
+ ✓ tests/layout/wrapWords.test.ts > wrapWords > when no engine provided > should return no syllables when empty string provided
+ ✓ tests/layout/wrapWords.test.ts > wrapWords > when no engine provided > should return unhyphenated syllables when single run string
+ ✓ tests/layout/wrapWords.test.ts > wrapWords > when no engine provided > should return unhyphenated syllables when multipe runs string
+ ✓ tests/layout/resolveYOffset.test.ts > resolveYOffset > should return same string if no attributes present
+ ✓ tests/layout/resolveYOffset.test.ts > resolveYOffset > should return same string if no yOffset present
+ ✓ tests/layout/resolveYOffset.test.ts > resolveYOffset > should return same string if no font present
+ ✓ tests/layout/resolveYOffset.test.ts > resolveYOffset > should return same string if no positions present
+ ✓ tests/layout/resolveYOffset.test.ts > resolveYOffset > should not mutate passed string
+ ✓ tests/layout/resolveYOffset.test.ts > resolveYOffset > should change glyph positions appropiately
+ ✓ tests/layout/generateGlyphs.test.ts > generateGlyphs > should return empty glyphs if font not provided
+ ✓ tests/layout/generateGlyphs.test.ts > generateGlyphs > should return correctly generate simple string glyphs
+ ✓ tests/layout/generateGlyphs.test.ts > generateGlyphs > should return correctly generate multi-run simple string glyphs
+ ✓ tests/layout/generateGlyphs.test.ts > generateGlyphs > should return correctly generate ligature glyphs
+ ✓ tests/layout/generateGlyphs.test.ts > generateGlyphs > should return correctly generate multi ligature glyphs
+ ✓ tests/layout/generateGlyphs.test.ts > generateGlyphs > should return correctly generate multi-run breaking ligature glyphs
+ ✓ tests/layout/generateGlyphs.test.ts > generateGlyphs > should return correctly generate multi-run ligature glyphs
+ ✓ tests/layout/generateGlyphs.test.ts > generateGlyphs > should return correctly generate glyphs starting with ligature
+ ✓ tests/layout/generateGlyphs.test.ts > generateGlyphs > should return correctly generate glyphs breaking ligature at start
+ ✓ tests/layout/generateGlyphs.test.ts > generateGlyphs > should return correctly generate glyphs ending with ligature
+ ✓ tests/layout/generateGlyphs.test.ts > generateGlyphs > should return correctly generate glyphs breaking ligature at the end
+ ✓ tests/attributedString/indexAtOffset.test.ts > attributeString indexAtOffset operator > should return index for single run string
+ ✓ tests/attributedString/indexAtOffset.test.ts > attributeString indexAtOffset operator > should return index for multiple run string
+ ✓ tests/attributedString/indexAtOffset.test.ts > attributeString indexAtOffset operator > should return index for single run string with ligature
+ ✓ tests/attributedString/indexAtOffset.test.ts > attributeString indexAtOffset operator > should return index for multiple run string with ligature
+ ✓ tests/run/advanceWidthBetween.test.ts > run advanceWidthBetween operator > should return 0 if positions not present
+ ✓ tests/run/advanceWidthBetween.test.ts > run advanceWidthBetween operator > should return 0 if positions empty
+ ✓ tests/run/advanceWidthBetween.test.ts > run advanceWidthBetween operator > should return 0 for leading start and end
+ ✓ tests/run/advanceWidthBetween.test.ts > run advanceWidthBetween operator > should return 0 for trailing start and end
+ ✓ tests/run/advanceWidthBetween.test.ts > run advanceWidthBetween operator > should return correct width when leading start
+ ✓ tests/run/advanceWidthBetween.test.ts > run advanceWidthBetween operator > should return correct width when trailing end
+ ✓ tests/run/advanceWidthBetween.test.ts > run advanceWidthBetween operator > should return correct width when leading start and trailing end
+ ✓ tests/run/advanceWidthBetween.test.ts > run advanceWidthBetween operator > should sum up positions values
+ ✓ tests/run/advanceWidthBetween.test.ts > run advanceWidthBetween operator > should sum up positions values when not starting on zero
+ ✓ tests/attributedString/trailingOffset.test.ts > attributeString trailingOffset operator > should return zero for single run string without spaces
+ ✓ tests/attributedString/trailingOffset.test.ts > attributeString trailingOffset operator > should return zero for multipe run string without spaces
+ ✓ tests/attributedString/trailingOffset.test.ts > attributeString trailingOffset operator > should return correct offset for single run string with spaces
+ ✓ tests/attributedString/trailingOffset.test.ts > attributeString trailingOffset operator > should return correct offset for multiple run string with spaces
+ ✓ tests/attributedString/leadingOffset.test.ts > attributeString leadingOffset operator > should return zero for single run string without spaces
+ ✓ tests/attributedString/leadingOffset.test.ts > attributeString leadingOffset operator > should return zero for multipe run string without spaces
+ ✓ tests/attributedString/leadingOffset.test.ts > attributeString leadingOffset operator > should return correct offset for single run string with spaces
+ ✓ tests/attributedString/leadingOffset.test.ts > attributeString leadingOffset operator > should return correct offset for multiple run string with spaces
+ ✓ tests/run/append.test.ts > run append glyph operator > should return same run if no glyph provided
+ ✓ tests/run/append.test.ts > run append glyph operator > should append glyph at run
+ ✓ tests/run/append.test.ts > run append glyph operator > should append ligature glyph at run
+ ✓ tests/run/append.test.ts > run append glyph operator > should append glyph at run with ligature
+ ✓ tests/run/append.test.ts > run append glyph operator > should append ligature glyph before run ligature
+ ✓ tests/run/append.test.ts > run append code point operator > should return same run if no code point provided
+ ✓ tests/run/append.test.ts > run append code point operator > should append code point at run
+ ✓ tests/run/append.test.ts > run append code point operator > should append ligature code point at run
+ ✓ tests/run/append.test.ts > run append code point operator > should append code point at run with ligature
+ ✓ tests/run/append.test.ts > run append code point operator > should append ligature code point before run ligature
+ ✓ tests/run/prepend.test.ts > run prepend glyph operator > should return same run if no glyph provided
+ ✓ tests/run/prepend.test.ts > run prepend glyph operator > should prepend glyph at run
+ ✓ tests/run/prepend.test.ts > run prepend glyph operator > should prepend ligature glyph at run
+ ✓ tests/run/prepend.test.ts > run prepend glyph operator > should prepend glyph at run with ligature
+ ✓ tests/run/prepend.test.ts > run prepend glyph operator > should prepend ligature glyph before run ligature
+ ✓ tests/run/prepend.test.ts > run prepend code point operator > should return same run if no code point provided
+ ✓ tests/run/prepend.test.ts > run prepend code point operator > should prepend code point at run
+ ✓ tests/run/prepend.test.ts > run prepend code point operator > should prepend ligature code point at run
+ ✓ tests/run/prepend.test.ts > run prepend code point operator > should prepend code point at run with ligature
+ ✓ tests/run/prepend.test.ts > run prepend code point operator > should prepend ligature code point before run ligature
+ ✓ tests/attributedString/dropLast.test.ts > attributeString dropLast operator > should dropLast with one run
+ ✓ tests/attributedString/dropLast.test.ts > attributeString dropLast operator > should dropLast with two runs
+ ✓ tests/attributedString/dropLast.test.ts > attributeString dropLast operator > should slice with several runs
+ ✓ tests/attributedString/dropLast.test.ts > attributeString dropLast operator > should dropLast glyphs with one run
+ ✓ tests/attributedString/dropLast.test.ts > attributeString dropLast operator > should dropLast glyphs with several runs
+ ✓ tests/run/slice.test.ts > run slice operator > slice start and end > should slice containing range
+ ✓ tests/run/slice.test.ts > run slice operator > slice start and end > should slice exact range
+ ✓ tests/run/slice.test.ts > run slice operator > slice start and end > should slice exceeding range
+ ✓ tests/run/slice.test.ts > run slice operator > slice start and end > should slice containing range when start not zero
+ ✓ tests/run/slice.test.ts > run slice operator > slice start and end > should slice exact range when start not zero
+ ✓ tests/run/slice.test.ts > run slice operator > slice start and end > should slice exceeding range when start not zero
+ ✓ tests/run/slice.test.ts > run slice operator > slice glyphs > should exact slice return same glyphs
+ ✓ tests/run/slice.test.ts > run slice operator > slice glyphs > should exact slice with ligature return same glyphs
+ ✓ tests/run/slice.test.ts > run slice operator > slice glyphs > should correctly slice glyphs
+ ✓ tests/run/slice.test.ts > run slice operator > slice glyphs > should correctly slice glyphs containing ligature
+ ✓ tests/run/slice.test.ts > run slice operator > slice glyphs > should correctly slice glyphs containing ligature at start
+ ✓ tests/run/slice.test.ts > run slice operator > slice glyphs > should correctly slice glyphs starting in ligature
+ ✓ tests/run/slice.test.ts > run slice operator > slice glyphs > should correctly slice glyphs ending in ligature
+ ✓ tests/run/slice.test.ts > run slice operator > slice glyphs > should correctly slice glyphs breaking ligature at start
+ ✓ tests/run/slice.test.ts > run slice operator > slice glyphs > should correctly slice glyphs breaking ligature at end
+ ✓ tests/run/slice.test.ts > run slice operator > slice glyphs > should correctly slice glyphs starting in long ligature
+ ✓ tests/run/slice.test.ts > run slice operator > slice glyphs > should correctly slice glyphs ending in long ligature
+ ✓ tests/run/slice.test.ts > run slice operator > slice glyphs > should correctly slice glyphs breaking long ligature at 1st char at start
+ ✓ tests/run/slice.test.ts > run slice operator > slice glyphs > should correctly slice glyphs breaking long ligature at 2nd char at start
+ ✓ tests/run/slice.test.ts > run slice operator > slice glyphs > should correctly slice glyphs breaking long ligature at 1st char at end
+ ✓ tests/run/slice.test.ts > run slice operator > slice glyphs > should correctly slice glyphs breaking long ligature at 2nd char at end
+ ✓ tests/run/slice.test.ts > run slice operator > slice positions > should exact slice return same positions
+ ✓ tests/run/slice.test.ts > run slice operator > slice positions > should exact slice with ligature return same positions
+ ✓ tests/run/slice.test.ts > run slice operator > slice positions > should correctly slice positions
+ ✓ tests/run/slice.test.ts > run slice operator > slice positions > should correctly slice positions containing ligature
+ ✓ tests/run/slice.test.ts > run slice operator > slice positions > should correctly slice positions starting in ligature
+ ✓ tests/run/slice.test.ts > run slice operator > slice positions > should correctly slice positions ending in ligature
+ ✓ tests/run/slice.test.ts > run slice operator > slice positions > should correctly slice positions breaking ligature at start
+ ✓ tests/run/slice.test.ts > run slice operator > slice positions > should correctly slice positions breaking ligature at end
+ ✓ tests/run/slice.test.ts > run slice operator > slice glyph indices > should exact slice return same glyph indices
+ ✓ tests/run/slice.test.ts > run slice operator > slice glyph indices > should correctly slice glyph indices
+ ✓ tests/run/slice.test.ts > run slice operator > slice glyph indices > should exact slice return same glyph indices when ligature
+ ✓ tests/run/slice.test.ts > run slice operator > slice glyph indices > should correctly slice glyph indices containing ligature
+ ✓ tests/run/slice.test.ts > run slice operator > slice glyph indices > should correctly slice glyph indices starting in ligature
+ ✓ tests/run/slice.test.ts > run slice operator > slice glyph indices > should correctly slice glyph indices ending in ligature
+ ✓ tests/run/slice.test.ts > run slice operator > slice glyph indices > should correctly slice glyph indices breaking ligature at start
+ ✓ tests/run/slice.test.ts > run slice operator > slice glyph indices > should correctly slice glyph indices breaking ligature at end
+ ✓ tests/attributedString/append.test.ts > attributeString append operator > should return copy of string if no glyph provided
+ ✓ tests/attributedString/append.test.ts > attributeString append operator > should append glyph to empty string
+ ✓ tests/attributedString/append.test.ts > attributeString append operator > should append glyph on single run string
+ ✓ tests/attributedString/append.test.ts > attributeString append operator > should append code point on single run string
+ ✓ tests/attributedString/append.test.ts > attributeString append operator > should append glyph on multiple run string
+ ✓ tests/attributedString/append.test.ts > attributeString append operator > should append code point on multiple run string
+ ✓ tests/attributedString/append.test.ts > attributeString append operator > should append ligature glyph on single run string
+ ✓ tests/attributedString/append.test.ts > attributeString append operator > should append ligaure glyph on multiple run string
+ ✓ tests/attributedString/prepend.test.ts > attributeString prepend operator > should return copy of string if no glyph provided
+ ✓ tests/attributedString/prepend.test.ts > attributeString prepend operator > should prepend glyph to empty string
+ ✓ tests/attributedString/prepend.test.ts > attributeString prepend operator > should prepend glyph on single run string
+ ✓ tests/attributedString/prepend.test.ts > attributeString prepend operator > should prepend glyph on multiple run string
+ ✓ tests/attributedString/prepend.test.ts > attributeString prepend operator > should prepend ligature glyph on single run string
+ ✓ tests/attributedString/prepend.test.ts > attributeString prepend operator > should prepend ligaure glyph on multiple run string
+ ✓ tests/glyph/slice.test.ts > glyph slice operator > should return no glyph for empty slice
+ ✓ tests/glyph/slice.test.ts > glyph slice operator > should return same glyph for exact slice
+ ✓ tests/glyph/slice.test.ts > glyph slice operator > should return same ligature glyphs for exact slice
+ ✓ tests/glyph/slice.test.ts > glyph slice operator > should return same long ligature glyphs for exact slice
+ ✓ tests/glyph/slice.test.ts > glyph slice operator > should break ligature glyph in half at start
+ ✓ tests/glyph/slice.test.ts > glyph slice operator > should break ligature glyph in half at end
+ ✓ tests/glyph/slice.test.ts > glyph slice operator > should break long ligature glyph in 1st char at start
+ ✓ tests/glyph/slice.test.ts > glyph slice operator > should break long ligature glyph in 1st char at end
+ ✓ tests/glyph/slice.test.ts > glyph slice operator > should break long ligature glyph in 2nd char at start
+ ✓ tests/glyph/slice.test.ts > glyph slice operator > should break long ligature glyph in 2nd char at end
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should return passed string unchanged
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default align to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default attachment to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default backgroundColor to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default characterSpacing to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default color to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default features to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default fill to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default font to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default fontSize to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default hangingPunctuation to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default hyphenationFactor to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default indent to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default justificationFactor to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default lineHeight to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default lineSpacing to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default link to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default marginLeft to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default marginRight to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default paddingTop to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default paragraphSpacing to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default underline to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default underlineColor to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default underlineStyle to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default script to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default shrinkFactor to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default strike to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default strikeColor to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default strikeStyle to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default stroke to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default verticalAlign to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default wordSpacing to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply default yOffset to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply align to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply attachment to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply backgroundColor to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply characterSpacing to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply color to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply features to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply fill to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply font to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply fontSize to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply hangingPunctuation to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply hyphenationFactor to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply indent to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply justificationFactor to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply lineHeight to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply lineSpacing to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply link to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply marginLeft to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply marginRight to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply opacity to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply paddingTop to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply paragraphSpacing to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply underline to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply underlineColor to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply underlineStyle to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply script to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply shrinkFactor to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply strike to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply strikeColor to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply strikeStyle to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply stroke to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply verticalAlign to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply wordSpacing to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should apply yOffset to passed run
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should underline color get color value if not present
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should margin right get margin value if not present
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should margin left get margin value if not present
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should padding top get padding value if not present
+ ✓ tests/layout/applyDefaultStyles.test.ts > applyDefaultStyles > should opacity be zero
+ ✓ tests/run/insert.test.ts > run insert glyph operator > should return same run if no glyph provided
+ ✓ tests/run/insert.test.ts > run insert glyph operator > should insert glyph at beggining of run
+ ✓ tests/run/insert.test.ts > run insert glyph operator > should insert glyph at end of run
+ ✓ tests/run/insert.test.ts > run insert glyph operator > should insert glyph at middle of run
+ ✓ tests/run/insert.test.ts > run insert glyph operator > should insert ligature glyph at beggining of run
+ ✓ tests/run/insert.test.ts > run insert glyph operator > should insert ligature glyph at end of run
+ ✓ tests/run/insert.test.ts > run insert glyph operator > should insert ligature glyph at middle of run
+ ✓ tests/run/insert.test.ts > run insert glyph operator > should insert glyph before run ligature
+ ✓ tests/run/insert.test.ts > run insert glyph operator > should insert glyph after run ligature
+ ✓ tests/run/insert.test.ts > run insert glyph operator > should insert glyph in the middle of ligature
+ ✓ tests/run/insert.test.ts > run insert glyph operator > should insert ligature glyph before run ligature
+ ✓ tests/run/insert.test.ts > run insert glyph operator > should insert ligature glyph after run ligature
+ ✓ tests/run/insert.test.ts > run insert code point operator > should return same run if no glyph provided
+ ✓ tests/run/insert.test.ts > run insert code point operator > should insert code point at beggining of run
+ ✓ tests/run/insert.test.ts > run insert code point operator > should insert code point at end of run
+ ✓ tests/run/insert.test.ts > run insert code point operator > should insert code point at middle of run
+ ✓ tests/run/insert.test.ts > run insert code point operator > should insert ligature code point at beggining of run
+ ✓ tests/run/insert.test.ts > run insert code point operator > should insert ligature code point at end of run
+ ✓ tests/run/insert.test.ts > run insert code point operator > should insert ligature code point at middle of run
+ ✓ tests/run/insert.test.ts > run insert code point operator > should insert code point before run ligature
+ ✓ tests/run/insert.test.ts > run insert code point operator > should insert code point after run ligature
+ ✓ tests/run/insert.test.ts > run insert code point operator > should insert ligature code point before run ligature
+ ✓ tests/run/insert.test.ts > run insert code point operator > should insert ligature code point after run ligature
+ ✓ tests/run/indexAtOffset.test.ts > run indexAtOffset operator > should return 0 if positions not present
+ ✓ tests/run/indexAtOffset.test.ts > run indexAtOffset operator > should return 0 if positions empty
+ ✓ tests/run/indexAtOffset.test.ts > run indexAtOffset operator > should return 0 if glyphs not present
+ ✓ tests/run/indexAtOffset.test.ts > run indexAtOffset operator > should return 0 if glyphs empty
+ ✓ tests/run/indexAtOffset.test.ts > run indexAtOffset operator > should return correct index
+ ✓ tests/run/indexAtOffset.test.ts > run indexAtOffset operator > should return correct index with ligatures
+ ✓ tests/attributedString/slice.test.ts > attributeString slice operator > should slice with one run
+ ✓ tests/attributedString/slice.test.ts > attributeString slice operator > should slice with two runs
+ ✓ tests/attributedString/slice.test.ts > attributeString slice operator > should slice with several runs
+ ✓ tests/attributedString/slice.test.ts > attributeString slice operator > should ignore unnecesary leading runs when slice
+ ✓ tests/attributedString/slice.test.ts > attributeString slice operator > should ignore unnecesary trailing runs when slice
+ ✓ tests/attributedString/slice.test.ts > attributeString slice operator > should slice glyphs when one run
+ ✓ tests/attributedString/slice.test.ts > attributeString slice operator > should slice glyphs with several runs
+ ✓ tests/attributedString/slice.test.ts > attributeString slice operator > should slice glyphs ending on ligature
+ ✓ tests/attributedString/slice.test.ts > attributeString slice operator > should slice glyphs starting on ligature
+ ✓ tests/indices/resolve.test.ts > indices resolve operator > should return empty array from empty array
+ ✓ tests/indices/resolve.test.ts > indices resolve operator > should return same indices from simple chars
+ ✓ tests/indices/resolve.test.ts > indices resolve operator > should return correct glyph indices when starting with ligature
+ ✓ tests/indices/resolve.test.ts > indices resolve operator > should return correct glyph indices when contain ligature
+ ✓ tests/indices/resolve.test.ts > indices resolve operator > should return correct glyph indices when ending in ligature
+ ✓ tests/indices/resolve.test.ts > indices resolve operator > should return correct glyph indices when starting with long ligature
+ ✓ tests/indices/resolve.test.ts > indices resolve operator > should return correct glyph indices when contain long ligature
+ ✓ tests/indices/resolve.test.ts > indices resolve operator > should return correct glyph indices when ending in long ligature
+ ✓ tests/indices/resolve.test.ts > indices resolve operator > should fill undefined index at start
+ ✓ tests/indices/resolve.test.ts > indices resolve operator > should fill undefined index at middle
+ ✓ tests/indices/resolve.test.ts > indices resolve operator > should fill undefined index at end
+ ✓ tests/attributedString/insertGlyph.test.ts > attributeString insertGlyph operator > should insert glyph on single run string at beggining
+ ✓ tests/attributedString/insertGlyph.test.ts > attributeString insertGlyph operator > should insert glyph on single run string at end
+ ✓ tests/attributedString/insertGlyph.test.ts > attributeString insertGlyph operator > should insert glyph on single run string at middle
+ ✓ tests/attributedString/insertGlyph.test.ts > attributeString insertGlyph operator > should insert ligature glyph on single run string at beggining
+ ✓ tests/attributedString/insertGlyph.test.ts > attributeString insertGlyph operator > should insert ligature glyph on single run string at end
+ ✓ tests/attributedString/insertGlyph.test.ts > attributeString insertGlyph operator > should insert ligature glyph on single run string at middile
+ ✓ tests/attributedString/insertGlyph.test.ts > attributeString insertGlyph operator > should insert glyph on single run with ligature string at beggining
+ ✓ tests/attributedString/insertGlyph.test.ts > attributeString insertGlyph operator > should insert glyph on single run with ligature string at end
+ ✓ tests/attributedString/insertGlyph.test.ts > attributeString insertGlyph operator > should insert glyph on single run with ligature string at middle
+ ✓ tests/attributedString/insertGlyph.test.ts > attributeString insertGlyph operator > should insert glyph at beggining of first run of two run string
+ ✓ tests/attributedString/insertGlyph.test.ts > attributeString insertGlyph operator > should insert glyph on first run of two run string
+ ✓ tests/attributedString/insertGlyph.test.ts > attributeString insertGlyph operator > should insert glyph at beggining of second run of two run string
+ ✓ tests/attributedString/insertGlyph.test.ts > attributeString insertGlyph operator > should insert glyph on second run of two run string
+ ✓ tests/attributedString/insertGlyph.test.ts > attributeString insertGlyph operator > should insert ligature glyph on first run of two run string
+ ✓ tests/attributedString/insertGlyph.test.ts > attributeString insertGlyph operator > should insert ligature glyph on second run of two run string
+ ✓ tests/run/trailingOffset.test.ts > run trailingOffset operator > should return zero for empty run
+ ✓ tests/run/trailingOffset.test.ts > run trailingOffset operator > should return zero if no leafing spaces
+ ✓ tests/run/trailingOffset.test.ts > run trailingOffset operator > should return trailing space of one space
+ ✓ tests/run/trailingOffset.test.ts > run trailingOffset operator > should return trailing space of many spaces
+ ✓ tests/rect/intersects.test.ts > rect intersects operator > should not intesect on top-left corner
+ ✓ tests/rect/intersects.test.ts > rect intersects operator > should intesect on top-left corner
+ ✓ tests/rect/intersects.test.ts > rect intersects operator > should not intesect on top edge
+ ✓ tests/rect/intersects.test.ts > rect intersects operator > should intesect on top edge
+ ✓ tests/rect/intersects.test.ts > rect intersects operator > should not intesect on top-right corner
+ ✓ tests/rect/intersects.test.ts > rect intersects operator > should intesect on top-right corner
+ ✓ tests/rect/intersects.test.ts > rect intersects operator > should not intesect on right edge
+ ✓ tests/rect/intersects.test.ts > rect intersects operator > should intesect on right edge
+ ✓ tests/rect/intersects.test.ts > rect intersects operator > should not intesect on bottom-right corner
+ ✓ tests/rect/intersects.test.ts > rect intersects operator > should intesect on bottom-right corner
+ ✓ tests/rect/intersects.test.ts > rect intersects operator > should not intesect on bottom edge
+ ✓ tests/rect/intersects.test.ts > rect intersects operator > should intesect on bottom edge
+ ✓ tests/rect/intersects.test.ts > rect intersects operator > should not intesect on bottom-left corner
+ ✓ tests/rect/intersects.test.ts > rect intersects operator > should intesect on bottom-left corner
+ ✓ tests/rect/intersects.test.ts > rect intersects operator > should not intesect on left edge
+ ✓ tests/rect/intersects.test.ts > rect intersects operator > should intesect on left edge
+ ✓ tests/run/leadingOffset.test.ts > run leadingOffset operator > should return zero for empty run
+ ✓ tests/run/leadingOffset.test.ts > run leadingOffset operator > should return zero if no leafing spaces
+ ✓ tests/run/leadingOffset.test.ts > run leadingOffset operator > should return trailing space of one space
+ ✓ tests/run/leadingOffset.test.ts > run leadingOffset operator > should return trailing space of many spaces
+ ✓ tests/attributedString/sliceAtOffset.test.ts > attributeString sliceAtOffset operator > should slice single run string
+ ✓ tests/attributedString/sliceAtOffset.test.ts > attributeString sliceAtOffset operator > should slice complete single run string when exceeding offset
+ ✓ tests/attributedString/sliceAtOffset.test.ts > attributeString sliceAtOffset operator > should slice single run string before ligature
+ ✓ tests/attributedString/sliceAtOffset.test.ts > attributeString sliceAtOffset operator > should slice single run string after ligature
+ ✓ tests/attributedString/sliceAtOffset.test.ts > attributeString sliceAtOffset operator > should slice multiple run string
+ ✓ tests/attributedString/sliceAtOffset.test.ts > attributeString sliceAtOffset operator > should slice complete multiple run string when exceeding offset
+ ✓ tests/attributedString/sliceAtOffset.test.ts > attributeString sliceAtOffset operator > should slice multiple run string before ligature in 1st run
+ ✓ tests/attributedString/sliceAtOffset.test.ts > attributeString sliceAtOffset operator > should slice multiple run string after ligature in 1st run
+ ✓ tests/attributedString/sliceAtOffset.test.ts > attributeString sliceAtOffset operator > should slice multiple run string before ligature in 2nd run
+ ✓ tests/attributedString/sliceAtOffset.test.ts > attributeString sliceAtOffset operator > should slice multiple run string after ligature in 2nd run
+ ✓ tests/attributedString/advanceWidthBetween.test.ts > attributeString advanceWidthBetween operator > should return 0 for empty string
+ ✓ tests/attributedString/advanceWidthBetween.test.ts > attributeString advanceWidthBetween operator > should return 0 if runs dont have positions
+ ✓ tests/attributedString/advanceWidthBetween.test.ts > attributeString advanceWidthBetween operator > should sum up single run advance width
+ ✓ tests/attributedString/advanceWidthBetween.test.ts > attributeString advanceWidthBetween operator > should sum up multiple runs advance width
+ ✓ tests/attributedString/advanceWidthBetween.test.ts > attributeString advanceWidthBetween operator > should sum up single run advance width when not starting on zero
+ ✓ tests/attributedString/advanceWidthBetween.test.ts > attributeString advanceWidthBetween operator > should sum up multiple runs advance width when not starting on zero
+ ✓ tests/layout/bidiReordering.test.ts > bidiReordering > should return reversed string
+ ✓ tests/layout/bidiReordering.test.ts > bidiReordering > should return normal string for direction ltr
+ ✓ tests/layout/bidiReordering.test.ts > bidiReordering > should return part of the string reversed
+ ✓ tests/layout/bidiReordering.test.ts > bidiReordering > should return string reversed not repeating ligatures characters
+ ✓ tests/run/flatten.test.ts > run flatten operator > should return empty array if no runs passed
+ ✓ tests/run/flatten.test.ts > run flatten operator > should return empty run
+ ✓ tests/run/flatten.test.ts > run flatten operator > should merge two equal empty runs
+ ✓ tests/run/flatten.test.ts > run flatten operator > should merge two differet empty runs
+ ✓ tests/run/flatten.test.ts > run flatten operator > should merge two equal runs into one
+ ✓ tests/run/flatten.test.ts > run flatten operator > should split containing runs in two
+ ✓ tests/run/flatten.test.ts > run flatten operator > should split containing runs in three
+ ✓ tests/run/flatten.test.ts > run flatten operator > should leave disjoint runs as they are
+ ✓ tests/run/flatten.test.ts > run flatten operator > should fill empty spaces with empty runs
+ ✓ tests/run/concat.test.ts > run concat operator > should concat with empty run return same run
+ ✓ tests/run/concat.test.ts > run concat operator > should merge runs attributes
+ ✓ tests/run/concat.test.ts > run concat operator > should concat runs glyphs
+ ✓ tests/run/concat.test.ts > run concat operator > should concat runs positions
+ ✓ tests/run/concat.test.ts > run concat operator > should concat runs glyph indices
+ ✓ tests/run/offset.test.ts > run offset operator > should return always 0 if no glyphIndices present
+ ✓ tests/run/offset.test.ts > run offset operator > should return always 0 for run without ligatures
+ ✓ tests/run/offset.test.ts > run offset operator > should correctly return offset for run with ligature
+ ✓ tests/run/offset.test.ts > run offset operator > should correctly return offset for run with long ligature
+ ✓ tests/run/dropLast.test.ts > run dropLast operator > should have one less char
+ ✓ tests/run/dropLast.test.ts > run dropLast operator > should correctly drop last glyph
+ ✓ tests/run/dropLast.test.ts > run dropLast operator > should correctly drop last position
+ ✓ tests/run/dropLast.test.ts > run dropLast operator > should correctly drop last glyph index
+ ✓ tests/layout/splitParagraphs.test.ts > splitParagraphs > should split single paragraph
+ ✓ tests/layout/splitParagraphs.test.ts > splitParagraphs > should layout break line in between fragment
+ ✓ tests/layout/splitParagraphs.test.ts > splitParagraphs > should split paragraph starting with break line
+ ✓ tests/layout/splitParagraphs.test.ts > splitParagraphs > should layout paragraph starting with \n on different runs
+ ✓ tests/layout/splitParagraphs.test.ts > splitParagraphs > should layout two consecutive break lines at the beggining of fragment
+ ✓ tests/layout/splitParagraphs.test.ts > splitParagraphs > should layout two consecutive break lines in between fragment
+ ✓ tests/layout/splitParagraphs.test.ts > splitParagraphs > should ignore break line at the end of fragment
+ ✓ tests/layout/splitParagraphs.test.ts > splitParagraphs > should layout two consecutive break lines at the end of fragment
+ ✓ tests/layout/splitParagraphs.test.ts > splitParagraphs > should layout two consecutive break lines in different runs
+ ✓ tests/run/sort.test.ts > run sort operator > should sort no runs
+ ✓ tests/run/sort.test.ts > run sort operator > should sort one run
+ ✓ tests/run/sort.test.ts > run sort operator > should sort ordered runs
+ ✓ tests/run/sort.test.ts > run sort operator > should sort unordered runs
+ ✓ tests/run/sort.test.ts > run sort operator > should sort many runs
+ ✓ tests/engines/linebreaker.test.ts > bestFit > should return at least one breakpoint
+ ✓ tests/engines/linebreaker.test.ts > bestFit > should break lines when the subnode is bigger than the given widths
+ ✓ tests/engines/linebreaker.test.ts > knuthPlass > should return at least one breakpoint
+ ✓ tests/run/ascent.test.ts > run ascent operator > should return 0 if font not present
+ ✓ tests/run/ascent.test.ts > run ascent operator > should return 0 if fontSize not present
+ ✓ tests/run/ascent.test.ts > run ascent operator > should return 0 if unknown font unitsPerEm
+ ✓ tests/run/ascent.test.ts > run ascent operator > should return 0 if unknown font ascent
+ ✓ tests/run/ascent.test.ts > run ascent operator > should return correct font ascent
+ ✓ tests/run/ascent.test.ts > run ascent operator > should return correct font ascent with shortest attachment
+ ✓ tests/run/ascent.test.ts > run ascent operator > should return attachment height if taller
+ ✓ tests/attributedString/fromFragments.test.ts > attributeString fromFragments operator > should return empty attributed string for no fragments
+ ✓ tests/attributedString/fromFragments.test.ts > attributeString fromFragments operator > should be constructed by one fragment
+ ✓ tests/attributedString/fromFragments.test.ts > attributeString fromFragments operator > should be constructed by fragments
+ ✓ tests/attributedString/fromFragments.test.ts > attributeString fromFragments operator > should preserve fragment attributes
+ ✓ tests/layout/bidiMirroring.test.ts > bidiMirroring > should mirror characters correctly
+ ✓ tests/layout/bidiMirroring.test.ts > bidiMirroring > should not mirror any characters
+ ✓ tests/run/glyphIndexAt.test.ts > run glyphIndexAt operator > should return string index if no glyph indices present
+ ✓ tests/run/glyphIndexAt.test.ts > run glyphIndexAt operator > should correctly return glyph index
+ ✓ tests/run/glyphIndexAt.test.ts > run glyphIndexAt operator > should correctly return trailing glyph index when ligature
+ ✓ tests/run/glyphIndexAt.test.ts > run glyphIndexAt operator > should correctly return leading glyph index when ligature
+ ✓ tests/run/glyphIndexAt.test.ts > run glyphIndexAt operator > should correctly return glyph index at ligature start
+ ✓ tests/run/glyphIndexAt.test.ts > run glyphIndexAt operator > should correctly return glyph index at ligature end
+ ✓ tests/run/filter.test.ts > run filter operator > should return empty array if no runs passed
+ ✓ tests/run/filter.test.ts > run filter operator > should filter only one run
+ ✓ tests/run/filter.test.ts > run filter operator > should filter many runs
+ ✓ tests/run/filter.test.ts > run filter operator > should filter trailing runs
+ ✓ tests/run/filter.test.ts > run filter operator > should filter leading runs
+ ✓ tests/attributedString/trim.test.ts > attributeString trim operator > should remove left strips
+ ✓ tests/attributedString/trim.test.ts > attributeString trim operator > should remove right strips
+ ✓ tests/attributedString/trim.test.ts > attributeString trim operator > should remove both sides strips
+ ✓ tests/attributedString/trim.test.ts > attributeString trim operator > should not change trimmed string
+ ✓ tests/attributedString/trim.test.ts > attributeString trim operator > should trim multipe runs
+ ✓ tests/engines/bidi.test.ts > bidi > should return string with correct bidi level for ltr
+ ✓ tests/engines/bidi.test.ts > bidi > should return string with correct bidi level for rtl
+ ✓ tests/engines/wordHyphenation.test.ts > wordHyphenation > should return empty array if null param
+ ✓ tests/engines/wordHyphenation.test.ts > wordHyphenation > should return empty part for empty string
+ ✓ tests/engines/wordHyphenation.test.ts > wordHyphenation > should hyphenate word
+ ✓ tests/engines/wordHyphenation.test.ts > wordHyphenation > should hyphenate word in many parts
+ ✓ tests/engines/wordHyphenation.test.ts > wordHyphenation > should hyphenate word with soft hyphen
+ ✓ tests/engines/wordHyphenation.test.ts > wordHyphenation > should hyphenate word with many soft hyphen
+ ✓ tests/engines/wordHyphenation.test.ts > wordHyphenation > should get previosuly word from cache
+ ✓ tests/attributedString/advanceWidth.test.ts > attributeString advanceWidth operator > should return 0 for empty string
+ ✓ tests/attributedString/advanceWidth.test.ts > attributeString advanceWidth operator > should return 0 if runs dont have positions
+ ✓ tests/attributedString/advanceWidth.test.ts > attributeString advanceWidth operator > should sum up runs advance width
+ ✓ tests/layout/verticalAlign.test.ts > verticalAlign > should apply vertical alignment "super" to string
+ ✓ tests/layout/verticalAlign.test.ts > verticalAlign > should apply vertical alignment "sub" to string
+ ✓ tests/layout/verticalAlign.test.ts > verticalAlign > should ignore vertical alignment value if it is not "sub" or "super"
+ ✓ tests/run/advanceWidth.test.ts > run advanceWidth operator > should return 0 if positions not present
+ ✓ tests/run/advanceWidth.test.ts > run advanceWidth operator > should return 0 if positions empty
+ ✓ tests/run/advanceWidth.test.ts > run advanceWidth operator > should sum up positions values
+ ✓ tests/run/advanceWidth.test.ts > run advanceWidth operator > should ignore invalid positions
+ ✓ tests/engines/scriptItemizer.test.ts > scriptItemizer > should return empty array for empty string
+ ✓ tests/engines/scriptItemizer.test.ts > scriptItemizer > should return run with correct latin script
+ ✓ tests/engines/scriptItemizer.test.ts > scriptItemizer > should return run with correct non-latin script
+ ✓ tests/engines/scriptItemizer.test.ts > scriptItemizer > should return runs with correct script for many scripts
+ ✓ tests/attributedString/ascent.test.ts > attributeString ascent operator > should return 0 for empty string
+ ✓ tests/attributedString/ascent.test.ts > attributeString ascent operator > should return 0 if runs dont have font
+ ✓ tests/attributedString/ascent.test.ts > attributeString ascent operator > should max runs ascent
+ ✓ tests/attributedString/ascent.test.ts > attributeString ascent operator > should sum up runs ascent with attachments
+ ✓ tests/run/descent.test.ts > run descent operator > should return 0 if font not present
+ ✓ tests/run/descent.test.ts > run descent operator > should return 0 if fontSize not present
+ ✓ tests/run/descent.test.ts > run descent operator > should return 0 if unknown font unitsPerEm
+ ✓ tests/run/descent.test.ts > run descent operator > should return 0 if unknown font descent
+ ✓ tests/run/descent.test.ts > run descent operator > should return correct font descent
+ ✓ tests/run/omit.test.ts > run omit operator > should omit passed attribute
+ ✓ tests/run/omit.test.ts > run omit operator > should not omit other attribute
+ ✓ tests/run/omit.test.ts > run omit operator > should preserve other attributes
+ ✓ tests/utils/stringFromCodePoints.test.ts > utils stringFromCodePoints operator > should return empty string if no param passed
+ ✓ tests/utils/stringFromCodePoints.test.ts > utils stringFromCodePoints operator > should return empty string if empty array passed
+ ✓ tests/utils/stringFromCodePoints.test.ts > utils stringFromCodePoints operator > should return get correct string for single code point
+ ✓ tests/utils/stringFromCodePoints.test.ts > utils stringFromCodePoints operator > should return get correct string for single ligature code point
+ ✓ tests/utils/stringFromCodePoints.test.ts > utils stringFromCodePoints operator > should return get correct string for multipe code points
+ ✓ tests/utils/stringFromCodePoints.test.ts > utils stringFromCodePoints operator > should return get correct string for multipe ligautre code points
+ ✓ tests/utils/stringFromCodePoints.test.ts > utils stringFromCodePoints operator > should return get correct string for even mode code points
+ ✓ tests/run/height.test.ts > run height operator > should return 0 if attributes empty
+ ✓ tests/run/height.test.ts > run height operator > should line height if present
+ ✓ tests/run/height.test.ts > run height operator > should return 0 if font not present
+ ✓ tests/run/height.test.ts > run height operator > should return 0 if fontSize not present
+ ✓ tests/run/height.test.ts > run height operator > should return 0 if unknown font unitsPerEm
+ ✓ tests/run/height.test.ts > run height operator > should return 0 if unknown font descent
+ ✓ tests/run/height.test.ts > run height operator > should return 0 if unknown font ascent
+ ✓ tests/run/height.test.ts > run height operator > should return correct height
+ ✓ tests/run/lineGap.test.ts > run lineGap operator > should return 0 if font not present
+ ✓ tests/run/lineGap.test.ts > run lineGap operator > should return 0 if fontSize not present
+ ✓ tests/run/lineGap.test.ts > run lineGap operator > should return 0 if unknown font unitsPerEm
+ ✓ tests/run/lineGap.test.ts > run lineGap operator > should return 0 if unknown font decent
+ ✓ tests/run/lineGap.test.ts > run lineGap operator > should return correct font lineGap
+ ✓ tests/run/add.test.ts > run add operator > should return equal run if 0
+ ✓ tests/run/add.test.ts > run add operator > should return added run
+ ✓ tests/attributedString/runIndexAt.test.ts > attributeString runIndexAt operator > should get index at start of first run
+ ✓ tests/attributedString/runIndexAt.test.ts > attributeString runIndexAt operator > should get index at end of first run
+ ✓ tests/attributedString/runIndexAt.test.ts > attributeString runIndexAt operator > should get index at start of last run
+ ✓ tests/attributedString/runIndexAt.test.ts > attributeString runIndexAt operator > should get index at end of last run
+ ✓ tests/attributedString/runIndexAt.test.ts > attributeString runIndexAt operator > should get -1 at invalid index
+ ✓ tests/layout/preprocessRuns.test.ts > preprocessRuns > should call both engines with attributed string
+ ✓ tests/layout/preprocessRuns.test.ts > preprocessRuns > should return empty value for null param
+ ✓ tests/layout/preprocessRuns.test.ts > preprocessRuns > should return empty value for empty attributed string
+ ✓ tests/layout/preprocessRuns.test.ts > preprocessRuns > should return flatten runs
+ ✓ tests/run/subtract.test.ts > run subtract operator > should return equal run if 0
+ ✓ tests/run/subtract.test.ts > run subtract operator > should return subtracted run
+ ✓ tests/attributedString/height.test.ts > attributeString height operator > should return 0 for empty string
+ ✓ tests/attributedString/height.test.ts > attributeString height operator > should return 0 if runs dont have font
+ ✓ tests/attributedString/height.test.ts > attributeString height operator > should max runs height
+ ✓ tests/attributedString/height.test.ts > attributeString height operator > should sum up runs height with lineHeight
+ ✓ tests/attributedString/runAt.test.ts > attributeString runAt operator > should get index at start of first run
+ ✓ tests/attributedString/runAt.test.ts > attributeString runAt operator > should get index at end of first run
+ ✓ tests/attributedString/runAt.test.ts > attributeString runAt operator > should get index at start of last run
+ ✓ tests/attributedString/runAt.test.ts > attributeString runAt operator > should get index at end of last run
+ ✓ tests/attributedString/runAt.test.ts > attributeString runAt operator > should get -1 at invalid index
+ ✓ tests/indices/normalize.test.ts > indices normalizeArray operator > should return empty array for empty array
+ ✓ tests/indices/normalize.test.ts > indices normalizeArray operator > should normalize consecutive numbers
+ ✓ tests/indices/normalize.test.ts > indices normalizeArray operator > should normalize consecutive numbers starting on zero
+ ✓ tests/indices/normalize.test.ts > indices normalizeArray operator > should normalize non-consecutive numbers
+ ✓ tests/indices/normalize.test.ts > indices normalizeArray operator > should normalize ascending non-consecutive numbers starting on zero
+ ✓ tests/run/runIndexAt.test.ts > run runIndexAt operator > should get index at start of first run
+ ✓ tests/run/runIndexAt.test.ts > run runIndexAt operator > should get index at end of first run
+ ✓ tests/run/runIndexAt.test.ts > run runIndexAt operator > should get index at start of last run
+ ✓ tests/run/runIndexAt.test.ts > run runIndexAt operator > should get index at end of last run
+ ✓ tests/run/runIndexAt.test.ts > run runIndexAt operator > should get -1 at invalid index
+ ✓ tests/glyph/fromCodePoint.test.ts > glyph fromCodePoint operator > should return null if no font provided
+ ✓ tests/glyph/fromCodePoint.test.ts > glyph fromCodePoint operator > should return null if no value provided
+ ✓ tests/glyph/fromCodePoint.test.ts > glyph fromCodePoint operator > should get glyph from font
+ ✓ tests/attributedString/descent.test.ts > attributeString descent operator > should return 0 for empty string
+ ✓ tests/attributedString/descent.test.ts > attributeString descent operator > should return 0 if runs dont have font
+ ✓ tests/attributedString/descent.test.ts > attributeString descent operator > should return min runs descent
+ ✓ tests/run/scale.test.ts > run scale operator > should return 0 if font not present
+ ✓ tests/run/scale.test.ts > run scale operator > should return 0 if unknown font unitsPerEm
+ ✓ tests/run/scale.test.ts > run scale operator > should return correct font scale
+ ✓ tests/utils/isNumber.test.ts > utils isNumber operator > should return true for number argument
+ ✓ tests/utils/isNumber.test.ts > utils isNumber operator > should return true for float argument
+ ✓ tests/utils/isNumber.test.ts > utils isNumber operator > should return false for string argument
+ ✓ tests/utils/isNumber.test.ts > utils isNumber operator > should return false for true argument
+ ✓ tests/utils/isNumber.test.ts > utils isNumber operator > should return false for false argument
+ ✓ tests/utils/isNumber.test.ts > utils isNumber operator > should return false for object argument
+ ✓ tests/glyph/isWhiteSpace.test.ts > glyph isWhiteSpace operator > should return false if no glyph provided
+ ✓ tests/glyph/isWhiteSpace.test.ts > glyph isWhiteSpace operator > should return false for non white space glyph
+ ✓ tests/glyph/isWhiteSpace.test.ts > glyph isWhiteSpace operator > should get glyph from font
+ ✓ tests/indices/prepend.test.ts > indices prepend operator > should prepend indices to empty string
+ ✓ tests/indices/prepend.test.ts > indices prepend operator > should return same empty array if zero passed
+ ✓ tests/indices/prepend.test.ts > indices prepend operator > should return same array if zero passed
+ ✓ tests/indices/prepend.test.ts > indices prepend operator > should prepend correct amont of values
+ ✓ tests/indices/append.test.ts > indices append operator > should append indices to empty string
+ ✓ tests/indices/append.test.ts > indices append operator > should return same empty array if zero passed
+ ✓ tests/indices/append.test.ts > indices append operator > should return same array if zero passed
+ ✓ tests/indices/append.test.ts > indices append operator > should append correct amont of values
+ ✓ tests/run/getFont.test.ts > run getFont glyph operator > should return null if run does not have attributes
+ ✓ tests/run/getFont.test.ts > run getFont glyph operator > should return null if run does not have font
+ ✓ tests/run/getFont.test.ts > run getFont glyph operator > should return first font when present
+ ✓ tests/attributedString/length.test.ts > attributeString length operator > should return 0 for empty string
+ ✓ tests/attributedString/length.test.ts > attributeString length operator > should correct length for attributed string
+ ✓ tests/attributedString/start.test.ts > attributeString start operator > should return 0 for empty string
+ ✓ tests/attributedString/start.test.ts > attributeString start operator > should return first run start value
+ ✓ tests/rect/partition.test.ts > rect partition operator > should return empty rect if height 0
+ ✓ tests/rect/partition.test.ts > rect partition operator > should return correct partition
+ ✓ tests/attributedString/end.test.ts > attributeString end operator > should return 0 for empty string
+ ✓ tests/attributedString/end.test.ts > attributeString end operator > should return first run end value
+ ✓ tests/rect/equals.test.ts > rect equals operator > should return false for different rects
+ ✓ tests/rect/equals.test.ts > rect equals operator > should return true for equal rects
+ ✓ tests/run/empty.test.ts > run empty operator > should return empty run
+ ✓ tests/rect/maxX.test.ts > rect maxX operator > should return zero if no rect provided
+ ✓ tests/rect/maxX.test.ts > rect maxX operator > should return zero if empty rect provided
+ ✓ tests/rect/maxX.test.ts > rect maxX operator > should return rect maxX correctly
+ ✓ tests/run/isEmpty.test.ts > run isEmpty operator > should be truthy for empty run
+ ✓ tests/run/isEmpty.test.ts > run isEmpty operator > should be falsy for non-empty run
+ ✓ tests/run/length.test.ts > run length operator > should be zero for empty run
+ ✓ tests/run/length.test.ts > run length operator > should be correct length for run
+ ✓ tests/rect/bottomLeft.test.ts > rect bottomLeft operator > should return zero point if no rect provided
+ ✓ tests/rect/bottomLeft.test.ts > rect bottomLeft operator > should return zero point if empty rect provided
+ ✓ tests/rect/bottomLeft.test.ts > rect bottomLeft operator > should return rect bottomLeft correctly
+ ✓ tests/rect/area.test.ts > rect area operator > should return zero if no rect provided
+ ✓ tests/rect/area.test.ts > rect area operator > should return zero for empty rect
+ ✓ tests/rect/area.test.ts > rect area operator > should return rect area correctly
+ ✓ tests/rect/maxY.test.ts > rect maxY operator > should return zero if no rect provided
+ ✓ tests/rect/maxY.test.ts > rect maxY operator > should return zero if empty rect provided
+ ✓ tests/rect/maxY.test.ts > rect maxY operator > should return rect maxY correctly
+ ✓ tests/rect/bottomRight.test.ts > rect bottomRight operator > should return zero point if no rect provided
+ ✓ tests/rect/bottomRight.test.ts > rect bottomRight operator > should return zero point if empty rect provided
+ ✓ tests/rect/bottomRight.test.ts > rect bottomRight operator > should return rect bottomRight correctly
+ ✓ tests/rect/copy.test.ts > rect copy operator > should create copy of rect
+ ✓ tests/rect/empty.test.ts > rect empty operator > should return empty rect
+ ✓ tests/attributedString/empty.test.ts > attributeString empty operator > should return empty attributed string
+ ✓ tests/layout/layoutParagraph.test.ts > layoutParagraph > should keep overflowing text in the last rect
+ ✓ tests/engines/fontSubstitution.test.ts > FontSubstitution > should return empty array if no runs passed
+ ✓ tests/engines/fontSubstitution.test.ts > FontSubstitution > should merge consecutive runs with same font
+ ✓ tests/engines/fontSubstitution.test.ts > FontSubstitution > should substitute many runs
+ ✓ tests/engines/fontSubstitution.test.ts > FontSubstitution > Fallback Font > should utilize a fallback font that supports the provided glyph
+ ✓ tests/engines/fontSubstitution.test.ts > FontSubstitution > Fallback Font > should split a run when fallback font is used on a portion of the run
+ ✓ tests/flatten.test.ts > stylesheet flatten > should return empty object for undefined
+ ✓ tests/flatten.test.ts > stylesheet flatten > should return empty object for null
+ ✓ tests/flatten.test.ts > stylesheet flatten > should return empty object for empty array
+ ✓ tests/flatten.test.ts > stylesheet flatten > should return identity for single style object
+ ✓ tests/flatten.test.ts > stylesheet flatten > should return identity for single style object array
+ ✓ tests/flatten.test.ts > stylesheet flatten > should return identity for single style object array with nil values
+ ✓ tests/flatten.test.ts > stylesheet flatten > should return flatten several style objects
+ ✓ tests/flatten.test.ts > stylesheet flatten > should return object of merged values from array
+ ✓ tests/flatten.test.ts > stylesheet flatten > should return flatten several style objects with nil values
+ ✓ tests/flatten.test.ts > stylesheet flatten > should return flatten nested style objects
+ ✓ tests/flatten.test.ts > stylesheet flatten > should return flatten nested style objects with nil values
+ ✓ tests/mediaQueries.test.ts > media queries > should resolve max-height media queries on narrow container
+ ✓ tests/mediaQueries.test.ts > media queries > should resolve max-height media queries on wider container
+ ✓ tests/mediaQueries.test.ts > media queries > should resolve max-width media queries on narrow container
+ ✓ tests/mediaQueries.test.ts > media queries > should resolve max-width media queries on wider container
+ ✓ tests/mediaQueries.test.ts > media queries > should resolve portrait media queries on portrait container
+ ✓ tests/mediaQueries.test.ts > media queries > should resolve portrait media queries on landscape container
+ ✓ tests/mediaQueries.test.ts > media queries > should resolve landscape media queries on landscape container
+ ✓ tests/mediaQueries.test.ts > media queries > should resolve landscape media queries on portrait container
+ ✓ tests/node.test.jsx > node > should render to string
+ ✓ tests/node.test.jsx > node > should render to string call render callback
+ ✓ tests/node.test.jsx > node > should render to stream
+ ✓ tests/node.test.jsx > node > should render to stream call render callback
+ ✓ tests/node.test.jsx > node > should render to file
+ ✓ tests/node.test.jsx > node > should export font store
+ ✓ tests/node.test.jsx > node > should export styleSheet
+ ✓ tests/node.test.jsx > node > should export version info
+ ✓ tests/node.test.jsx > node > should throw error when trying to use PDFViewer
+ ✓ tests/node.test.jsx > node > should throw error when trying to use PDFDownloadLink
+ ✓ tests/node.test.jsx > node > should throw error when trying to use BlobProvider
+ ✓ tests/node.test.jsx > node > should throw error when trying to use usePDF
+ ✓ tests/node.test.jsx > node > should render a fragment
+ ✓ tests/node.test.jsx > node > should render a fragment in render
+ ✓ tests/node.test.jsx > node > should render a child array
+ ✓ tests/node.test.jsx > node > should render a child array in render
+ ✓ tests/node.test.jsx > node > should render nested dynamic views
+ ✓ tests/orphanTexts.test.jsx > renderer > empty string 837ms
+ ✓ tests/gap.test.ts > resolve stylesheet gap > should resolve gap shorthand
+ ✓ tests/gap.test.ts > resolve stylesheet gap > should resolve row gap
+ ✓ tests/gap.test.ts > resolve stylesheet gap > should resolve column gap
+ ✓ tests/layout.test.ts > resolve stylesheet layout > should resolve positions in in dimensions
+ ✓ tests/layout.test.ts > resolve stylesheet layout > should resolve positions in mm dimensions
+ ✓ tests/layout.test.ts > resolve stylesheet layout > should resolve positions in cm dimensions
+ ✓ tests/layout.test.ts > resolve stylesheet layout > should resolve aspect ratio
+ ✓ tests/layout.test.ts > resolve stylesheet layout > should resolve display
+ ✓ tests/layout.test.ts > resolve stylesheet layout > should resolve position
+ ✓ tests/layout.test.ts > resolve stylesheet layout > should resolve overflow
+ ✓ tests/layout.test.ts > resolve stylesheet layout > should resolve z index
+ ✓ tests/colors.test.ts > resolve stylesheet colors > should keep hex colors as they are
+ ✓ tests/colors.test.ts > resolve stylesheet colors > should resolve rgb colors to hexa
+ ✓ tests/colors.test.ts > resolve stylesheet colors > should resolve rgba colors to hexa
+ ✓ tests/colors.test.ts > resolve stylesheet colors > should resolve hsl colors to hexa
+ ✓ tests/colors.test.ts > resolve stylesheet colors > should resolve hsla colors to hexa
+ ✓ tests/colors.test.ts > resolve stylesheet colors > should resolve integer opacity
+ ✓ tests/colors.test.ts > resolve stylesheet colors > should resolve float opacity
+ ✓ tests/colors.test.ts > resolve stylesheet colors > should resolve string opacity
+ ✓ tests/positioning.test.ts > resolve stylesheet positioning > should resolve object positining shorthand
+ ✓ tests/positioning.test.ts > resolve stylesheet positioning > should resolve object positining percentage shorthand
+ ✓ tests/positioning.test.ts > resolve stylesheet positioning > should resolve object position left top shorthand
+ ✓ tests/positioning.test.ts > resolve stylesheet positioning > should resolve object position left center shorthand
+ ✓ tests/positioning.test.ts > resolve stylesheet positioning > should resolve object position left bottom shorthand
+ ✓ tests/positioning.test.ts > resolve stylesheet positioning > should resolve object position right top shorthand
+ ✓ tests/positioning.test.ts > resolve stylesheet positioning > should resolve object position right center shorthand
+ ✓ tests/positioning.test.ts > resolve stylesheet positioning > should resolve object position right bottom shorthand
+ ✓ tests/positioning.test.ts > resolve stylesheet positioning > should resolve object position center center shorthand
+ ✓ tests/positioning.test.ts > resolve stylesheet positioning > should resolve object positining
+ ✓ tests/positioning.test.ts > resolve stylesheet positioning > should resolve object positining percentage
+ ✓ tests/positioning.test.ts > resolve stylesheet positioning > should resolve object position left top
+ ✓ tests/positioning.test.ts > resolve stylesheet positioning > should resolve object position left center
+ ✓ tests/positioning.test.ts > resolve stylesheet positioning > should resolve object position left bottom
+ ✓ tests/positioning.test.ts > resolve stylesheet positioning > should resolve object position right top
+ ✓ tests/positioning.test.ts > resolve stylesheet positioning > should resolve object position right center
+ ✓ tests/positioning.test.ts > resolve stylesheet positioning > should resolve object position right bottom
+ ✓ tests/positioning.test.ts > resolve stylesheet positioning > should resolve object position center center
+ ✓ tests/positioning.test.ts > resolve stylesheet positioning > should resolve object fit
+ ✓ tests/flex.test.ts > resolve stylesheet flex > should resolve flex shorthand
+ ✓ tests/flex.test.ts > resolve stylesheet flex > should resolve flex align content
+ ✓ tests/flex.test.ts > resolve stylesheet flex > should resolve flex align items
+ ✓ tests/flex.test.ts > resolve stylesheet flex > should resolve flex align self
+ ✓ tests/flex.test.ts > resolve stylesheet flex > should resolve flex direction
+ ✓ tests/flex.test.ts > resolve stylesheet flex > should resolve flex wrap
+ ✓ tests/flex.test.ts > resolve stylesheet flex > should resolve flex grow
+ ✓ tests/flex.test.ts > resolve stylesheet flex > should resolve string flex grow
+ ✓ tests/flex.test.ts > resolve stylesheet flex > should resolve flex shrink
+ ✓ tests/flex.test.ts > resolve stylesheet flex > should resolve string flex shrink
+ ✓ tests/flex.test.ts > resolve stylesheet flex > should resolve flex basis
+ ✓ tests/flex.test.ts > resolve stylesheet flex > should resolve string flex basis
+ ✓ tests/flex.test.ts > resolve stylesheet flex > should resolve flex basis percent
+ ✓ tests/flex.test.ts > resolve stylesheet flex > should resolve flex basis auto
+ ✓ tests/flex.test.ts > resolve stylesheet flex > should resolve flex justify content
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve width dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve width px dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve width mm dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve width cm dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve width vw dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve width vh dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve width percentage dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve min/max width in dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve min/max width mm dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve min/max width cm dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve min/max width vw dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve min/max width vh dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve min/max width percent dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve height dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve height px dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve height mm dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve height cm dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve height vw dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve height vh dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve height percentage dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve min/max height in dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve min/max height mm dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve min/max height cm dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve min/max height vw dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve min/max height vh dimensions
+ ✓ tests/dimensions.test.ts > resolve stylesheet dimensions > should resolve min/max height percentage dimensions
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve numeric font weight value
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve string font weight value
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve thin font weight
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve hairline font weight
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve ultralight font weight
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve extralight font weight
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve light font weight
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve normal font weight
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve medium font weight
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve semibold font weight
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve demibold font weight
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve bold font weight
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve ultrabold font weight
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve extrabold font weight
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve heavy font weight
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve black font weight
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve font size
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve in font size
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve font size rem units
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve font size rem units when base not specificed
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve line height number
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve number line height with font size
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve string line height
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve string line height  with font-size
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve percentage line height
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve percentage line height with font-size
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve px line height
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve mm line height
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve font family
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve font families
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve font style
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve letter spacing
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve in line spacing
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve max lines
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve text align
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve text decoration
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve text style
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve text overflow
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve text transform
+ ✓ tests/text.test.ts > resolve stylesheet text > should resolve text vertical align
+ ✓ tests/resolve.test.ts > stylesheet resolve > should return empty object for undefined
+ ✓ tests/resolve.test.ts > stylesheet resolve > should return empty object for null
+ ✓ tests/resolve.test.ts > stylesheet resolve > should return empty object for empty object
+ ✓ tests/resolve.test.ts > stylesheet resolve > should return identity for single style object
+ ✓ tests/resolve.test.ts > stylesheet resolve > should return identity for single style object array
+ ✓ tests/resolve.test.ts > stylesheet resolve > should return identity for single style object array with nil values
+ ✓ tests/resolve.test.ts > stylesheet resolve > should return several style objects flatten
+ ✓ tests/resolve.test.ts > stylesheet resolve > should return object of merged values from array
+ ✓ tests/resolve.test.ts > stylesheet resolve > should return flatten several style objects with nil values
+ ✓ tests/resolve.test.ts > stylesheet resolve > should return flatten nested style objects
+ ✓ tests/resolve.test.ts > stylesheet resolve > should return flatten nested style objects with nil values
+ ✓ tests/flex.test.jsx > flex shorthand > should support auto 776ms
+ ✓ tests/transform.test.jsx > transform > should scale with two args 786ms
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve border shorthand
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve border shorthand with decimal units
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve border top shorthand
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve border right shorthand
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve border bottom shorthand
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve border left shorthand
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve border color shorthand
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve border hex color shorthand
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve border rgb color shorthand
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve border rgba color shorthand
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve border hsl color shorthand
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve border hsla color shorthand
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve border hex color
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve border rgb color
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve border rgba color
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve border hsl color
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve border hsla color
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve border radius shorthand
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve border style shorthand
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve border width shorthand
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve borders in in
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve borders in vw
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve borders in vh
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve borders in mm
+ ✓ tests/borders.test.ts > resolve stylesheet borders > should resolve borders in cm
+ ✓ tests/margins.test.ts > resolve stylesheet margins > should ignore invalid values
+ ✓ tests/margins.test.ts > resolve stylesheet margins > should resolve margin shorthand
+ ✓ tests/margins.test.ts > resolve stylesheet margins > should resolve margin axis shorthand
+ ✓ tests/margins.test.ts > resolve stylesheet margins > should resolve margin edges shorthand
+ ✓ tests/margins.test.ts > resolve stylesheet margins > should resolve margin edges shorthand units
+ ✓ tests/margins.test.ts > resolve stylesheet margins > should resolve margin edges shorthand negative values
+ ✓ tests/margins.test.ts > resolve stylesheet margins > should resolve margin shorthand with auto
+ ✓ tests/margins.test.ts > resolve stylesheet margins > should resolve margin edges shorthand units with decimals
+ ✓ tests/margins.test.ts > resolve stylesheet margins > should resolve margin auto shorthand
+ ✓ tests/margins.test.ts > resolve stylesheet margins > should resolve margin horizontal shorthand
+ ✓ tests/margins.test.ts > resolve stylesheet margins > should resolve margin horizontal edges shorthand
+ ✓ tests/margins.test.ts > resolve stylesheet margins > should resolve margin horizontal auto shorthand
+ ✓ tests/margins.test.ts > resolve stylesheet margins > should resolve margin vertical shorthand
+ ✓ tests/margins.test.ts > resolve stylesheet margins > should resolve margin vertical edges shorthand
+ ✓ tests/margins.test.ts > resolve stylesheet margins > should resolve margin vertical auth shorthand
+ ✓ tests/margins.test.ts > resolve stylesheet margins > should resolve margin units correctly
+ ✓ tests/margins.test.ts > resolve stylesheet margins > should resolve margin vw dimensions
+ ✓ tests/margins.test.ts > resolve stylesheet margins > should resolve margin vh dimensions
+ ✓ tests/margins.test.ts > resolve stylesheet margins > should resolve expanded margin mm dimensions
+ ✓ tests/margins.test.ts > resolve stylesheet margins > should resolve expanded margin cm dimensions
+ ✓ tests/margins.test.ts > resolve stylesheet margins > should resolve values with improper formatting
+ ✓ tests/paddings.test.ts > resolve stylesheet paddings > should ignore invalid values
+ ✓ tests/paddings.test.ts > resolve stylesheet paddings > should resolve padding shorthand
+ ✓ tests/paddings.test.ts > resolve stylesheet paddings > should resolve padding axis shorthand
+ ✓ tests/paddings.test.ts > resolve stylesheet paddings > should resolve padding edges shorthand
+ ✓ tests/paddings.test.ts > resolve stylesheet paddings > should resolve padding edges shorthand units
+ ✓ tests/paddings.test.ts > resolve stylesheet paddings > should resolve padding edges shorthand negative values
+ ✓ tests/paddings.test.ts > resolve stylesheet paddings > should resolve padding edges shorthand units with decimals
+ ✓ tests/paddings.test.ts > resolve stylesheet paddings > should resolve padding horizontal shorthand
+ ✓ tests/paddings.test.ts > resolve stylesheet paddings > should resolve padding horizontal edges shorthand
+ ✓ tests/paddings.test.ts > resolve stylesheet paddings > should resolve padding vertical shorthand
+ ✓ tests/paddings.test.ts > resolve stylesheet paddings > should resolve padding vertical edges shorthand
+ ✓ tests/paddings.test.ts > resolve stylesheet paddings > should resolve padding units correctly
+ ✓ tests/paddings.test.ts > resolve stylesheet paddings > should resolve padding vw dimensions
+ ✓ tests/paddings.test.ts > resolve stylesheet paddings > should resolve padding vh dimensions
+ ✓ tests/paddings.test.ts > resolve stylesheet paddings > should resolve expanded padding mm dimensions
+ ✓ tests/paddings.test.ts > resolve stylesheet paddings > should resolve expanded padding cm dimensions
+ ✓ tests/paddings.test.ts > resolve stylesheet paddings > should resolve values with improper formatting
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve transform origin shorthand
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve transform origin percent shorthand
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve single value transform origin shorthand
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve transform origin left shorthand
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve transform origin top shorthand
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve transform origin right shorthand
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve transform origin bottom shorthand
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve transform origin center shorthand
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve transform origin
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve transform origin percentages
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve transform origin left top
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve transform origin left center
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve transform origin left bottom
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve transform origin right top
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve transform origin right center
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve transform origin right bottom
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve transform origin center center
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve single value scale operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve single value gradient scale operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve multiple value scale operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve multiple value gradient scale operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve multiple value scale operation without comma separator
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve multiple value gradient scale operation without comma separator
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve multiple value scale operation with negative and floats
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve multiple value gradient scale operation with negative and floats
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve scaleX operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve scaleX gradient operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve scaleY operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve scaleY gradient operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve translate operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve translate gradient operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve translate operation without comma separator
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve translate gradient operation without comma separator
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve translate operation with negative and floats
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve translate gradient operation with negative and floats
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve translateX operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve translateX gradient operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve translateY operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve translateY gradient operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve numeric rotate operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve numeric rotate gradient operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve float rotate operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve float rotate gradient operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve deg rotate operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve deg rotate gradient operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve negative deg rotate operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve negative deg rotate gradient operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve rad rotate operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve rad rotate gradient operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve negative rad rotate operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve negative rad rotate gradient operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve numeric skew operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve numeric skew gradient operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve float skew operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve float skew gradient operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve deg skew operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve deg skew gradient operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve negative deg skew operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve negative deg skew gradient operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve rad skew operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve rad skew gradient operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve negative rad skew operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve negative rad skew gradient operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve mixed units skew operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve mixed units skew gradient operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve skewX operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve skewX gradient operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve skewY operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve skewY gradient operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve matrix operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve matrix gradient operation
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve combined operations
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should resolve combined gradient operations
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should leave parsed tranform value as is
+ ✓ tests/transform.test.ts > resolve stylesheet transform > should leave parsed tranform gradient value as is
+ ✓ tests/gap.test.jsx > flex > should support gap 858ms
+ ✓ tests/flex.test.jsx > flex shorthand > should support flex-basis auto
+ ✓ tests/debug.test.jsx > debug > should show size of Text component 1062ms
+ ✓ tests/link.test.jsx > Link > should render text 1124ms
+ ✓ tests/gap.test.jsx > flex > should support percentage gap
+ ✓ tests/emoji.test.jsx > emoji > should support builder function 1189ms
+ ✓ tests/flex.test.jsx > flex shorthand > should do not grow on default
+ ✓ tests/link.test.jsx > Link > should render TEXT component
+ ✓ tests/debug.test.jsx > debug > should show paddings and margins
+ ✓ tests/gap.test.jsx > flex > should support rowGap and columnGap
+ ✓ tests/flex.test.jsx > flex shorthand > should shrink on default
+ ✓ tests/svg.test.jsx > Svg > should render Tspan component 1186ms
+ ✓ tests/namedDestinations.test.jsx > named destinations > should visually match snapshot 1514ms
+ ✓ tests/orphanTexts.test.jsx > renderer > string
+ ✓ tests/orphanTexts.test.jsx > renderer > boolean
+ ✓ tests/orphanTexts.test.jsx > renderer > zero
+ ✓ tests/orphanTexts.test.jsx > renderer > numbers
+ ✓ tests/debug.test.jsx > debug > should show origin pointer
+ ✓ tests/emoji.test.jsx > emoji > should support Unicode 13.0 emoji 428ms
+ ✓ tests/gap.test.jsx > flex > should support percentage rowGap and columnGap
+ ✓ tests/text.test.jsx > text > should match snapshot 1650ms
+ ✓ tests/orphanTexts.test.jsx > renderer > empty text element
+ ✓ tests/debug.test.jsx > debug > should not render debug if false passed
+ ✓ tests/text.test.jsx > text > should support verticalAlign super and sub
+ ✓ tests/svg.test.jsx > Svg > should render Tiger 548ms
+ ✓ tests/debug.test.jsx > debug > should not render debug if undefined passed
+ ✓ tests/images.test.jsx > Image > should render jpgs with different exif orientations 1940ms
+ ✓ tests/transform.test.jsx > transform > should scale with one arg
+ ✓ tests/transform.test.jsx > transform > should scale on X axis
+ ✓ tests/transform.test.jsx > transform > should scale on Y axis
+ ✓ tests/transform.test.jsx > transform > should translate to zero px
+ ✓ tests/transform.test.jsx > transform > should translate on X axis
+ ✓ tests/transform.test.jsx > transform > should translate on Y axis
+ ✓ tests/transform.test.jsx > transform > should translate on both axis
+ ✓ tests/transform.test.jsx > transform > should rotate
+ ✓ tests/svg.test.jsx > Svg > should render Chart 315ms
+ ✓ tests/resume.test.jsx > resume > should match snapshot 2263ms
+ ✓ tests/steps/resolveBookmarks.test.ts > layout resolveBookmarks > should keep nodes the same if no bookmark passed
+ ✓ tests/steps/resolveBookmarks.test.ts > layout resolveBookmarks > should resolve bookmark in page node
+ ✓ tests/steps/resolveBookmarks.test.ts > layout resolveBookmarks > should resolve bookmark hierarchy
+ ✓ tests/steps/resolveBookmarks.test.ts > layout resolveBookmarks > should resolve bookmark object prop
+ ✓ tests/svg.test.jsx > Svg > should render Chart2 591ms
+ ✓ tests/node/setBorderWidth.test.ts > node setBorderWidth > setBorderTop > should return node if no yoga node available
+ ✓ tests/node/setBorderWidth.test.ts > node setBorderWidth > setBorderTop > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setBorderWidth.test.ts > node setBorderWidth > setBorderTop > Should throw error for percent values
+ ✓ tests/node/setBorderWidth.test.ts > node setBorderWidth > setBorderRight > should return node if no yoga node available
+ ✓ tests/node/setBorderWidth.test.ts > node setBorderWidth > setBorderRight > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setBorderWidth.test.ts > node setBorderWidth > setBorderRight > Should throw error for percent values
+ ✓ tests/node/setBorderWidth.test.ts > node setBorderWidth > setBorderBottom > should return node if no yoga node available
+ ✓ tests/node/setBorderWidth.test.ts > node setBorderWidth > setBorderBottom > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setBorderWidth.test.ts > node setBorderWidth > setBorderBottom > Should throw error for percent values
+ ✓ tests/node/setBorderWidth.test.ts > node setBorderWidth > setBorderLeft > should return node if no yoga node available
+ ✓ tests/node/setBorderWidth.test.ts > node setBorderWidth > setBorderLeft > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setBorderWidth.test.ts > node setBorderWidth > setBorderLeft > Should throw error for percent values
+ ✓ tests/node/setBorderWidth.test.ts > node setBorderWidth > setBorder > should return node if no yoga node available
+ ✓ tests/node/setBorderWidth.test.ts > node setBorderWidth > setBorder > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setBorderWidth.test.ts > node setBorderWidth > setBorder > Should throw error for percent values
+ ✓ tests/node/shouldBreak.test.ts > node shouldBreak > should not break when the child has enough space on the page
+ ✓ tests/node/shouldBreak.test.ts > node shouldBreak > should break when the child has enough space on the page
+ ✓ tests/node/shouldBreak.test.ts > node shouldBreak > should not break when the child can be wrapped
+ ✓ tests/node/shouldBreak.test.ts > node shouldBreak > should break when the child is an unwrappable node
+ ✓ tests/node/shouldBreak.test.ts > node shouldBreak > should break when the child has wrapping disabled
+ ✓ tests/node/shouldBreak.test.ts > node shouldBreak > should break when minPresenceAhead is large enough and there are overflowing siblings after the child
+ ✓ tests/node/shouldBreak.test.ts > node shouldBreak > should break when minPresenceAhead is large enough and there are overflowing siblings due to margins after the child
+ ✓ tests/node/shouldBreak.test.ts > node shouldBreak > should not break when minPresenceAhead is not past the page end
+ ✓ tests/node/shouldBreak.test.ts > node shouldBreak > should not break when the siblings after the child do not overflow past the page end
+ ✓ tests/node/shouldBreak.test.ts > node shouldBreak > should not break when the siblings after the child do not overflow past the page end, with margins
+ ✓ tests/node/shouldBreak.test.ts > node shouldBreak > should not break when only the last sibling's bottom margin overflows past the page end
+ ✓ tests/node/shouldBreak.test.ts > node shouldBreak > should not break due to minPresenceAhead when breaking does not improve presence, to avoid infinite loops
+ ✓ tests/node/shouldBreak.test.ts > node shouldBreak > should never break fixed child
+ ✓ tests/node/shouldBreak.test.ts > node shouldBreak > should ignore fixed elements after child
+ ✓ tests/node/shouldBreak.test.ts > node shouldBreak > should work with trivial minimal reproduction example
+ ✓ tests/node/shouldBreak.test.ts > node shouldBreak > should work with minimal infinite loop reproduction example
+ ✓ tests/node/shouldBreak.test.ts > node shouldBreak > should work with reproduction from #2303
+ ✓ tests/node/shouldBreak.test.ts > node shouldBreak > should not break when the child can wrap
+ ✓ tests/node/setPadding.test.ts > node setPadding > setPaddingTop > should return node if no yoga node available
+ ✓ tests/node/setPadding.test.ts > node setPadding > setPaddingTop > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setPadding.test.ts > node setPadding > setPaddingTop > Should call appropiate yoga node method for percent values
+ ✓ tests/node/setPadding.test.ts > node setPadding > setPaddingRight > should return node if no yoga node available
+ ✓ tests/node/setPadding.test.ts > node setPadding > setPaddingRight > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setPadding.test.ts > node setPadding > setPaddingRight > Should call appropiate yoga node method for percent values
+ ✓ tests/node/setPadding.test.ts > node setPadding > setPaddingBottom > should return node if no yoga node available
+ ✓ tests/node/setPadding.test.ts > node setPadding > setPaddingBottom > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setPadding.test.ts > node setPadding > setPaddingBottom > Should call appropiate yoga node method for percent values
+ ✓ tests/node/setPadding.test.ts > node setPadding > setPaddingLeft > should return node if no yoga node available
+ ✓ tests/node/setPadding.test.ts > node setPadding > setPaddingLeft > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setPadding.test.ts > node setPadding > setPaddingLeft > Should call appropiate yoga node method for percent values
+ ✓ tests/node/setPadding.test.ts > node setPadding > setPadding > should return node if no yoga node available
+ ✓ tests/node/setPadding.test.ts > node setPadding > setPadding > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setPadding.test.ts > node setPadding > setPadding > Should call appropiate yoga node method for percent values
+ ✓ tests/image/resolveSource.test.ts > image resolveSource > source > resolves url
+ ✓ tests/image/resolveSource.test.ts > image resolveSource > source > resolves url object
+ ✓ tests/image/resolveSource.test.ts > image resolveSource > source > resolves buffer
+ ✓ tests/image/resolveSource.test.ts > image resolveSource > source > resolves data buffer
+ ✓ tests/image/resolveSource.test.ts > image resolveSource > source > resolves blob
+ ✓ tests/image/resolveSource.test.ts > image resolveSource > async > resolves url
+ ✓ tests/image/resolveSource.test.ts > image resolveSource > async > resolves url object
+ ✓ tests/image/resolveSource.test.ts > image resolveSource > async > resolves buffer
+ ✓ tests/image/resolveSource.test.ts > image resolveSource > async > resolves data buffer
+ ✓ tests/image/resolveSource.test.ts > image resolveSource > async > resolves blob
+ ✓ tests/image/resolveSource.test.ts > image resolveSource > factory > resolves url
+ ✓ tests/image/resolveSource.test.ts > image resolveSource > factory > resolves url object
+ ✓ tests/image/resolveSource.test.ts > image resolveSource > factory > resolves buffer
+ ✓ tests/image/resolveSource.test.ts > image resolveSource > factory > resolves data buffer
+ ✓ tests/image/resolveSource.test.ts > image resolveSource > factory > resolves undefined
+ ✓ tests/image/resolveSource.test.ts > image resolveSource > factory > resolves blob
+ ✓ tests/image/resolveSource.test.ts > image resolveSource > async factory > resolves url
+ ✓ tests/image/resolveSource.test.ts > image resolveSource > async factory > resolves url object
+ ✓ tests/image/resolveSource.test.ts > image resolveSource > async factory > resolves buffer
+ ✓ tests/image/resolveSource.test.ts > image resolveSource > async factory > resolves data buffer
+ ✓ tests/image/resolveSource.test.ts > image resolveSource > async factory > resolves undefined
+ ✓ tests/image/resolveSource.test.ts > image resolveSource > async factory > resolves blob
+ ✓ tests/steps/resolvePagePaddings.test.ts > layout resolvePagePaddings > Should keep other styles untouched
+ ✓ tests/steps/resolvePagePaddings.test.ts > layout resolvePagePaddings > Should leave numeric paddingTop as it is
+ ✓ tests/steps/resolvePagePaddings.test.ts > layout resolvePagePaddings > Should leave numeric paddingRight as it is
+ ✓ tests/steps/resolvePagePaddings.test.ts > layout resolvePagePaddings > Should leave numeric paddingBottom as it is
+ ✓ tests/steps/resolvePagePaddings.test.ts > layout resolvePagePaddings > Should leave numeric paddingLeft as it is
+ ✓ tests/steps/resolvePagePaddings.test.ts > layout resolvePagePaddings > Should resolve percent paddingTop
+ ✓ tests/steps/resolvePagePaddings.test.ts > layout resolvePagePaddings > Should resolve percent paddingRight
+ ✓ tests/steps/resolvePagePaddings.test.ts > layout resolvePagePaddings > Should resolve percent paddingBottom
+ ✓ tests/steps/resolvePagePaddings.test.ts > layout resolvePagePaddings > Should resolve percent paddingLeft
+ ✓ tests/steps/resolvePagePaddings.test.ts > layout resolvePagePaddings > Should resolve several pages
+ ✓ tests/steps/resolveInhritance.test.ts > layout resolveInheritance > Should not inherit invalid property
+ ✓ tests/steps/resolveInhritance.test.ts > layout resolveInheritance > Should not override descendents styles
+ ✓ tests/steps/resolveInhritance.test.ts > layout resolveInheritance > Should only inherit node descendents
+ ✓ tests/steps/resolveInhritance.test.ts > layout resolveInheritance > Should inherit multiple textDecoration properly
+ ✓ tests/steps/resolveInhritance.test.ts > layout resolveInheritance > Should inherit background color for text childs
+ ✓ tests/steps/resolveInhritance.test.ts > layout resolveInheritance > Should inherit color value
+ ✓ tests/steps/resolveInhritance.test.ts > layout resolveInheritance > Should inherit fontFamily value
+ ✓ tests/steps/resolveInhritance.test.ts > layout resolveInheritance > Should inherit fontSize value
+ ✓ tests/steps/resolveInhritance.test.ts > layout resolveInheritance > Should inherit fontStyle value
+ ✓ tests/steps/resolveInhritance.test.ts > layout resolveInheritance > Should inherit fontWeight value
+ ✓ tests/steps/resolveInhritance.test.ts > layout resolveInheritance > Should inherit letterSpacing value
+ ✓ tests/steps/resolveInhritance.test.ts > layout resolveInheritance > Should inherit opacity value
+ ✓ tests/steps/resolveInhritance.test.ts > layout resolveInheritance > Should inherit textDecoration value
+ ✓ tests/steps/resolveInhritance.test.ts > layout resolveInheritance > Should inherit textTransform value
+ ✓ tests/steps/resolveInhritance.test.ts > layout resolveInheritance > Should inherit lineHeight value
+ ✓ tests/steps/resolveInhritance.test.ts > layout resolveInheritance > Should inherit textAlign value
+ ✓ tests/steps/resolveInhritance.test.ts > layout resolveInheritance > Should inherit visibility value
+ ✓ tests/steps/resolveInhritance.test.ts > layout resolveInheritance > Should inherit wordSpacing value
+ ✓ tests/page/getSize.test.ts > page getSize > should default to A4
+ ✓ tests/page/getSize.test.ts > page getSize > should default to portrait A4
+ ✓ tests/page/getSize.test.ts > page getSize > should accept size string
+ ✓ tests/page/getSize.test.ts > page getSize > should accept size string in landscape mode
+ ✓ tests/page/getSize.test.ts > page getSize > should accept size number array
+ ✓ tests/page/getSize.test.ts > page getSize > should accept size string array
+ ✓ tests/page/getSize.test.ts > page getSize > should accept size number array in landscape mode
+ ✓ tests/page/getSize.test.ts > page getSize > should accept size string array in landscape mode
+ ✓ tests/page/getSize.test.ts > page getSize > should accept number size object
+ ✓ tests/page/getSize.test.ts > page getSize > should accept string size object
+ ✓ tests/page/getSize.test.ts > page getSize > should accept size object in landscape mode
+ ✓ tests/page/getSize.test.ts > page getSize > should accept string size object in landscape mode
+ ✓ tests/page/getSize.test.ts > page getSize > should accept size number
+ ✓ tests/page/getSize.test.ts > page getSize > should accept size number in landscape mode
+ ✓ tests/node/setMargin.test.ts > node setMargin > setMarginTop > should return node if no yoga node available
+ ✓ tests/node/setMargin.test.ts > node setMargin > setMarginTop > Should call appropiate yoga node method for auto value
+ ✓ tests/node/setMargin.test.ts > node setMargin > setMarginTop > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setMargin.test.ts > node setMargin > setMarginTop > Should call appropiate yoga node method for percent values
+ ✓ tests/node/setMargin.test.ts > node setMargin > setMarginRight > should return node if no yoga node available
+ ✓ tests/node/setMargin.test.ts > node setMargin > setMarginRight > Should call appropiate yoga node method for auto value
+ ✓ tests/node/setMargin.test.ts > node setMargin > setMarginRight > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setMargin.test.ts > node setMargin > setMarginRight > Should call appropiate yoga node method for percent values
+ ✓ tests/node/setMargin.test.ts > node setMargin > setMarginBottom > should return node if no yoga node available
+ ✓ tests/node/setMargin.test.ts > node setMargin > setMarginBottom > Should call appropiate yoga node method for auto value
+ ✓ tests/node/setMargin.test.ts > node setMargin > setMarginBottom > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setMargin.test.ts > node setMargin > setMarginBottom > Should call appropiate yoga node method for percent values
+ ✓ tests/node/setMargin.test.ts > node setMargin > setMarginLeft > should return node if no yoga node available
+ ✓ tests/node/setMargin.test.ts > node setMargin > setMarginLeft > Should call appropiate yoga node method for auto value
+ ✓ tests/node/setMargin.test.ts > node setMargin > setMarginLeft > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setMargin.test.ts > node setMargin > setMarginLeft > Should call appropiate yoga node method for percent values
+ ✓ tests/node/setMargin.test.ts > node setMargin > setMargin > should return node if no yoga node available
+ ✓ tests/node/setMargin.test.ts > node setMargin > setMargin > Should call appropiate yoga node method for auto value
+ ✓ tests/node/setMargin.test.ts > node setMargin > setMargin > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setMargin.test.ts > node setMargin > setMargin > Should call appropiate yoga node method for percent values
+ ✓ tests/node/setPosition.test.ts > node setPosition > setPositionTop > should return node if no yoga node available
+ ✓ tests/node/setPosition.test.ts > node setPosition > setPositionTop > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setPosition.test.ts > node setPosition > setPositionTop > Should call appropiate yoga node method for percent values
+ ✓ tests/node/setPosition.test.ts > node setPosition > setPositionRight > should return node if no yoga node available
+ ✓ tests/node/setPosition.test.ts > node setPosition > setPositionRight > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setPosition.test.ts > node setPosition > setPositionRight > Should call appropiate yoga node method for percent values
+ ✓ tests/node/setPosition.test.ts > node setPosition > setPositionBottom > should return node if no yoga node available
+ ✓ tests/node/setPosition.test.ts > node setPosition > setPositionBottom > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setPosition.test.ts > node setPosition > setPositionBottom > Should call appropiate yoga node method for percent values
+ ✓ tests/node/setPosition.test.ts > node setPosition > setPositionLeft > should return node if no yoga node available
+ ✓ tests/node/setPosition.test.ts > node setPosition > setPositionLeft > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setPosition.test.ts > node setPosition > setPositionLeft > Should call appropiate yoga node method for percent values
+ ✓ tests/node/setPosition.test.ts > node setPosition > setPosition > should return node if no yoga node available
+ ✓ tests/node/setPosition.test.ts > node setPosition > setPosition > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setPosition.test.ts > node setPosition > setPosition > Should call appropiate yoga node method for percent values
+ ✓ tests/node/setDimension.test.ts > node setDimension > setWidth > should return node if no yoga node available
+ ✓ tests/node/setDimension.test.ts > node setDimension > setWidth > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setDimension.test.ts > node setDimension > setWidth > Should call appropiate yoga node method for percent values
+ ✓ tests/node/setDimension.test.ts > node setDimension > setMinWidth > should return node if no yoga node available
+ ✓ tests/node/setDimension.test.ts > node setDimension > setMinWidth > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setDimension.test.ts > node setDimension > setMinWidth > Should throw error for percent values
+ ✓ tests/node/setDimension.test.ts > node setDimension > setMaxWidth > should return node if no yoga node available
+ ✓ tests/node/setDimension.test.ts > node setDimension > setMaxWidth > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setDimension.test.ts > node setDimension > setMaxWidth > Should throw error for percent values
+ ✓ tests/node/setDimension.test.ts > node setDimension > setHeight > should return node if no yoga node available
+ ✓ tests/node/setDimension.test.ts > node setDimension > setHeight > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setDimension.test.ts > node setDimension > setHeight > Should call appropiate yoga node method for percent values
+ ✓ tests/node/setDimension.test.ts > node setDimension > setMinHeight > should return node if no yoga node available
+ ✓ tests/node/setDimension.test.ts > node setDimension > setMinHeight > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setDimension.test.ts > node setDimension > setMinHeight > Should throw error for percent values
+ ✓ tests/node/setDimension.test.ts > node setDimension > setMaxHeight > should return node if no yoga node available
+ ✓ tests/node/setDimension.test.ts > node setDimension > setMaxHeight > Should call appropiate yoga node method for numeric values
+ ✓ tests/node/setDimension.test.ts > node setDimension > setMaxHeight > Should throw error for percent values
+ ✓ tests/steps/resolveStyles.test.ts > layout resolveStyles > Should resolve page styles
+ ✓ tests/steps/resolveStyles.test.ts > layout resolveStyles > Should resolve several pages styles
+ ✓ tests/steps/resolveStyles.test.ts > layout resolveStyles > Should resolve page styles array
+ ✓ tests/steps/resolveStyles.test.ts > layout resolveStyles > Should resolve nested node styles
+ ✓ tests/steps/resolveStyles.test.ts > layout resolveStyles > Should resolve nested node styles media queries
+ ✓ tests/steps/resolveStyles.test.ts > layout resolveStyles > Should resolve nested node styles media queries with page style
+ ✓ tests/steps/resolveStyles.test.ts > layout resolveStyles > Should resolve nested node styles array
+ ✓ tests/steps/resolveStyles.test.ts > layout resolveStyles > Should resolve default link styles
+ ✓ tests/steps/resolveStyles.test.ts > layout resolveStyles > Should overide default link styles
+ ✓ tests/steps/resolveStyles.test.ts > layout resolveStyles > Should overide default link styles with array
+ ✓ tests/steps/resolvePageSizes.test.ts > layout resolvePageSizes > Should default to A4
+ ✓ tests/steps/resolvePageSizes.test.ts > layout resolvePageSizes > Should default to portrait A4
+ ✓ tests/steps/resolvePageSizes.test.ts > layout resolvePageSizes > Should accept size string
+ ✓ tests/steps/resolvePageSizes.test.ts > layout resolvePageSizes > Should accept size string in landscape mode
+ ✓ tests/steps/resolvePageSizes.test.ts > layout resolvePageSizes > Should accept size array
+ ✓ tests/steps/resolvePageSizes.test.ts > layout resolvePageSizes > Should accept size array in landscape mode
+ ✓ tests/steps/resolvePageSizes.test.ts > layout resolvePageSizes > Should accept size object
+ ✓ tests/steps/resolvePageSizes.test.ts > layout resolvePageSizes > Should accept size object in landscape mode
+ ✓ tests/steps/resolvePageSizes.test.ts > layout resolvePageSizes > Should accept size number
+ ✓ tests/steps/resolvePageSizes.test.ts > layout resolvePageSizes > Should accept size number in landscape mode
+ ✓ tests/steps/resolvePageSizes.test.ts > layout resolvePageSizes > Should resolve several pages
+ ✓ tests/steps/resolvePageSizes.test.ts > layout resolvePageSizes > Should flatten page styles
+ ✓ tests/steps/resolveLinkSubstitution.test.ts > layout resolve link substitution > Should leave link with text children as it is
+ ✓ tests/steps/resolveLinkSubstitution.test.ts > layout resolve link substitution > Should replace link with only one text instance as children
+ ✓ tests/steps/resolveLinkSubstitution.test.ts > layout resolve link substitution > Should replace link with only many text instances as children
+ ✓ tests/steps/resolveLinkSubstitution.test.ts > layout resolve link substitution > Should replace link with render prop
+ ✓ tests/node/setAlignContent.test.ts > node setAlignContent > should return node if no yoga node available
+ ✓ tests/node/setAlignContent.test.ts > node setAlignContent > Should set align auto by default
+ ✓ tests/node/setAlignContent.test.ts > node setAlignContent > Should set flex-start
+ ✓ tests/node/setAlignContent.test.ts > node setAlignContent > Should set center
+ ✓ tests/node/setAlignContent.test.ts > node setAlignContent > Should set flex-end
+ ✓ tests/node/setAlignContent.test.ts > node setAlignContent > Should set stretch
+ ✓ tests/node/setAlignContent.test.ts > node setAlignContent > Should set baseline
+ ✓ tests/node/setAlignContent.test.ts > node setAlignContent > Should set space-between
+ ✓ tests/node/setAlignContent.test.ts > node setAlignContent > Should set space-around
+ ✓ tests/node/setAlignContent.test.ts > node setAlignContent > Should set space-evenly
+ ✓ tests/node/setJustifyContent.test.ts > node setJustifyContent > should return node if no yoga node available
+ ✓ tests/node/setJustifyContent.test.ts > node setJustifyContent > Should set center
+ ✓ tests/node/setJustifyContent.test.ts > node setJustifyContent > Should set flex-end
+ ✓ tests/node/setJustifyContent.test.ts > node setJustifyContent > Should set flex-start
+ ✓ tests/node/setJustifyContent.test.ts > node setJustifyContent > Should set space-between
+ ✓ tests/node/setJustifyContent.test.ts > node setJustifyContent > Should set space-around
+ ✓ tests/node/setJustifyContent.test.ts > node setJustifyContent > Should set space-evenly
+ ✓ tests/node/setGap.test.ts > node setGap > setRowGap > should return node if no yoga node available
+ ✓ tests/node/setGap.test.ts > node setGap > setRowGap > should call appropiate yoga node method for numeric values
+ ✓ tests/node/setGap.test.ts > node setGap > setRowGap > should call appropiate yoga node method for percent values
+ ✓ tests/node/setGap.test.ts > node setGap > setColumnGap > should return node if no yoga node available
+ ✓ tests/node/setGap.test.ts > node setGap > setColumnGap > should call appropiate yoga node method for numeric values
+ ✓ tests/node/setGap.test.ts > node setGap > setColumnGap > should call appropiate yoga node method for percent values
+ ✓ tests/node/getPadding.test.ts > node getPadding > Should return 0 by default if no yoga node available
+ ✓ tests/node/getPadding.test.ts > node getPadding > Should return yoga values if node available
+ ✓ tests/node/getPadding.test.ts > node getPadding > Should return box specific values if available
+ ✓ tests/node/getPadding.test.ts > node getPadding > Should return style specific values if available
+ ✓ tests/node/removePaddings.test.ts > node removePaddings > Should keep other styles untouched
+ ✓ tests/node/removePaddings.test.ts > node removePaddings > Should remove paddingTop
+ ✓ tests/node/removePaddings.test.ts > node removePaddings > Should remove paddingRight
+ ✓ tests/node/removePaddings.test.ts > node removePaddings > Should remove paddingBottom
+ ✓ tests/node/removePaddings.test.ts > node removePaddings > Should remove paddingLeft
+ ✓ tests/node/removePaddings.test.ts > node removePaddings > Should remove padding shorthand
+ ✓ tests/node/removePaddings.test.ts > node removePaddings > Should remove paddingHorizontal shorthand
+ ✓ tests/node/removePaddings.test.ts > node removePaddings > Should remove paddingVertical shorthand
+ ✓ tests/text/lineIndexAtHeight.test.ts > text lineIndexAtHeight > Should return 0 if no lines present
+ ✓ tests/text/lineIndexAtHeight.test.ts > text lineIndexAtHeight > Should return 0 for height lower than first line
+ ✓ tests/text/lineIndexAtHeight.test.ts > text lineIndexAtHeight > Should return 1 for height higher than first line
+ ✓ tests/text/lineIndexAtHeight.test.ts > text lineIndexAtHeight > Should return correct line index for intermediate line
+ ✓ tests/text/lineIndexAtHeight.test.ts > text lineIndexAtHeight > Should return penultimate line index for height lower than last line
+ ✓ tests/text/lineIndexAtHeight.test.ts > text lineIndexAtHeight > Should return correct line index for last line
+ ✓ tests/text/lineIndexAtHeight.test.ts > text lineIndexAtHeight > Should return correct line index for height higher than last line
+ ✓ tests/steps/resolveOrigins.test.ts > layout resolveOrigins > should not resolve for node without box
+ ✓ tests/steps/resolveOrigins.test.ts > layout resolveOrigins > should resolve centered origin by default
+ ✓ tests/steps/resolveOrigins.test.ts > layout resolveOrigins > should resolve origin adjusted by fixed values
+ ✓ tests/steps/resolveOrigins.test.ts > layout resolveOrigins > should resolve origin adjusted by percent values
+ ✓ tests/steps/resolveOrigins.test.ts > layout resolveOrigins > should resolve origins for nested elements
+ ✓ tests/node/getMargin.test.ts > node getMargin > Should return 0 by default if no yoga node available
+ ✓ tests/node/getMargin.test.ts > node getMargin > Should return yoga values if node available
+ ✓ tests/node/getMargin.test.ts > node getMargin > Should return box specific values if available
+ ✓ tests/node/getMargin.test.ts > node getMargin > Should return style specific values if available
+ ✓ tests/node/setAlignItems.test.ts > node setAlignItems > should return node if no yoga node available
+ ✓ tests/node/setAlignItems.test.ts > node setAlignItems > Should set align auto by stretch
+ ✓ tests/node/setAlignItems.test.ts > node setAlignItems > Should set flex-start
+ ✓ tests/node/setAlignItems.test.ts > node setAlignItems > Should set center
+ ✓ tests/node/setAlignItems.test.ts > node setAlignItems > Should set flex-end
+ ✓ tests/node/setAlignItems.test.ts > node setAlignItems > Should set stretch
+ ✓ tests/node/setAlignItems.test.ts > node setAlignItems > Should set baseline
+ ✓ tests/node/setAlignItems.test.ts > node setAlignItems > Should set space-between
+ ✓ tests/node/setAlignItems.test.ts > node setAlignItems > Should set space-around
+ ✓ tests/node/setAlignSelf.test.ts > node setAlignSelf > should return node if no yoga node available
+ ✓ tests/node/setAlignSelf.test.ts > node setAlignSelf > Should set align auto by default
+ ✓ tests/node/setAlignSelf.test.ts > node setAlignSelf > Should set flex-start
+ ✓ tests/node/setAlignSelf.test.ts > node setAlignSelf > Should set center
+ ✓ tests/node/setAlignSelf.test.ts > node setAlignSelf > Should set flex-end
+ ✓ tests/node/setAlignSelf.test.ts > node setAlignSelf > Should set stretch
+ ✓ tests/node/setAlignSelf.test.ts > node setAlignSelf > Should set baseline
+ ✓ tests/node/setAlignSelf.test.ts > node setAlignSelf > Should set space-between
+ ✓ tests/node/setAlignSelf.test.ts > node setAlignSelf > Should set space-around
+ ✓ tests/node/setFlexDirection.test.ts > node setFlexDirection > should return node if no yoga node available
+ ✓ tests/node/setFlexDirection.test.ts > node setFlexDirection > Should set column by default
+ ✓ tests/node/setFlexDirection.test.ts > node setFlexDirection > Should set column
+ ✓ tests/node/setFlexDirection.test.ts > node setFlexDirection > Should set row
+ ✓ tests/node/setFlexDirection.test.ts > node setFlexDirection > Should set row-reverse
+ ✓ tests/node/setFlexDirection.test.ts > node setFlexDirection > Should set column-reverse
+ ✓ tests/node/getOrigin.test.ts > node getOrigin > Should return null for node without box
+ ✓ tests/node/getOrigin.test.ts > node getOrigin > Should return centered origin by default
+ ✓ tests/node/getOrigin.test.ts > node getOrigin > Should return origin adjusted by fixed values
+ ✓ tests/node/getOrigin.test.ts > node getOrigin > Should return origin adjusted by percent values
+ ✓ tests/text/heightAtLineIndex.test.ts > text heightAtLineIndex > Should return 0 if no lines present
+ ✓ tests/text/heightAtLineIndex.test.ts > text heightAtLineIndex > Should return correct height for first line
+ ✓ tests/text/heightAtLineIndex.test.ts > text heightAtLineIndex > Should return correct height for intermediate line
+ ✓ tests/text/heightAtLineIndex.test.ts > text heightAtLineIndex > Should return correct height for last line
+ ✓ tests/text/heightAtLineIndex.test.ts > text heightAtLineIndex > Should return correct height for overflow line
+ ✓ tests/steps/resolvePercentHeight.test.ts > layout resolvePercentHeight > Should keep empty document untouched
+ ✓ tests/steps/resolvePercentHeight.test.ts > layout resolvePercentHeight > Should keep empty page untouched
+ ✓ tests/steps/resolvePercentHeight.test.ts > layout resolvePercentHeight > Should not resolve children if page dont have height
+ ✓ tests/steps/resolvePercentHeight.test.ts > layout resolvePercentHeight > Should resolve children percent dimensions if page have height
+ ✓ tests/svg.test.jsx > Svg > should render Gradients
+ ✓ tests/svg.test.jsx > Svg > should render Dasharrays
+ ✓ tests/resume.test.jsx > resume > should match snapshot 837ms
+ ✓ tests/node/setFlexWrap.test.ts > node setFlexWrap > should return node if no yoga node available
+ ✓ tests/node/setFlexWrap.test.ts > node setFlexWrap > Should set no-wrap by default
+ ✓ tests/node/setFlexWrap.test.ts > node setFlexWrap > Should set no-wrap
+ ✓ tests/node/setFlexWrap.test.ts > node setFlexWrap > Should set wrap
+ ✓ tests/node/setFlexWrap.test.ts > node setFlexWrap > Should set wrap-reverse
+ ✓ tests/node/setPositionType.test.ts > node setPositionType > should return node if no yoga node available
+ ✓ tests/node/setPositionType.test.ts > node setPositionType > Should set relative
+ ✓ tests/node/setPositionType.test.ts > node setPositionType > Should set absolute
+ ✓ tests/node/setPositionType.test.ts > node setPositionType > Should set static
+ ✓ tests/node/getBorderWidth.test.ts > node getBorderWidth > Should return 0 by default if no yoga node available
+ ✓ tests/node/getBorderWidth.test.ts > node getBorderWidth > Should return yoga values if node available
+ ✓ tests/page/isHeightAuto.test.ts > page isHeightAuto > Should return false if height present
+ ✓ tests/page/isHeightAuto.test.ts > page isHeightAuto > Should return false if height is zero
+ ✓ tests/page/isHeightAuto.test.ts > page isHeightAuto > Should return false if height not present
+ ✓ tests/page/isHeightAuto.test.ts > page isHeightAuto > Should return false if height is null
+ ✓ tests/page/isHeightAuto.test.ts > page isHeightAuto > Should return false if height is undefined
+ ✓ tests/node/setDisplay.test.ts > node setDisplay > should return node if no yoga node available
+ ✓ tests/node/setDisplay.test.ts > node setDisplay > Should set flex by default
+ ✓ tests/node/setDisplay.test.ts > node setDisplay > Should set flex
+ ✓ tests/node/setDisplay.test.ts > node setDisplay > Should set none
+ ✓ tests/node/setFlexShrink.test.ts > node setFlexShrink > should return node if no yoga node available
+ ✓ tests/node/setFlexShrink.test.ts > node setFlexShrink > Should set one by default
+ ✓ tests/node/setFlexShrink.test.ts > node setFlexShrink > Should set provided value
+ ✓ tests/node/setOverflow.test.ts > node setOverflow > should return node if no yoga node available
+ ✓ tests/node/setOverflow.test.ts > node setOverflow > Should set visible
+ ✓ tests/node/setOverflow.test.ts > node setOverflow > Should set scroll
+ ✓ tests/node/setOverflow.test.ts > node setOverflow > Should set hidden
+ ✓ tests/node/setFlexGrow.test.ts > node setFlexGrow > should return node if no yoga node available
+ ✓ tests/node/setFlexGrow.test.ts > node setFlexGrow > Should set zero by default
+ ✓ tests/node/setFlexGrow.test.ts > node setFlexGrow > Should set provided value
+ ✓ tests/page/getOrientation.test.ts > page getOrientation > Should return portrait if no orientation provided
+ ✓ tests/page/getOrientation.test.ts > page getOrientation > Should return landscape if landscape
+ ✓ tests/page/getOrientation.test.ts > page getOrientation > Should return portrait if portait
+ ✓ tests/page/getOrientation.test.ts > page getOrientation > Should return portrait if anything else
+ ✓ tests/node/getPosition.test.ts > node getPosition > Should return 0 by default if no yoga node available
+ ✓ tests/node/getPosition.test.ts > node getPosition > Should return yoga values if node available
+ ✓ tests/page/isLandscape.test.ts > page isLandscape > Should return false if no orientation provided
+ ✓ tests/page/isLandscape.test.ts > page isLandscape > Should return true if landscape
+ ✓ tests/page/isLandscape.test.ts > page isLandscape > Should return false if portait
+ ✓ tests/node/setAspectRatio.test.ts > node setAspectRatio > should return node if no yoga node available
+ ✓ tests/node/setAspectRatio.test.ts > node setAspectRatio > Should call yoga node setter if provided
+ ✓ tests/node/getDimension.test.ts > node getDimension > Should return 0 by default if no yoga node available
+ ✓ tests/node/getDimension.test.ts > node getDimension > Should return yoga values if node available
+ ✓ tests/image/getSource.test.ts > image getSource > Should get src
+ ✓ tests/image/getSource.test.ts > image getSource > Should get source
+ ✓ tests/image/getSource.test.ts > image getSource > Should get undefined if either present
+ ✓ tests/page/isPortrait.test.ts > page isPortrait > Should return true if no orientation provided
+ ✓ tests/page/isPortrait.test.ts > page isPortrait > Should return false if landscape
+ ✓ tests/page/isPortrait.test.ts > page isPortrait > Should return true if portait
+ ✓ tests/node/setFlexBasis.test.ts > node setFlexBasis > should return node if no yoga node available
+ ✓ tests/node/setFlexBasis.test.ts > node setFlexBasis > Should set provided value
+ ✓ tests/steps/resolveSvg.test.ts > layout resolveSvg > resolve xlinks > should replace xlinkHref with the correct node
+ ✓ tests/steps/resolveSvg.test.ts > layout resolveSvg > resolve xlinks > should not replace xlinkHref if node does not exist
+ ✓ tests/text/layoutText.test.ts > text layoutText > Should render empty text
+ ✓ tests/text/layoutText.test.ts > text layoutText > Should render aligned left text by default
+ ✓ tests/text/layoutText.test.ts > text layoutText > Should render aligned left text
+ ✓ tests/text/layoutText.test.ts > text layoutText > Should render aligned right text
+ ✓ tests/text/layoutText.test.ts > text layoutText > Should render aligned center text
+ ✓ tests/text/layoutText.test.ts > text layoutText > Should render single line justified text aligned to the left
+ ✓ tests/text/layoutText.test.ts > text layoutText > Should render multiline justified text correctly aligned
+ ✓ tests/text/layoutText.test.ts > text layoutText > Should render maxLines
+ ✓ tests/text/layoutText.test.ts > text layoutText > should allow hyphenation callback to be overriden
+ ✓ tests/steps/resolveTextLayout.test.ts > text layout step > should calculate lines for text while resolve dimensions
+ ✓ tests/steps/resolveTextLayout.test.ts > text layout step > should calculate lines for text width defined height
+ ✓ tests/steps/resolveTextLayout.test.ts > text layout step > should calculate lines for empty text
+ ✓ tests/resume.test.jsx > resume > should match snapshot 654ms
+ ✓ tests/steps/resolvePagination.test.ts > pagination step > should stretch absolute block to full page size
+ ✓ tests/steps/resolvePagination.test.ts > pagination step > should force new height for split nodes
+ ✓ tests/steps/resolvePagination.test.ts > pagination step > should force new height for split nodes with fixed height
+ ✓ tests/steps/resolvePagination.test.ts > pagination step > should not wrap page with false wrap prop
+ ✓ tests/steps/resolvePagination.test.ts > pagination step > should break on a container whose children can not fit on a page
+ ✓ tests/steps/resolvePagination.test.ts > pagination step > should not infinitely loop when splitting pages
+ ✓ tests/pageWrap.test.jsx > pageWrap > should match snapshot 3945ms
+ ✓ tests/svg/parsePoints.test.ts > svg parsePoints > should return empty array for null argument
+ ✓ tests/svg/parsePoints.test.ts > svg parsePoints > should return empty array for empty string
+ ✓ tests/svg/parsePoints.test.ts > svg parsePoints > should correctly parse svg points
+ ✓ tests/svg/parsePoints.test.ts > svg parsePoints > should trim leading spaces
+ ✓ tests/svg/parsePoints.test.ts > svg parsePoints > should trim trailing spaces
+ ✓ tests/svg/parsePoints.test.ts > svg parsePoints > should parse float values
+ ✓ tests/utils/parseColor.test.ts > parse color util > should parse regular hex color
+ ✓ tests/utils/parseColor.test.ts > parse color util > should parse opacity as 1 if not provided
+ ✓ tests/utils/parseColor.test.ts > parse color util > should parse opacity as 1 when provided
+ ✓ tests/utils/parseColor.test.ts > parse color util > should parse opacity as 0 when provided
+ ✓ tests/utils/parseColor.test.ts > parse color util > should parse opacit provided
+ ✓ tests/primitives/renderCircle.test.ts > primitive renderCircle > should render circle correctly
+ ✓ tests/primitives/renderForm.test.ts > primitive renderFieldSet > should render FieldSet correctly
+ ✓ tests/operations/setDestination.test.ts > operations setDestination > should call addNamedDestination method to passed context if id present
+ ✓ tests/operations/setDestination.test.ts > operations setDestination > should not call addNamedDestination method to passed context if id missed
+ ✓ tests/primitives/renderEllipse.test.ts > primitive renderEllipse > should render ellipse correctly
+ ✓ tests/svg/getBoundingBox.test.ts > path getBoundingBox > should return empty path bounding box
+ ✓ tests/svg/getBoundingBox.test.ts > path getBoundingBox > should return path bounding box
+ ✓ tests/svg/getBoundingBox.test.ts > path getBoundingBox > should return ellipse bounding box
+ ✓ tests/svg/getBoundingBox.test.ts > path getBoundingBox > should return circle bounding box
+ ✓ tests/svg/getBoundingBox.test.ts > path getBoundingBox > should return line bounding box
+ ✓ tests/svg/getBoundingBox.test.ts > path getBoundingBox > should return inverted line bounding box
+ ✓ tests/svg/getBoundingBox.test.ts > path getBoundingBox > should return rect bounding box
+ ✓ tests/svg/getBoundingBox.test.ts > path getBoundingBox > should return polygon bounding box
+ ✓ tests/svg/getBoundingBox.test.ts > path getBoundingBox > should return polyline bounding box
+ ✓ tests/primitives/renderCanvas.test.ts > primitive renderCanvas > should be scoped operation
+ ✓ tests/primitives/renderCanvas.test.ts > primitive renderCanvas > should call paint method with ctx
+ ✓ tests/primitives/renderCanvas.test.ts > primitive renderCanvas > should remove dangerous methods from passed ctx
+ ✓ tests/primitives/renderCanvas.test.ts > primitive renderCanvas > should get correct available width and height
+ ✓ tests/primitives/renderCanvas.test.ts > primitive renderCanvas > should get correct available width and height with paddings
+ ✓ tests/utils/objectFit.test.ts > object-fit > should fill to content box for portrait images
+ ✓ tests/utils/objectFit.test.ts > object-fit > should fill to content box for landscape images
+ ✓ tests/utils/objectFit.test.ts > object-fit > should contain inside content box for portrait images
+ ✓ tests/utils/objectFit.test.ts > object-fit > should contain inside content box for landscape images
+ ✓ tests/utils/objectFit.test.ts > object-fit > should cover inside content box for portrait images
+ ✓ tests/utils/objectFit.test.ts > object-fit > should cover inside content box for landscape images
+ ✓ tests/utils/objectFit.test.ts > object-fit > should not fit inside content box for smaller portrait images
+ ✓ tests/utils/objectFit.test.ts > object-fit > should not fit inside content box for bigger portrait images
+ ✓ tests/utils/objectFit.test.ts > object-fit > should not fit inside content box for smaller landscape images
+ ✓ tests/utils/objectFit.test.ts > object-fit > should not fit inside content box for bigger landscape images
+ ✓ tests/utils/objectFit.test.ts > object-fit > should scale-down inside content box for smaller portrait images
+ ✓ tests/utils/objectFit.test.ts > object-fit > should scale-down inside content box for bigger portrait images
+ ✓ tests/utils/objectFit.test.ts > object-fit > should scale-down inside content box for smaller landscape images
+ ✓ tests/utils/objectFit.test.ts > object-fit > should scale-down inside content box for bigger landscape images
+ ✓ tests/utils/objectFit.test.ts > object-fit > should fill to content box for portrait images with fixed positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should fill to content box for landscape images with fixed positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should contain inside content box for portrait images with fixed positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should contain inside content box for landscape images with fixed positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should contain inside content box for portrait images with zero fixed positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should contain inside content box for landscape images with zero fixed positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should cover inside content box for portrait images with fixed positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should cover inside content box for landscape images with fixed positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should cover inside content box for portrait images with zero fixed positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should cover inside content box for landscape images with zero fixed positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should not fit inside content box for smaller portrait images with fixed positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should not fit inside content box for bigger portrait images with fixed positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should not fit inside content box for portrait images with zero fixed positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should not fit inside content box for landscape images with zero fixed positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should fill to content box for portrait images with percentage positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should fill to content box for landscape images with percentage positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should contain inside content box for portrait images with percentage positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should contain inside content box for landscape images with percentage positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should contain inside content box for portrait images with zero percentage positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should contain inside content box for landscape images with zero percentage positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should cover inside content box for portrait images with percentage positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should cover inside content box for landscape images with percentage positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should cover inside content box for portrait images with zero percentage positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should cover inside content box for landscape images with zero percentage positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should not fit inside content box for smaller portrait images with percentage positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should not fit inside content box for bigger portrait images with percentage positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should not fit inside content box for portrait images with zero percentage positions
+ ✓ tests/utils/objectFit.test.ts > object-fit > should not fit inside content box for landscape images with zero percentage positions
+ ✓ tests/primitives/renderBackground.test.ts > primitive renderBackground > should not render if node has no background
+ ✓ tests/primitives/renderBackground.test.ts > primitive renderBackground > should not render if has background but no dimensions
+ ✓ tests/primitives/renderBackground.test.ts > primitive renderBackground > should render background correctly
+ ✓ tests/primitives/renderBackground.test.ts > primitive renderBackground > should be scoped operation
+ ✓ tests/primitives/renderBackground.test.ts > primitive renderBackground > should render with opacity 1 by default
+ ✓ tests/primitives/renderBackground.test.ts > primitive renderBackground > should render background opacity
+ ✓ tests/primitives/renderBackground.test.ts > primitive renderBackground > should render background opacity 0
+ ✓ tests/primitives/renderBackground.test.ts > primitive renderBackground > should render background color opacity 0
+ ✓ tests/font-store.test.ts > font store > should create font store
+ ✓ tests/font-store.test.ts > font store > should throw if font is not registered
+ ✓ tests/font-store.test.ts > font store > should register single font
+ ✓ tests/font-store.test.ts > font store > should use default weight and style if not passed
+ ✓ tests/font-store.test.ts > font store > should register font with style and weight
+ ✓ tests/font-store.test.ts > font store > should register fonts in bulk
+ ✓ tests/fallback-weights.test.ts > fallback weights > if the target weight given is between 400 and 500 inclusive > look for available weights between the target and 500 in ascending order
+ ✓ tests/fallback-weights.test.ts > fallback weights > if the target weight given is between 400 and 500 inclusive > if no match is found, look for available weights less than the target, in descending order
+ ✓ tests/fallback-weights.test.ts > fallback weights > if the target weight given is between 400 and 500 inclusive > if no match is found, look for available weights greater than 500, in ascending order.
+ ✓ tests/fallback-weights.test.ts > fallback weights > if a weight less than 400 is given > look for available weights less than the target, in descending order.
+ ✓ tests/fallback-weights.test.ts > fallback weights > if a weight less than 400 is given > if no match is found, look for available weights greater than the target, in ascending order
+ ✓ tests/fallback-weights.test.ts > fallback weights > if a weight greater than 500 is given > look for available weights greater than the target, in ascending order
+ ✓ tests/fallback-weights.test.ts > fallback weights > if a weight greater than 500 is given > if no match is found, look for available weights less than the target, in descending order
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve courier
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve bold courier
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve italic courier
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve bold italic courier
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve courier normal weight
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve courier missing font weight
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve times
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve bold times
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve italic times
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve bold italic times
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve times normal weight
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve times missing font weight
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve helvetica
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve bold helvetica
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve italic helvetica
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve bold italic helvetica
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve helvetica normal weight
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve helvetica missing font weight
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve legacy courier bold
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve legacy courier oblique
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve legacy courier bold oblique
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve legacy times bold
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve legacy times italic
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve legacy times bold italic
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve legacy helvetica bold
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve legacy helvetica oblique
+ ✓ tests/standard-fonts.test.ts > standard fonts > should resolve legacy helvetica bold oblique
+ ✓ tests/cache.test.ts > Background > should have length 0 by default
+ ✓ tests/cache.test.ts > Background > should return undefined for invalid key
+ ✓ tests/cache.test.ts > Background > should be able to set pair key-value
+ ✓ tests/cache.test.ts > Background > should get key value
+ ✓ tests/cache.test.ts > Background > should reset cache
+ ✓ tests/cache.test.ts > Background > remove elements FIFO if limit exceeded
+ ✓ tests/resolve.test.ts > image resolveImage > Should fetch remote image using GET method by default
+ ✓ tests/resolve.test.ts > image resolveImage > Should fetch remote image using passed method
+ ✓ tests/resolve.test.ts > image resolveImage > Should fetch remote image using passed headers
+ ✓ tests/resolve.test.ts > image resolveImage > Should fetch remote image using passed body
+ ✓ tests/resolve.test.ts > image resolveImage > Should fetch remote image using passed credentials
+ ✓ tests/resolve.test.ts > image resolveImage > Should not include credentials if not exist
+ ✓ tests/resolve.test.ts > image resolveImage > Should render a jpeg image over http
+ ✓ tests/resolve.test.ts > image resolveImage > Should render a png image over http
+ ✓ tests/resolve.test.ts > image resolveImage > Should render a local image from src object
+ ✓ tests/resolve.test.ts > image resolveImage > Should render a local image from data
+ ✓ tests/resolve.test.ts > image resolveImage > Should render a base64 image
+ ✓ tests/resolve.test.ts > image resolveImage > Should render a buffer jpg image
+ ✓ tests/resolve.test.ts > image resolveImage > Should render a buffer png image
+ ✓ tests/resolve.test.ts > image resolveImage > Should not cache previously loaded remote images if flag false 472ms
+ ✓ tests/resolve.test.ts > image resolveImage > Should cache previously loaded local images by default
+ ✓ tests/resolve.test.ts > image resolveImage > Should not cache previously loaded local images if flag false 422ms
+ ✓ tests/resolve.test.ts > image resolveImage > Should render a blob image
+ ✓ tests/resolve.test.ts > image resolveImage > Should render a blob without type
+ ✓ tests/resolve.test.ts > image resolveImage > Should render a blob image with type application/octet-stream
+ ✓ tests/index.test.ts > primitives > should export group
+ ✓ tests/index.test.ts > primitives > should export svg
+ ✓ tests/index.test.ts > primitives > should export view
+ ✓ tests/index.test.ts > primitives > should export link
+ ✓ tests/index.test.ts > primitives > should export page
+ ✓ tests/index.test.ts > primitives > should export note
+ ✓ tests/index.test.ts > primitives > should export path
+ ✓ tests/index.test.ts > primitives > should export rect
+ ✓ tests/index.test.ts > primitives > should export line
+ ✓ tests/index.test.ts > primitives > should export field set
+ ✓ tests/index.test.ts > primitives > should export text input
+ ✓ tests/index.test.ts > primitives > should export form list
+ ✓ tests/index.test.ts > primitives > should export select
+ ✓ tests/index.test.ts > primitives > should export stop
+ ✓ tests/index.test.ts > primitives > should export defs
+ ✓ tests/index.test.ts > primitives > should export image
+ ✓ tests/index.test.ts > primitives > should export tspan
+ ✓ tests/index.test.ts > primitives > should export canvas
+ ✓ tests/index.test.ts > primitives > should export circle
+ ✓ tests/index.test.ts > primitives > should export ellipse
+ ✓ tests/index.test.ts > primitives > should export polygon
+ ✓ tests/index.test.ts > primitives > should export document
+ ✓ tests/index.test.ts > primitives > should export polyline
+ ✓ tests/index.test.ts > primitives > should export clippath
+ ✓ tests/index.test.ts > primitives > should export text intance
+ ✓ tests/index.test.ts > primitives > should export text linear gradient
+ ✓ tests/index.test.ts > primitives > should export text radial gradient
+ ✓ tests/dropLast.test.ts > dropLast > skips the last element from a list, returning the remainder
+ ✓ tests/dropLast.test.ts > dropLast > returns an empty array if passed 1 element array
+ ✓ tests/dropLast.test.ts > dropLast > returns an empty array if passed empty array
+ ✓ tests/dropLast.test.ts > dropLast > can operate on strings
+ ✓ tests/matchPercent.test.ts > match percent > should return null for null input
+ ✓ tests/matchPercent.test.ts > match percent > should return null for numeric inputs
+ ✓ tests/matchPercent.test.ts > match percent > should return null for wrong string inputs
+ ✓ tests/matchPercent.test.ts > match percent > should return value for positive integer percents
+ ✓ tests/matchPercent.test.ts > match percent > should return value for positive real percents
+ ✓ tests/matchPercent.test.ts > match percent > should return value for negative integer percents
+ ✓ tests/matchPercent.test.ts > match percent > should return value for negative real percents
+ ✓ tests/pick.test.ts > pick > copies the named properties of an object to the new object
+ ✓ tests/pick.test.ts > pick > handles numbers as properties
+ ✓ tests/pick.test.ts > pick > ignores properties not included
+ ✓ tests/compose.test.ts > compose > performs right-to-left function composition
+ ✓ tests/isNil.test.ts > isNil > tests a value for `null` or `undefined`
+ ✓ tests/without.test.ts > without > filters passed keys
+ ✓ tests/without.test.ts > without > handles numbers as keys
+ ✓ tests/without.test.ts > without > ignores keys not included
+ ✓ tests/castArray.test.ts > castArray > should return [undefined] for undefined
+ ✓ tests/castArray.test.ts > castArray > should return [null] for null
+ ✓ tests/castArray.test.ts > castArray > should cast passed value in an array
+ ✓ tests/castArray.test.ts > castArray > should return array if passed array
+ ✓ tests/evolve.test.ts > evolve > creates a new object by evolving the `object` according to the `transformation` functions
+ ✓ tests/evolve.test.ts > evolve > does not invoke function if object does not contain the key
+ ✓ tests/evolve.test.ts > evolve > is not destructive
+ ✓ tests/upperFirst.test.ts > upperFirst > should return undefined for undefined
+ ✓ tests/upperFirst.test.ts > upperFirst > should return null for null
+ ✓ tests/upperFirst.test.ts > upperFirst > should return empty string when empty string
+ ✓ tests/upperFirst.test.ts > upperFirst > should return string with first char upperFirstd
+ ✓ tests/last.test.ts > last > returns the last element of an ordered collection
+ ✓ tests/repeat.test.ts > repeat > should repeat property  times
+ ✓ tests/repeat.test.ts > repeat > should not repeat property
+ ✓ tests/capitalize.test.ts > capitalize > should return undefined for undefined
+ ✓ tests/capitalize.test.ts > capitalize > should return null for null
+ ✓ tests/capitalize.test.ts > capitalize > should return empty string when empty string
+ ✓ tests/capitalize.test.ts > capitalize > should return single word string capitalized
+ ✓ tests/capitalize.test.ts > capitalize > should return multiple word string capitalized
+ ✓ tests/parseFloat.test.ts > parseFloat > should return undefined for undefined
+ ✓ tests/parseFloat.test.ts > parseFloat > should return null for null
+ ✓ tests/parseFloat.test.ts > parseFloat > should parse integer
+ ✓ tests/parseFloat.test.ts > parseFloat > should parse float
+ ✓ tests/parseFloat.test.ts > parseFloat > should parse string integer
+ ✓ tests/parseFloat.test.ts > parseFloat > should parse string float
+ ✓ tests/get.test.ts > get > takes a path and an object and returns the value at the path or the default value
+ ✓ tests/get.test.ts > get > gets a deep property's value from objects
+ ✓ tests/get.test.ts > get > returns the default value for items not found
+ ✓ tests/get.test.ts > get > returns the default value for null/undefined
+ ✓ tests/get.test.ts > get > works with falsy items
+ ✓ tests/adjust.test.ts > adjust > applies the given function to the value at the given index of the supplied array
+ ✓ tests/adjust.test.ts > adjust > offsets negative indexes from the end of the array
+ ✓ tests/adjust.test.ts > adjust > returns the original array if the supplied index is out of bounds
+ ✓ tests/adjust.test.ts > adjust > does not mutate the original array
+ ✓ tests/reverse.test.ts > reverse > reverses arrays
+ ✓ tests/omit.test.ts > omit > copies an object omitting the listed property
+ ✓ tests/omit.test.ts > omit > copies an object omitting the listed properties
+
+ Test Files  195 passed (195)
+      Tests  1473 passed | 1 todo (1474)
+   Start at  15:20:53
+   Duration  14.11s (transform 23.20s, setup 5.50s, collect 94.49s, tests 33.41s, environment 45ms, prepare 23.60s)
+
+Done in 14.82s.
+stderr | tests/orphanTexts.test.jsx > renderer > empty string
+Invalid '' string child outside <Text> component
+
+stderr | tests/orphanTexts.test.jsx > renderer > string
+Invalid 'text' string child outside <Text> component
+
+stderr | tests/margins.test.ts > resolve stylesheet margins > should ignore invalid values
+
+    @react-pdf/stylesheet parsing error:
+    margin: "string",
+            ^
+    Unsupported margin value format
+  
+
+    @react-pdf/stylesheet parsing error:
+    margin: url("link.com"),
+            ^
+    Unsupported margin value format
+  
+
+    @react-pdf/stylesheet parsing error:
+    margin: auto 2 black 4,
+            ^
+    Unsupported margin value format
+  
+
+    @react-pdf/stylesheet parsing error:
+    margin: calc(100% - 10px),
+            ^
+    Unsupported margin value format
+  
+
+    @react-pdf/stylesheet parsing error:
+    margin: rgba(1 1 1 / 0.3),
+            ^
+    Unsupported margin value format
+  
+
+    @react-pdf/stylesheet parsing error:
+    margin: 1, 2, 3,
+            ^
+    Unsupported margin value format
+  
+
+    @react-pdf/stylesheet parsing error:
+    marginLeft: yellow,
+                ^
+    Unsupported marginLeft value format
+  
+
+    @react-pdf/stylesheet parsing error:
+    marginTop: 12lelkek,
+               ^
+    Unsupported marginTop value format
+  
+
+    @react-pdf/stylesheet parsing error:
+    marginBottom: 1 2 3,
+                  ^
+    Unsupported marginBottom value format
+  
+
+    @react-pdf/stylesheet parsing error:
+    marginHorizontal: 1 2 3,
+                      ^
+    Unsupported marginHorizontal value format
+  
+
+    @react-pdf/stylesheet parsing error:
+    margin: 1 2 3 4 5,
+            ^
+    Unsupported margin value format
+  
+
+    @react-pdf/stylesheet parsing error:
+    margin: () => {
+      },
+            ^
+    Unsupported margin value format
+  
+
+stderr | tests/paddings.test.ts > resolve stylesheet paddings > should ignore invalid values
+
+    @react-pdf/stylesheet parsing error:
+    padding: 2 auto,
+             ^
+    Unsupported padding value format
+  
+
+    @react-pdf/stylesheet parsing error:
+    padding: "string",
+             ^
+    Unsupported padding value format
+  
+
+    @react-pdf/stylesheet parsing error:
+    padding: url("link.com"),
+             ^
+    Unsupported padding value format
+  
+
+    @react-pdf/stylesheet parsing error:
+    padding: auto 2 black 4,
+             ^
+    Unsupported padding value format
+  
+
+    @react-pdf/stylesheet parsing error:
+    padding: calc(100% - 10px),
+             ^
+    Unsupported padding value format
+  
+
+    @react-pdf/stylesheet parsing error:
+    padding: rgba(1 1 1 / 0.3),
+             ^
+    Unsupported padding value format
+  
+
+    @react-pdf/stylesheet parsing error:
+    padding: 1, 2, 3,
+             ^
+    Unsupported padding value format
+  
+
+    @react-pdf/stylesheet parsing error:
+    paddingLeft: yellow,
+                 ^
+    Unsupported paddingLeft value format
+  
+
+    @react-pdf/stylesheet parsing error:
+    paddingTop: 12lelkek,
+                ^
+    Unsupported paddingTop value format
+  
+
+    @react-pdf/stylesheet parsing error:
+    paddingBottom: 1 2 3,
+                   ^
+    Unsupported paddingBottom value format
+  
+
+    @react-pdf/stylesheet parsing error:
+    paddingHorizontal: 1 2 3,
+                       ^
+    Unsupported paddingHorizontal value format
+  
+
+    @react-pdf/stylesheet parsing error:
+    padding: 1 2 3 4 5,
+             ^
+    Unsupported padding value format
+  
+
+    @react-pdf/stylesheet parsing error:
+    padding: () => {
+      },
+             ^
+    Unsupported padding value format
+  
+
+stderr | tests/orphanTexts.test.jsx > renderer > zero
+Invalid '0' string child outside <Text> component
+
+stderr | tests/orphanTexts.test.jsx > renderer > numbers
+Invalid '10' string child outside <Text> component
+

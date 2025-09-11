@@ -1,0 +1,1272 @@
+
+running 259 tests
+test glob::tests::any1 ... ok
+test glob::tests::cls1 ... ok
+test glob::tests::any2 ... ok
+test glob::tests::cls10 ... ok
+test glob::tests::cls11 ... ok
+test glob::tests::cls12 ... ok
+test glob::tests::cls13 ... ok
+test glob::tests::cls14 ... ok
+test glob::tests::cls15 ... ok
+test glob::tests::cls16 ... ok
+test glob::tests::cls17 ... ok
+test glob::tests::cls18 ... ok
+test glob::tests::cls19 ... ok
+test glob::tests::cls2 ... ok
+test glob::tests::cls20 ... ok
+test glob::tests::cls21 ... ok
+test glob::tests::cls3 ... ok
+test glob::tests::cls4 ... ok
+test glob::tests::cls5 ... ok
+test glob::tests::cls6 ... ok
+test glob::tests::cls7 ... ok
+test glob::tests::cls8 ... ok
+test glob::tests::err_range1 ... ok
+test glob::tests::cls9 ... ok
+test glob::tests::err_range2 ... ok
+test glob::tests::err_unclosed1 ... ok
+test glob::tests::err_unclosed2 ... ok
+test glob::tests::err_unclosed3 ... ok
+test glob::tests::err_unclosed4 ... ok
+test glob::tests::extract_baselit1 ... ok
+test glob::tests::extract_baselit2 ... ok
+test glob::tests::extract_baselit3 ... ok
+test glob::tests::extract_baselit4 ... ok
+test glob::tests::extract_basetoks1 ... ok
+test glob::tests::extract_basetoks2 ... ok
+test glob::tests::extract_basetoks3 ... ok
+test glob::tests::extract_basetoks4 ... ok
+test glob::tests::extract_basetoks5 ... ok
+test glob::tests::extract_basetoks6 ... ok
+test glob::tests::extract_basetoks7 ... ok
+test glob::tests::extract_ext1 ... ok
+test glob::tests::extract_ext2 ... ok
+test glob::tests::extract_ext3 ... ok
+test glob::tests::extract_ext4 ... ok
+test glob::tests::extract_ext5 ... ok
+test glob::tests::extract_ext6 ... ok
+test glob::tests::extract_ext7 ... ok
+test glob::tests::extract_lit1 ... ok
+test glob::tests::extract_lit2 ... ok
+test glob::tests::extract_lit3 ... ok
+test glob::tests::extract_lit4 ... ok
+test glob::tests::extract_lit5 ... ok
+test glob::tests::extract_lit6 ... ok
+test glob::tests::extract_lit7 ... ok
+test glob::tests::extract_lit8 ... ok
+test glob::tests::extract_prefix1 ... ok
+test glob::tests::extract_prefix2 ... ok
+test glob::tests::extract_prefix3 ... ok
+test glob::tests::extract_prefix4 ... ok
+test glob::tests::extract_req_ext1 ... ok
+test glob::tests::extract_req_ext2 ... ok
+test glob::tests::extract_req_ext3 ... ok
+test glob::tests::extract_req_ext4 ... ok
+test glob::tests::extract_req_ext5 ... ok
+test glob::tests::extract_req_ext6 ... ok
+test glob::tests::extract_req_ext7 ... ok
+test glob::tests::extract_req_ext8 ... ok
+test glob::tests::extract_req_ext9 ... ok
+test glob::tests::extract_suffix1 ... ok
+test glob::tests::extract_suffix2 ... ok
+test glob::tests::extract_suffix3 ... ok
+test glob::tests::extract_suffix4 ... ok
+test glob::tests::extract_suffix5 ... ok
+test glob::tests::extract_suffix6 ... ok
+test glob::tests::extract_suffix7 ... ok
+test glob::tests::literal1 ... ok
+test glob::tests::literal2 ... ok
+test glob::tests::match1 ... ok
+test glob::tests::matchalt10 ... ok
+test glob::tests::matchalt1 ... ok
+test glob::tests::match10 ... ok
+test glob::tests::match9 ... ok
+test glob::tests::match2 ... ok
+test glob::tests::match4 ... ok
+test glob::tests::match3 ... ok
+test glob::tests::match5 ... ok
+test glob::tests::matchalt14 ... ok
+test glob::tests::match6 ... ok
+test glob::tests::matchalt2 ... ok
+test glob::tests::matchalt3 ... ok
+test glob::tests::match8 ... ok
+test glob::tests::matchalt4 ... ok
+test glob::tests::match7 ... ok
+test glob::tests::matchalt15 ... ok
+test glob::tests::matchalt9 ... ok
+test glob::tests::matchalt16 ... ok
+test glob::tests::matchalt13 ... ok
+test glob::tests::matchalt12 ... ok
+test glob::tests::matchbackslash1 ... ok
+test glob::tests::matchalt8 ... ok
+test glob::tests::matchbackslash2 ... ok
+test glob::tests::matchalt11 ... ok
+test glob::tests::matchalt7 ... ok
+test glob::tests::matchbackslash3 ... ok
+test glob::tests::matchbackslash4 ... ok
+test glob::tests::matchbackslash5 ... ok
+test glob::tests::matchbackslash7 ... ok
+test glob::tests::matchbackslash6 ... ok
+test glob::tests::matchnot12 ... ok
+test glob::tests::matchnot13 ... ok
+test glob::tests::matchnot10 ... ok
+test glob::tests::matchnot1 ... ok
+test glob::tests::matchnot11 ... ok
+test glob::tests::matchnot14 ... ok
+test glob::tests::matchnot15 ... ok
+test glob::tests::matchcasei1 ... ok
+test glob::tests::matchcasei2 ... ok
+test glob::tests::matchcasei4 ... ok
+test glob::tests::matchescape ... ok
+test glob::tests::matchcasei3 ... ok
+test glob::tests::matchnot20 ... ok
+test glob::tests::matchalt5 ... ok
+test glob::tests::matchnot17 ... ok
+test glob::tests::matchnot16 ... ok
+test glob::tests::matchalt6 ... ok
+test glob::tests::matchnot21 ... ok
+test glob::tests::matchnot22 ... ok
+test glob::tests::matchnot2 ... ok
+test glob::tests::matchnot28 ... ok
+test glob::tests::matchnot25 ... ok
+test glob::tests::matchnot27 ... ok
+test glob::tests::matchnot24 ... ok
+test glob::tests::matchnot29 ... ok
+test glob::tests::matchnot23 ... ok
+test glob::tests::matchnot8 ... ok
+test glob::tests::matchnot9 ... ok
+test glob::tests::matchnot6 ... ok
+test glob::tests::matchnot5 ... ok
+test glob::tests::matchnot18 ... ok
+test glob::tests::matchnot7 ... ok
+test glob::tests::matchpat2 ... ok
+test glob::tests::matchpat4 ... ok
+test glob::tests::matchnot19 ... ok
+test glob::tests::matchpat1 ... ok
+test glob::tests::matchpat3 ... ok
+test glob::tests::matchnot26 ... ok
+test glob::tests::matchpat5 ... ok
+test glob::tests::matchrange11 ... ok
+test glob::tests::matchrange1 ... ok
+test glob::tests::matchrange10 ... ok
+test glob::tests::matchnot30 ... ok
+test glob::tests::matchrange12 ... ok
+test glob::tests::matchrange2 ... ok
+test glob::tests::matchrange5 ... ok
+test glob::tests::matchrange4 ... ok
+test glob::tests::matchrange3 ... ok
+test glob::tests::matchrange6 ... ok
+test glob::tests::matchrange7 ... ok
+test glob::tests::matchrange8 ... ok
+test glob::tests::matchrange9 ... ok
+test glob::tests::matchnot3 ... ok
+test glob::tests::matchnot4 ... ok
+test glob::tests::matchrec13 ... ok
+test glob::tests::matchrec14 ... ok
+test glob::tests::matchrec19 ... ok
+test glob::tests::matchrec15 ... ok
+test glob::tests::matchpat7 ... ok
+test glob::tests::matchrec18 ... ok
+test glob::tests::matchpat6 ... ok
+test glob::tests::matchrec17 ... ok
+test glob::tests::matchrec16 ... ok
+test glob::tests::matchrec20 ... ok
+test glob::tests::matchrec22 ... ok
+test glob::tests::matchrec23 ... ok
+test glob::tests::matchrec25 ... ok
+test glob::tests::matchrec24 ... ok
+test glob::tests::matchrec21 ... ok
+test glob::tests::matchrec33 ... ok
+test glob::tests::matchrec5 ... ok
+test glob::tests::matchrec34 ... ok
+test glob::tests::matchrec6 ... ok
+test glob::tests::matchrec1 ... ok
+test glob::tests::matchrec7 ... ok
+test glob::tests::matchrec10 ... ok
+test glob::tests::re1 ... ok
+test glob::tests::matchrec12 ... ok
+test glob::tests::re10 ... ok
+test glob::tests::matchrec8 ... ok
+test glob::tests::matchrec11 ... ok
+test glob::tests::re12 ... ok
+test glob::tests::re13 ... ok
+test glob::tests::re14 ... ok
+test glob::tests::re15 ... ok
+test glob::tests::re17 ... ok
+test glob::tests::re16 ... ok
+test glob::tests::re11 ... ok
+test glob::tests::re18 ... ok
+test glob::tests::re19 ... ok
+test glob::tests::re2 ... ok
+test glob::tests::re20 ... ok
+test glob::tests::re22 ... ok
+test glob::tests::re23 ... ok
+test glob::tests::re25 ... ok
+test glob::tests::re24 ... ok
+test glob::tests::re26 ... ok
+test glob::tests::re21 ... ok
+test glob::tests::re29 ... ok
+test glob::tests::matchslash1 ... ok
+test glob::tests::re28 ... ok
+test glob::tests::re27 ... ok
+test glob::tests::matchrec32 ... ok
+test glob::tests::re3 ... ok
+test glob::tests::re31 ... ok
+test glob::tests::re30 ... ok
+test glob::tests::re32 ... ok
+test glob::tests::re33 ... ok
+test glob::tests::re34 ... ok
+test glob::tests::matchrec2 ... ok
+test glob::tests::re35 ... ok
+test glob::tests::re5 ... ok
+test glob::tests::re4 ... ok
+test glob::tests::re7 ... ok
+test glob::tests::re9 ... ok
+test glob::tests::re6 ... ok
+test glob::tests::re_casei ... ok
+test glob::tests::re8 ... ok
+test glob::tests::re_slash2 ... ok
+test glob::tests::rseq1 ... ok
+test glob::tests::rseq2 ... ok
+test glob::tests::matchrec31 ... ok
+test glob::tests::re_slash1 ... ok
+test glob::tests::matchslash2 ... ok
+test glob::tests::rseq3 ... ok
+test glob::tests::rseq4 ... ok
+test glob::tests::rseq5 ... ok
+test glob::tests::seq3 ... ok
+test glob::tests::seq1 ... ok
+test glob::tests::matchrec26 ... ok
+test glob::tests::seq2 ... ok
+test pathutil::tests::ext2 ... ok
+test pathutil::tests::ext3 ... ok
+test pathutil::tests::ext4 ... ok
+test pathutil::tests::ext5 ... ok
+test pathutil::tests::ext1 ... ok
+test pathutil::tests::normal4 ... ok
+test tests::default_set_is_empty_works ... ok
+test pathutil::tests::normal2 ... ok
+test tests::empty_set_works ... ok
+test tests::escape ... ok
+test pathutil::tests::normal3 ... ok
+test pathutil::tests::normal1 ... ok
+test glob::tests::matchslash5 ... ok
+test glob::tests::matchslash4 ... ok
+test glob::tests::matchslash3 ... ok
+test tests::set_does_not_remember ... ok
+test tests::set_works ... ok
+test glob::tests::matchrec4 ... ok
+test glob::tests::matchrec3 ... ok
+test glob::tests::matchrec9 ... ok
+
+test result: ok. 259 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 22 tests
+"63faf1af01d3"
+test escape::tests::backslash ... ok
+test escape::tests::carriage ... ok
+test escape::tests::empty ... ok
+test escape::tests::invalid_utf8 ... ok
+test escape::tests::nothing_hex0 ... ok
+test escape::tests::nothing_hex1 ... ok
+test escape::tests::nl ... ok
+test escape::tests::nothing_hex2 ... ok
+test escape::tests::nothing_simple ... ok
+test escape::tests::nul ... ok
+test escape::tests::tab ... ok
+test hostname::tests::print_hostname ... ok
+test human::tests::invalid_empty ... ok
+test human::tests::invalid_non_digit ... ok
+test human::tests::invalid_overflow ... ok
+test human::tests::invalid_suffix ... ok
+test human::tests::suffix_g ... ok
+test human::tests::suffix_k ... ok
+test human::tests::suffix_m ... ok
+test human::tests::suffix_none ... ok
+test pattern::tests::bytes ... ok
+test pattern::tests::os ... ok
+
+test result: ok. 22 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 27 tests
+test interpolate::tests::find_cap_ref1 ... ok
+test interpolate::tests::find_cap_ref10 ... ok
+test interpolate::tests::find_cap_ref11 ... ok
+test interpolate::tests::find_cap_ref12 ... ok
+test interpolate::tests::find_cap_ref13 ... ok
+test interpolate::tests::find_cap_ref2 ... ok
+test interpolate::tests::find_cap_ref3 ... ok
+test interpolate::tests::find_cap_ref4 ... ok
+test interpolate::tests::find_cap_ref5 ... ok
+test interpolate::tests::find_cap_ref6 ... ok
+test interpolate::tests::find_cap_ref7 ... ok
+test interpolate::tests::find_cap_ref8 ... ok
+test interpolate::tests::find_cap_ref9 ... ok
+test interpolate::tests::interp1 ... ok
+test interpolate::tests::interp10 ... ok
+test interpolate::tests::interp11 ... ok
+test interpolate::tests::interp12 ... ok
+test interpolate::tests::interp13 ... ok
+test interpolate::tests::interp14 ... ok
+test interpolate::tests::interp2 ... ok
+test interpolate::tests::interp3 ... ok
+test interpolate::tests::interp4 ... ok
+test interpolate::tests::interp5 ... ok
+test interpolate::tests::interp6 ... ok
+test interpolate::tests::interp7 ... ok
+test interpolate::tests::interp8 ... ok
+test interpolate::tests::interp9 ... ok
+
+test result: ok. 27 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 10 tests
+test test_matcher::shortest_match ... ok
+test test_matcher::no_captures ... ok
+test test_matcher::find ... ok
+test test_matcher::replace ... ok
+test test_matcher::captures_iter ... ok
+test test_matcher::try_find_iter ... ok
+test test_matcher::captures ... ok
+test test_matcher::find_iter ... ok
+test test_matcher::replace_with_captures ... ok
+test test_matcher::try_captures_iter ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+
+running 4 tests
+test matcher::tests::candidate_lines ... ok
+test matcher::tests::case_smart ... ok
+test matcher::tests::line_terminator_crlf ... ok
+test matcher::tests::word ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 105 tests
+test hyperlink::tests::build_empty_format ... ok
+test hyperlink::tests::build_format ... ok
+test hyperlink::tests::parse_format ... ok
+test hyperlink::tests::handle_alias ... ok
+test hyperlink_aliases::tests::alias_names_are_reasonable ... ok
+test hyperlink::tests::parse_invalid ... ok
+test hyperlink::tests::parse_valid ... ok
+test hyperlink_aliases::tests::aliases_are_valid_formats ... ok
+test hyperlink_aliases::tests::is_sorted ... ok
+test json::tests::binary_detection ... ok
+test json::tests::max_matches_after_context ... ok
+test json::tests::max_matches ... ok
+test jsont::tests::base64_basic ... ok
+test json::tests::always_begin_end_no_match ... ok
+test standard::tests::heading ... ok
+test standard::tests::invert ... ok
+test standard::tests::byte_offset ... ok
+test json::tests::no_match ... ok
+test standard::tests::invert_context ... ok
+test standard::tests::context_break_multiple_no_heading ... ok
+test standard::tests::column_number ... ok
+test standard::tests::context_break ... ok
+test standard::tests::context_break_multiple_heading ... ok
+test json::tests::missing_crlf ... ok
+test standard::tests::invert_context_multi_line ... ok
+test standard::tests::invert_context_only_matching_multi_line ... ok
+test standard::tests::heading_multiple ... ok
+test standard::tests::line_number ... ok
+test standard::tests::invert_multi_line ... ok
+test standard::tests::invert_context_only_matching ... ok
+test standard::tests::max_matches_multi_line1 ... ok
+test standard::tests::max_matches ... ok
+test standard::tests::no_heading ... ok
+test standard::tests::max_columns ... ok
+test standard::tests::max_columns_with_count ... ok
+test standard::tests::max_matches_context ... ok
+test standard::tests::no_heading_multiple ... ok
+test standard::tests::only_matching_max_columns ... ok
+test standard::tests::only_matching ... ok
+test standard::tests::max_columns_with_count_preview_one_match ... ok
+test standard::tests::max_columns_preview ... ok
+test standard::tests::max_columns_with_count_preview_two_matches ... ok
+test standard::tests::max_columns_with_count_preview_no_match ... ok
+test standard::tests::path ... ok
+test standard::tests::path_terminator ... ok
+test standard::tests::only_matching_max_columns_preview ... ok
+test standard::tests::per_match ... ok
+test standard::tests::only_matching_max_columns_multi_line1 ... ok
+test standard::tests::only_matching_max_columns_preview_multi_line1 ... ok
+test standard::tests::only_matching_multi_line1 ... ok
+test standard::tests::max_columns_multi_line ... ok
+test standard::tests::regression_after_context_with_match ... ok
+test standard::tests::byte_offset_multi_line ... ok
+test standard::tests::regression_search_empty_with_crlf ... ok
+test standard::tests::line_number_multi_line ... ok
+test standard::tests::column_number_multi_line ... ok
+test standard::tests::per_match_multi_line1 ... ok
+test standard::tests::replacement_multi_line ... ok
+test standard::tests::replacement_multi_line_diff_line_term ... ok
+test standard::tests::replacement_max_columns_preview2 ... ok
+test standard::tests::per_match_multi_line1_only_first_line ... ok
+test standard::tests::replacement_multi_line_combine_lines ... ok
+test standard::tests::only_matching_max_columns_multi_line2 ... ok
+test standard::tests::max_matches_multi_line2 ... ok
+test standard::tests::only_matching_max_columns_preview_multi_line2 ... ok
+test standard::tests::reports_match ... ok
+test standard::tests::separator_field ... ok
+test standard::tests::reports_binary ... ok
+test standard::tests::separator_path ... ok
+test standard::tests::reports_stats ... ok
+test standard::tests::reports_stats_multiple ... ok
+test standard::tests::only_matching_multi_line2 ... ok
+test standard::tests::trim_ascii_multi_line ... ok
+test standard::tests::trim_ascii_with_line_term ... ok
+test standard::tests::trim_ascii ... ok
+test summary::tests::count_max_matches ... ok
+test summary::tests::count_no_path_even_with_path ... ok
+test summary::tests::count_no_path ... ok
+test summary::tests::count_path_separator ... ok
+test summary::tests::count_path ... ok
+test summary::tests::count_matches ... ok
+test standard::tests::per_match_multi_line2 ... ok
+test standard::tests::per_match_multi_line2_only_first_line ... ok
+test summary::tests::count_path_field_separator ... ok
+test summary::tests::count_path_terminator ... ok
+test summary::tests::count_path_with_zero ... ok
+test summary::tests::path_with_match_error ... ok
+test summary::tests::path_without_match_found ... ok
+test summary::tests::path_with_match_not_found ... ok
+test summary::tests::count_path_without_zero ... ok
+test summary::tests::path_with_match_found ... ok
+test summary::tests::path_without_match_not_found ... ok
+test summary::tests::path_without_match_error ... ok
+test util::tests::custom_decimal_format ... ok
+test summary::tests::quiet ... ok
+test summary::tests::quiet_with_stats ... ok
+test standard::tests::max_columns_multi_line_preview ... ok
+test standard::tests::per_match_multi_line3 ... ok
+test standard::tests::per_match_multi_line3_only_first_line ... ok
+test standard::tests::replacement_max_columns_preview1 ... ok
+test standard::tests::replacement ... ok
+test standard::tests::replacement_passthru ... ok
+test standard::tests::replacement_per_match ... ok
+test standard::tests::replacement_max_columns ... ok
+test standard::tests::replacement_only_matching ... ok
+
+test result: ok. 105 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.19s
+
+
+running 26 tests
+test ast::tests::various ... ok
+test literal::tests::case_insensitive_alternation ... ok
+test ban::tests::various ... ok
+test literal::tests::class ... ok
+test literal::tests::anything ... ok
+test literal::tests::empty ... ok
+test literal::tests::concat ... ok
+test literal::tests::alternation ... ok
+test literal::tests::heuristics ... ok
+test literal::tests::crazy_repeats ... ok
+test matcher::tests::candidate_lines ... ignored
+test literal::tests::impossible ... ok
+test literal::tests::look ... ok
+test literal::tests::optimize ... ok
+test literal::tests::literal ... ok
+test matcher::tests::line_terminator_error ... ok
+test non_matching::tests::literal ... ok
+test non_matching::tests::anchor ... ok
+test non_matching::tests::dot ... ok
+test literal::tests::various ... ok
+test strip::tests::various ... ok
+test literal::tests::repetition ... ok
+test matcher::tests::case_smart ... ok
+test matcher::tests::line_terminator_crlf ... ok
+test matcher::tests::word ... ok
+test matcher::tests::line_terminator ... ok
+
+test result: ok. 25 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+
+running 77 tests
+test line_buffer::tests::buffer_basics3 ... ok
+test line_buffer::tests::buffer_basics1 ... ok
+test line_buffer::tests::buffer_basics2 ... ok
+test line_buffer::tests::buffer_basics4 ... ok
+test line_buffer::tests::buffer_binary_convert1 ... ok
+test line_buffer::tests::buffer_binary_convert2 ... ok
+test line_buffer::tests::buffer_binary_convert3 ... ok
+test line_buffer::tests::buffer_binary_convert4 ... ok
+test line_buffer::tests::buffer_binary_none ... ok
+test line_buffer::tests::buffer_binary_quit1 ... ok
+test line_buffer::tests::buffer_binary_quit2 ... ok
+test line_buffer::tests::buffer_binary_quit3 ... ok
+test line_buffer::tests::buffer_binary_quit4 ... ok
+test line_buffer::tests::buffer_binary_quit5 ... ok
+test line_buffer::tests::buffer_empty ... ok
+test line_buffer::tests::buffer_limited_capacity1 ... ok
+test line_buffer::tests::buffer_limited_capacity3 ... ok
+test line_buffer::tests::buffer_small_capacity ... ok
+test line_buffer::tests::buffer_limited_capacity2 ... ok
+test lines::tests::line_count ... ok
+test line_buffer::tests::buffer_zero_capacity ... ok
+test lines::tests::line_iter_empty ... ok
+test line_buffer::tests::replace ... ok
+test lines::tests::line_locate ... ok
+test lines::tests::line_locate_weird ... ok
+test lines::tests::preceding_lines_doc ... ok
+test lines::tests::line_iter ... ok
+test lines::tests::preceding_lines_short ... ok
+test lines::tests::preceding_lines_empty2 ... ok
+test lines::tests::preceding_lines_sherlock ... ok
+test lines::tests::preceding_lines_empty1 ... ok
+test searcher::glue::tests::binary1 ... ok
+test searcher::glue::tests::binary2 ... ok
+test searcher::glue::tests::basic4 ... ok
+test searcher::glue::tests::basic2 ... ok
+test searcher::glue::tests::basic1 ... ok
+test searcher::glue::tests::basic3 ... ok
+test searcher::glue::tests::context_code2 ... ok
+test searcher::glue::tests::context_sherlock2 ... ok
+test searcher::glue::tests::context_sherlock1 ... ok
+test searcher::glue::tests::context_code1 ... ok
+test searcher::glue::tests::context_sherlock4 ... ok
+test searcher::glue::tests::context_sherlock_invert1 ... ok
+test searcher::glue::tests::context_sherlock3 ... ok
+test searcher::glue::tests::context_sherlock6 ... ok
+test searcher::glue::tests::context_sherlock_invert2 ... ok
+test searcher::glue::tests::invert1 ... ok
+test searcher::glue::tests::line_number1 ... ok
+test searcher::glue::tests::empty_line1 ... ok
+test searcher::glue::tests::line_number_invert1 ... ok
+test searcher::glue::tests::multi_line_overlap1 ... ok
+test searcher::glue::tests::empty_line3 ... ok
+test searcher::glue::tests::empty_line2 ... ok
+test searcher::glue::tests::empty_line4 ... ok
+1:For the Doctor Wat�sons of this world, as opposed to the Sherlock
+3:be, to a very large extent, the result of luck. Sherlock Holmes
+test searcher::glue::tests::empty_line5 ... ok
+test searcher::glue::tests::empty_line6 ... ok
+test searcher::glue::tests::scratch ... ok
+test searcher::glue::tests::multi_line_overlap2 ... ok
+test searcher::tests::config_error_heap_limit ... ok
+test searcher::glue::tests::passthru_sherlock1 ... ok
+test searcher::glue::tests::context_code3 ... ok
+test searcher::glue::tests::passthru_sherlock_invert1 ... ok
+test searcher::tests::uft8_bom_sniffing ... ok
+test searcher::glue::tests::context_sherlock5 ... ok
+test searcher::tests::config_error_line_terminator ... ok
+test testutil::tests::empty_line2 ... ok
+test testutil::tests::empty_line6 ... ok
+test testutil::tests::empty_line3 ... ok
+test testutil::tests::empty_line4 ... ok
+test testutil::tests::empty_line1 ... ok
+test testutil::tests::empty_line5 ... ok
+test searcher::glue::tests::big_error_one_line ... ok
+test searcher::glue::tests::big_error_multi_line ... ok
+test searcher::glue::tests::binary3 ... ok
+test searcher::glue::tests::binary4 ... ok
+test searcher::glue::tests::big1 ... ok
+test searcher::glue::tests::regression_2260 ... ok
+
+test result: ok. 77 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.12s
+
+
+running 139 tests
+test default_types::tests::default_types_are_sorted ... ok
+test dir::tests::errored ... ok
+test dir::tests::errored_both ... ok
+test dir::tests::custom_ignore_precedence ... ok
+test dir::tests::custom_ignore ... ok
+test dir::tests::absolute_parent_anchored ... ok
+test dir::tests::explicit_ignore ... ok
+test dir::tests::errored_partial ... ok
+test dir::tests::absolute_parent ... ok
+test dir::tests::not_present_empty ... ok
+test dir::tests::gitignore_no_git ... ok
+test dir::tests::ignore ... ok
+test dir::tests::custom_ignore_over_ignore ... ok
+test dir::tests::git_exclude ... ok
+test dir::tests::gitignore_allowed_no_git ... ok
+test dir::tests::gitignore ... ok
+test gitignore::tests::cs2 ... ok
+test gitignore::tests::cs1 ... ok
+test dir::tests::errored_partial_and_ignore ... ok
+test dir::tests::ignore_over_gitignore ... ok
+test gitignore::tests::cs3 ... ok
+test gitignore::tests::cs4 ... ok
+test gitignore::tests::ig10 ... ok
+test gitignore::tests::ig1 ... ok
+test gitignore::tests::ig14 ... ok
+test dir::tests::stops_at_git_dir ... ok
+test dir::tests::exclude_lowest ... ok
+test gitignore::tests::ig13 ... ok
+test gitignore::tests::ig16 ... ok
+test gitignore::tests::ig21 ... ok
+test gitignore::tests::ig15 ... ok
+test gitignore::tests::case_insensitive ... ok
+test gitignore::tests::ig2 ... ok
+test dir::tests::git_info_exclude_in_linked_worktree ... ok
+test gitignore::tests::ig18 ... ok
+test gitignore::tests::ig19 ... ok
+test gitignore::tests::ig17 ... ok
+test gitignore::tests::ig20 ... ok
+test gitignore::tests::ig23 ... ok
+test gitignore::tests::ig25 ... ok
+test gitignore::tests::ig24 ... ok
+test gitignore::tests::ig22 ... ok
+test gitignore::tests::ig26 ... ok
+test gitignore::tests::ig11 ... ok
+test gitignore::tests::ig12 ... ok
+test gitignore::tests::ig29 ... ok
+test gitignore::tests::ig33 ... ok
+test gitignore::tests::ig27 ... ok
+test gitignore::tests::ig32 ... ok
+test gitignore::tests::ig30 ... ok
+test gitignore::tests::ig28 ... ok
+test gitignore::tests::ig31 ... ok
+test gitignore::tests::ig34 ... ok
+test gitignore::tests::ig3 ... ok
+test gitignore::tests::ig38 ... ok
+test gitignore::tests::ig39 ... ok
+test gitignore::tests::ig35 ... ok
+test gitignore::tests::ig36 ... ok
+test gitignore::tests::ig37 ... ok
+test gitignore::tests::ignot12 ... ok
+test gitignore::tests::ignot11 ... ok
+test gitignore::tests::ig40 ... ok
+test gitignore::tests::ig43 ... ok
+test gitignore::tests::ig41 ... ok
+test gitignore::tests::ig44 ... ok
+test gitignore::tests::ig7 ... ok
+test gitignore::tests::ig8 ... ok
+test gitignore::tests::ignot10 ... ok
+test gitignore::tests::ig9 ... ok
+test gitignore::tests::ig42 ... ok
+test gitignore::tests::ignot1 ... ok
+test gitignore::tests::ig4 ... ok
+test gitignore::tests::ig5 ... ok
+test gitignore::tests::ig6 ... ok
+test gitignore::tests::ignot14 ... ok
+test gitignore::tests::ignot15 ... ok
+test gitignore::tests::ignot2 ... ok
+test gitignore::tests::ignot13 ... ok
+test gitignore::tests::ignot18 ... ok
+test gitignore::tests::ignot6 ... ok
+test gitignore::tests::ignot7 ... ok
+test gitignore::tests::ignot16 ... ok
+test gitignore::tests::regression_106 ... ok
+test gitignore::tests::ignot17 ... ok
+test overrides::tests::empty ... ok
+test gitignore::tests::ignot4 ... ok
+test gitignore::tests::ignot5 ... ok
+test gitignore::tests::ignot3 ... ok
+test gitignore::tests::ignot19 ... ok
+test overrides::tests::allow_directories ... ok
+test overrides::tests::absolute_path ... ok
+test overrides::tests::default_case_sensitive ... ok
+test overrides::tests::only_ignores ... ok
+test overrides::tests::simple ... ok
+test gitignore::tests::parse_excludes_file3 ... ok
+test gitignore::tests::parse_excludes_file2 ... ok
+test gitignore::tests::parse_excludes_file1 ... ok
+test gitignore::tests::parse_excludes_file5 ... ok
+test gitignore::tests::parse_excludes_file4 ... ok
+test types::tests::match1 ... ok
+test types::tests::match5 ... ok
+test gitignore::tests::ignot9 ... ok
+test types::tests::match10 ... ok
+test types::tests::match11 ... ok
+test gitignore::tests::ignot8 ... ok
+test overrides::tests::case_insensitive ... ok
+test overrides::tests::gitignore ... ok
+test overrides::tests::precedence ... ok
+test types::tests::test_invalid_defs ... ok
+test types::tests::matchnot1 ... ok
+test types::tests::matchnot2 ... ok
+test types::tests::match2 ... ok
+test types::tests::match6 ... ok
+test types::tests::match3 ... ok
+test types::tests::match4 ... ok
+test types::tests::matchnot4 ... ok
+test types::tests::match7 ... ok
+test types::tests::matchnot3 ... ok
+test types::tests::matchnot7 ... ok
+test types::tests::matchnot5 ... ok
+test types::tests::matchnot8 ... ok
+test types::tests::match8 ... ok
+test walk::tests::no_read_permissions ... ok
+test types::tests::match9 ... ok
+test types::tests::matchnot6 ... ok
+test walk::tests::first_path_not_symlink ... ok
+test walk::tests::explicit_ignore ... ok
+test walk::tests::no_ignores ... ok
+test walk::tests::explicit_ignore_exclusive_use ... ok
+test walk::tests::same_file_system ... ok
+test walk::tests::filter ... ok
+test walk::tests::symlinks ... ok
+test walk::tests::custom_ignore ... ok
+test walk::tests::custom_ignore_exclusive_use ... ok
+test walk::tests::symlink_loop ... ok
+test walk::tests::gitignore ... ok
+test walk::tests::gitignore_parent ... ok
+test walk::tests::max_filesize ... ok
+test walk::tests::max_depth ... ok
+
+test result: ok. 139 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+
+running 5 tests
+test test_path_should_be_under_root - should panic ... ok
+test test_files_in_deep ... ok
+test test_files_in_root ... ok
+test test_dirs_in_deep ... ok
+test test_dirs_in_root ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+
+running 114 tests
+test flags::config::tests::basic ... ok
+test flags::config::tests::error ... ok
+test flags::defs::test_byte_offset ... ok
+test flags::defs::test_binary ... ok
+test flags::defs::test_after_context ... ok
+test flags::defs::test_auto_hybrid_regex ... ok
+test flags::defs::test_before_context ... ok
+test flags::defs::test_block_buffered ... ok
+test flags::defs::test_case_sensitive ... ok
+test flags::defs::test_color ... ok
+test flags::defs::test_column ... ok
+test flags::defs::test_colors ... ok
+test flags::defs::test_context ... ok
+test flags::defs::test_context_separator ... ok
+test flags::defs::test_count_matches ... ok
+test flags::defs::test_debug ... ok
+test flags::defs::test_dfa_size_limit ... ok
+test flags::defs::test_engine ... ok
+test flags::defs::test_count ... ok
+test flags::defs::test_field_context_separator ... ok
+test flags::defs::test_crlf ... ok
+test flags::defs::test_files ... ok
+test flags::defs::test_files_with_matches ... ok
+test flags::defs::test_files_without_match ... ok
+test flags::defs::test_encoding ... ok
+test flags::defs::test_field_match_separator ... ok
+test flags::defs::test_fixed_strings ... ok
+test flags::defs::test_heading ... ok
+test flags::defs::test_follow ... ok
+test flags::defs::test_glob ... ok
+test flags::defs::test_glob_case_insensitive ... ok
+test flags::defs::test_file ... ok
+test flags::defs::test_generate ... ok
+test flags::defs::test_help ... ok
+test flags::defs::test_hidden ... ok
+test flags::defs::test_hostname_bin ... ok
+test flags::defs::test_ignore_case ... ok
+test flags::defs::test_ignore_file ... ok
+test flags::defs::test_hyperlink_format ... ok
+test flags::defs::test_ignore_file_case_insensitive ... ok
+test flags::defs::test_include_zero ... ok
+test flags::defs::test_iglob ... ok
+test flags::defs::test_invert_match ... ok
+test flags::defs::test_json ... ok
+test flags::defs::test_line_number ... ok
+test flags::defs::test_line_buffered ... ok
+test flags::defs::test_line_regexp ... ok
+test flags::defs::test_max_columns ... ok
+test flags::defs::test_max_columns_preview ... ok
+test flags::defs::test_max_count ... ok
+test flags::defs::test_max_depth ... ok
+test flags::defs::test_max_filesize ... ok
+test flags::defs::test_mmap ... ok
+test flags::defs::test_multiline_dotall ... ok
+test flags::defs::test_multiline ... ok
+test flags::defs::test_no_config ... ok
+test flags::defs::test_no_ignore ... ok
+test flags::defs::test_no_ignore_exclude ... ok
+test flags::defs::test_no_ignore_dot ... ok
+test flags::defs::test_no_ignore_global ... ok
+test flags::defs::test_no_ignore_messages ... ok
+test flags::defs::test_no_ignore_parent ... ok
+test flags::defs::test_no_ignore_vcs ... ok
+test flags::defs::test_no_ignore_files ... ok
+test flags::defs::test_no_line_number ... ok
+test flags::defs::test_no_messages ... ok
+test flags::defs::test_no_require_git ... ok
+test flags::defs::test_no_unicode ... ok
+test flags::defs::test_null ... ok
+test flags::defs::test_null_data ... ok
+test flags::defs::test_no_pcre2_unicode ... ok
+test flags::defs::test_only_matching ... ok
+test flags::defs::test_passthru ... ok
+test flags::defs::test_one_file_system ... ok
+test flags::defs::test_pcre2 ... ok
+test flags::defs::test_pcre2_version ... ok
+test flags::defs::test_path_separator ... ok
+test flags::defs::test_pre ... ok
+test flags::defs::test_pre_glob ... ok
+test flags::defs::test_pretty ... ok
+test flags::defs::test_quiet ... ok
+test flags::defs::test_regex_size_limit ... ok
+test flags::defs::test_replace ... ok
+test flags::defs::test_search_zip ... ok
+test flags::defs::test_regexp ... ok
+test flags::defs::test_smart_case ... ok
+test flags::defs::test_sort ... ok
+test flags::defs::test_sort_files ... ok
+test flags::defs::test_stats ... ok
+test flags::defs::test_sortr ... ok
+test flags::defs::test_stop_on_nonmatch ... ok
+test flags::defs::test_threads ... ok
+test flags::defs::test_trace ... ok
+test flags::defs::test_trim ... ok
+test flags::defs::test_type ... ok
+test flags::defs::test_type_add ... ok
+test flags::defs::test_type_clear ... ok
+test flags::defs::test_text ... ok
+test flags::defs::test_type_list ... ok
+test flags::defs::test_unrestricted ... ok
+test flags::defs::test_type_not ... ok
+test flags::defs::test_vimgrep ... ok
+test flags::defs::test_word_regexp ... ok
+test flags::defs::test_with_filename ... ok
+test flags::defs::tests::available_shorts ... ok
+test flags::defs::tests::choices_ascii_alphanumeric ... ok
+test flags::defs::test_with_filename_no ... ok
+test flags::defs::test_version ... ok
+test flags::defs::tests::longs_all_ascii_alphanumeric ... ok
+test flags::defs::tests::shorts_no_duplicates ... ok
+test flags::defs::tests::shorts_all_ascii_alphanumeric ... ok
+test flags::defs::tests::non_switches_have_variable_names ... ok
+test flags::defs::tests::longs_no_duplicates ... ok
+test flags::defs::tests::switches_have_no_choices ... ok
+
+test result: ok. 114 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+
+running 299 tests
+test binary::before_match1_explicit ... ok
+test binary::after_match1_stdin ... ok
+test binary::after_match1_explicit_count ... ok
+test binary::after_match1_explicit_text ... ok
+test binary::after_match1_explicit ... ok
+test binary::after_match1_implicit_quiet ... ok
+test binary::after_match1_implicit_path ... ok
+test binary::before_match2_explicit ... ok
+test binary::after_match1_implicit_binary ... ok
+test binary::before_match1_implicit ... ok
+test binary::after_match2_implicit_text ... ok
+test binary::after_match1_implicit ... ok
+test binary::after_match1_implicit_count_binary ... ok
+test binary::before_match1_implicit_binary ... ok
+test binary::after_match1_implicit_count ... ok
+test binary::after_match2_implicit ... ok
+test binary::after_match1_implicit_text ... ok
+test feature::f1155_auto_hybrid_regex ... ok
+test feature::context_sep ... ok
+test feature::context_sep_default ... ok
+test binary::before_match1_implicit_text ... ok
+test binary::before_match2_implicit ... ok
+test feature::context_sep_empty ... ok
+test feature::f1207_auto_encoding ... ok
+test feature::f1207_ignore_encoding ... ok
+test feature::f109_case_sensitive_part2 ... ok
+test binary::before_match2_implicit_text ... ok
+test feature::f109_max_depth ... ok
+test feature::f129_matches ... ok
+test feature::f129_replace ... ok
+test feature::f109_case_sensitive_part1 ... ok
+test feature::f129_context ... ok
+test feature::f1078_max_columns_preview1 ... ok
+test feature::f159_max_count_zero ... ok
+test feature::f1420_no_ignore_exclude ... ok
+test feature::f1_replacement_encoding ... ok
+test feature::f1078_max_columns_preview2 ... ok
+test feature::f1_unknown_encoding ... ok
+test feature::f159_max_count ... ok
+test feature::f1138_no_ignore_dot ... ok
+test feature::f1_sjis ... ok
+test feature::f1414_no_require_git ... ok
+test feature::f2288_context_partial_override ... ok
+test feature::f2288_context_partial_override_rev ... ok
+test feature::f1_utf16_auto ... ok
+test feature::f1_eucjp ... ok
+test feature::f20_no_filename ... ok
+test feature::f1_utf16_explicit ... ok
+test feature::f263_sort_files_reverse ... ok
+test feature::f263_sort_files ... ok
+test feature::f196_persistent_config ... ok
+test feature::f1404_nothing_searched_ignored ... ok
+test feature::f1404_nothing_searched_warning ... ok
+test feature::f243_column_line ... ok
+test feature::f275_pathsep ... ok
+test feature::f362_exceeds_regex_size_limit ... ok
+test feature::f411_parallel_quiet_search_stats ... ok
+test feature::f34_only_matching ... ok
+test feature::f411_single_threaded_quiet_search_stats ... ok
+test feature::f411_parallel_search_stats ... ok
+test feature::f411_single_threaded_search_stats ... ok
+test feature::f362_dfa_size_limit ... ok
+test feature::f1466_no_ignore_files ... ok
+test feature::f34_only_matching_line_column ... ok
+test feature::f1842_field_match_separator ... ok
+test feature::f1842_field_context_separator ... ok
+test feature::f416_crlf_multiline ... ok
+test feature::f416_crlf ... ok
+test feature::f416_crlf_only_matching ... ok
+test feature::f419_zero_as_shortcut_for_null ... ok
+test feature::f7 ... ok
+test feature::f89_files ... ok
+test feature::f917_trim ... ok
+test feature::f45_precedence_internal ... ok
+test feature::f7_stdin ... ok
+test feature::f45_precedence_with_others ... ok
+test feature::f89_count ... ok
+test feature::f68_no_ignore_vcs ... ok
+test feature::f89_match ... ok
+test feature::f89_files_with_matches ... ok
+test feature::f948_exit_code_error ... ok
+test feature::f917_trim_max_columns_matches ... ok
+test feature::f89_files_without_match ... ok
+test feature::f70_smart_case ... ok
+test feature::f917_trim_max_columns_normal ... ok
+test feature::f917_trim_max_columns_multi_standard ... ok
+test feature::f917_trim_multi_standard ... ok
+test feature::f948_exit_code_no_match ... ok
+test feature::no_context_sep ... ok
+test feature::f917_trim_match ... ok
+test feature::f993_null_data ... ok
+test feature::f948_exit_code_match ... ok
+test feature::no_context_sep_overridden ... ok
+test json::r1412_look_behind_match_missing ... ok
+test feature::no_context_sep_overrides ... ok
+test json::basic ... ok
+test json::quiet_stats ... ok
+test json::crlf ... ok
+test misc::after_context ... ok
+test misc::after_context_line_numbers ... ok
+test feature::no_unicode ... ok
+test feature::stop_on_nonmatch ... ok
+test feature::f917_trim_max_columns_multi_only_matching ... ok
+test feature::f917_trim_max_columns_multi_per_match ... ok
+test json::notutf8_file ... ok
+test json::notutf8 ... ok
+test misc::before_context ... ok
+test misc::binary_convert ... ok
+test misc::compressed_brotli ... ok
+test feature::f45_relative_cwd ... ok
+test misc::compressed_bzip2 ... ok
+test misc::binary_convert_mmap ... ok
+test misc::before_context_line_numbers ... ok
+test feature::f740_passthru ... ok
+test misc::compressed_lzma ... ok
+test misc::binary_search_mmap ... ok
+test misc::compressed_lz4 ... ok
+test misc::binary_search_no_mmap ... ok
+test misc::compressed_xz ... ok
+test misc::compressed_zstd ... ok
+test misc::columns ... ok
+test misc::context ... ok
+test misc::compressed_failing_gzip ... ok
+test misc::context_line_numbers ... ok
+test misc::binary_quit ... ok
+test misc::compressed_gzip ... ok
+test misc::byte_offset_only_matching ... ok
+test misc::binary_quit_mmap ... ok
+test json::r1095_missing_crlf ... ok
+test json::r1095_crlf_empty_match ... ok
+test misc::compressed_uncompress ... ok
+test misc::count ... ok
+test misc::case_insensitive ... ok
+test misc::count_matches ... ok
+test misc::count_matches_inverted ... ok
+test misc::file_type_clear ... ok
+test misc::count_matches_via_only ... ok
+test misc::files ... ok
+test misc::dir ... ok
+test misc::files_without_match ... ok
+test misc::file_types ... ok
+test misc::files_with_matches ... ok
+test misc::file_type_add ... ok
+test misc::file_type_add_compose ... ok
+test misc::glob ... ok
+test misc::file_types_negate ... ok
+test misc::glob_case_insensitive ... ok
+test misc::glob_negate ... ok
+test misc::glob_case_sensitive ... ok
+test misc::glob_always_case_insensitive ... ok
+test misc::ignore_git ... ok
+test misc::ignore_generic ... ok
+test misc::ignore_git_parent_stop ... ok
+test misc::ignore_git_parent_stop_file ... ok
+test misc::ignore_git_parent ... ok
+test misc::ignore_hidden ... ok
+test misc::inverted ... ok
+test misc::max_filesize_parse_error_length ... ok
+test misc::line_numbers ... ok
+test misc::ignore_ripgrep_parent_no_stop ... ok
+test misc::ignore_ripgrep ... ok
+test misc::max_filesize_parse_error_suffix ... ok
+test misc::inverted_line_numbers ... ok
+test misc::preprocessing_glob ... ok
+test misc::preprocessing ... ok
+test misc::max_filesize_suffix_overflow ... ok
+test misc::literal ... ok
+test misc::max_filesize_parse_m_suffix ... ok
+test misc::max_filesize_parse_no_suffix ... ok
+test misc::max_filesize_parse_k_suffix ... ok
+test misc::quiet ... ok
+test misc::replace ... ok
+test misc::include_zero ... ok
+test misc::include_zero_override ... ok
+test misc::replace_groups ... ok
+test misc::no_ignore_hidden ... ok
+test misc::no_ignore ... ok
+test misc::no_parent_ignore_git ... ok
+test misc::replace_named_groups ... ok
+test misc::single_file ... ok
+test misc::type_list ... ok
+test misc::symlink_follow ... ok
+test misc::unrestricted2 ... ok
+test misc::unrestricted3 ... ok
+test misc::unrestricted1 ... ok
+test misc::symlink_nofollow ... ok
+test misc::vimgrep ... ok
+test misc::vimgrep_no_line ... ok
+test misc::with_filename ... ok
+test misc::vimgrep_no_line_no_column ... ok
+test misc::with_heading_default ... ok
+test misc::with_heading ... ok
+test misc::word ... ok
+test misc::word_period ... ok
+test misc::line ... ok
+test multiline::overlap1 ... ok
+test multiline::overlap2 ... ok
+test regression::r105_part1 ... ok
+test regression::r105_part2 ... ok
+test regression::r1064 ... ok
+test multiline::context ... ok
+test regression::r1098 ... ok
+test regression::f1757 ... ok
+test multiline::only_matching ... ok
+test multiline::dot_all ... ok
+test regression::r1159_invalid_flag ... ok
+test multiline::dot_no_newline ... ok
+test multiline::stdin ... ok
+test multiline::vimgrep ... ok
+test regression::r1163 ... ok
+test regression::r1130 ... ok
+test regression::r1176_line_regex ... ok
+test regression::r1176_literal_file ... ok
+test regression::r1173 ... ok
+test regression::r1174 ... ok
+test regression::r1223_no_dir_check_for_default_path ... ok
+test regression::r127 ... ok
+test regression::r1311_multi_line_term_replace ... ok
+test regression::r131 ... ok
+test regression::r1259_drop_last_byte_nonl ... ok
+test regression::r1164 ... ok
+test regression::r1401_look_ahead_only_matching_1 ... ok
+test regression::r1401_look_ahead_only_matching_2 ... ok
+test regression::r128 ... ok
+test regression::r1412_look_behind_no_replacement ... ok
+test regression::r1334_crazy_literals ... ok
+test regression::r1319 ... ok
+test regression::r137 ... ok
+test regression::r1573 ... ok
+test regression::r1380 ... ok
+test regression::r1389_bad_symlinks_no_biscuit ... ok
+test regression::r1446_respect_excludes_in_worktree ... ok
+test regression::r1559 ... ok
+test regression::r16 ... ok
+test regression::r1638 ... ok
+test regression::r1739_replacement_lineterm_match ... ok
+test regression::r1537 ... ok
+test regression::r1765 ... ok
+test regression::r1866 ... ok
+test regression::r1838_nul_error_with_binary_detection ... ok
+test regression::r1891 ... ok
+test regression::r156 ... ok
+test regression::r206 ... ok
+test regression::r210 ... ok
+test regression::r199 ... ok
+test regression::r1159_exit_status ... ok
+test regression::r184 ... ok
+test regression::r229 ... ok
+test regression::r2198 ... ok
+test regression::r2236 ... ok
+test regression::r228 ... ok
+test regression::r1878 ... ok
+test regression::r256 ... ok
+test regression::r1868_context_passthru_override ... ok
+test regression::r256_j1 ... ok
+test regression::r25 ... ok
+test regression::r251 ... ok
+test regression::r2658_null_data_line_regexp ... ok
+test regression::r270 ... ok
+test regression::r279 ... ok
+test regression::r2574 ... ok
+test regression::r30 ... ok
+test regression::r2095 ... ok
+test regression::r428_unrecognized_style ... ok
+test regression::r391 ... ok
+test regression::r428_color_context_path ... ok
+test regression::r405 ... ok
+test regression::r451_only_matching ... ok
+test regression::r451_only_matching_as_in_issue ... ok
+test regression::r483_matching_no_stdout ... ok
+test regression::r2480 ... ok
+test regression::r483_non_matching_exit_code ... ok
+test regression::r493 ... ok
+test regression::r49 ... ok
+test regression::r506_word_not_parenthesized ... ok
+test misc::replace_with_only_matching ... ok
+test regression::r50 ... ok
+test regression::r599 ... ok
+test regression::r553_flag ... ok
+test regression::r64 ... ok
+test regression::r693_context_in_contextless_mode ... ok
+test regression::r65 ... ok
+test regression::r67 ... ok
+test regression::r568_leading_hyphen_option_args ... ok
+test regression::r900 ... ok
+test regression::r807 ... ok
+test regression::r90 ... ok
+test regression::r99 ... ok
+test feature::f2361_sort_nested_files ... ok
+test regression::r87 ... ok
+test regression::r553_switch ... ok
+test regression::r2208 ... ok
+test regression::r1203_reverse_suffix_literal ... ok
+test regression::r93 ... ok
+test misc::sort_accessed ... ok
+test misc::sortr_accessed ... ok
+test misc::sort_files ... ok
+test misc::file_types_negate_all ... ok
+test misc::file_types_all ... ok
+
+test result: ok. 299 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.76s
+
+
+running 4 tests
+test crates/globset/src/lib.rs - escape (line 934) ... ok
+test crates/globset/src/lib.rs - (line 18) ... ok
+test crates/globset/src/lib.rs - (line 50) ... ok
+test crates/globset/src/lib.rs - (line 34) ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.81s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 8 tests
+test crates/cli/src/lib.rs - (line 51) ... ignored
+test crates/cli/src/lib.rs - (line 59) ... ignored
+test crates/cli/src/decompress.rs - decompress::DecompressionReader (line 321) - compile ... ok
+test crates/cli/src/process.rs - process::CommandReader (line 157) - compile ... ok
+test crates/cli/src/escape.rs - escape::escape (line 21) ... ok
+test crates/cli/src/escape.rs - escape::unescape (line 62) ... ok
+test crates/cli/src/lib.rs - (line 65) ... ok
+test crates/cli/src/pattern.rs - pattern::patterns_from_reader (line 125) ... ok
+
+test result: ok. 6 passed; 0 failed; 2 ignored; 0 measured; 0 filtered out; finished in 0.60s
+
+
+running 1 test
+test crates/matcher/src/lib.rs - Match (line 61) ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.15s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 3 tests
+test crates/printer/src/color.rs - color::UserColorSpec (line 135) ... ok
+test crates/printer/src/hyperlink.rs - hyperlink::HyperlinkFormat (line 58) ... ok
+test crates/printer/src/lib.rs - (line 26) ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.13s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 1 test
+test crates/searcher/src/lib.rs - (line 39) ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.06s
+
+
+running 6 tests
+test crates/ignore/src/lib.rs - (line 35) - compile ... ok
+test crates/ignore/src/lib.rs - (line 17) - compile ... ok
+test crates/ignore/src/types.rs - types (line 51) ... ok
+test crates/ignore/src/types.rs - types (line 34) ... ok
+test crates/ignore/src/types.rs - types (line 16) ... ok
+test crates/ignore/src/types.rs - types (line 71) ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.01s
+
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.06s
+     Running unittests src/lib.rs (target/debug/deps/globset-578402f5340df9e6)
+     Running unittests src/lib.rs (target/debug/deps/grep-056eb6b7cbb9dbdf)
+     Running unittests src/lib.rs (target/debug/deps/grep_cli-1f60fd688b270561)
+     Running unittests src/lib.rs (target/debug/deps/grep_matcher-2511040cdb6f5f85)
+     Running tests/tests.rs (target/debug/deps/integration-5471dce8dafb9c0d)
+     Running unittests src/lib.rs (target/debug/deps/grep_pcre2-ef9e52ad252555fe)
+     Running unittests src/lib.rs (target/debug/deps/grep_printer-308a4c98aa1ca715)
+     Running unittests src/lib.rs (target/debug/deps/grep_regex-fae17627d5be5ab1)
+     Running unittests src/lib.rs (target/debug/deps/grep_searcher-6fbd9e0a6c3a69b4)
+     Running unittests src/lib.rs (target/debug/deps/ignore-c367eab7cf656fff)
+     Running tests/gitignore_matched_path_or_any_parents_tests.rs (target/debug/deps/gitignore_matched_path_or_any_parents_tests-fb1020ee47d2248b)
+
+thread 'test_path_should_be_under_root' panicked at /app/crates/ignore/src/gitignore.rs:229:9:
+path is expected to be under the root
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+     Running unittests crates/core/main.rs (target/debug/deps/rg-caedc76e038fa722)
+1
+2
+3
+4
+5
+6
+7
+8
+9
+D
+G
+J
+K
+O
+Q
+R
+W
+X
+Y
+Z
+k
+y
+     Running tests/tests.rs (target/debug/deps/integration-363d9da47f7e0442)
+   Doc-tests globset
+   Doc-tests grep
+   Doc-tests grep_cli
+   Doc-tests grep_matcher
+   Doc-tests grep_pcre2
+   Doc-tests grep_printer
+   Doc-tests grep_regex
+   Doc-tests grep_searcher
+   Doc-tests ignore

@@ -1,0 +1,306 @@
+
+> echarts@6.0.0 test
+> npx jest --config test/ut/jest.config.cjs --verbose
+
+-------------|---------|----------|---------|---------|-------------------
+File         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------|---------|----------|---------|---------|-------------------
+All files    |    87.8 |       68 |   66.66 |    87.8 |                   
+ utHelper.ts |    87.8 |       68 |   66.66 |    87.8 | 70,74-75,80,84    
+-------------|---------|----------|---------|---------|-------------------
+PASS test/ut/spec/data/SeriesData.test.ts
+  SeriesData
+    Data Manipulation
+      ✓ initData 1d (11 ms)
+      ✓ initData 2d (1 ms)
+      ✓ initData 2d yx (2 ms)
+      ✓ Data with option 1d (2 ms)
+      ✓ Empty data (1 ms)
+      ✓ getRawValue (2 ms)
+      ✓ indexOfRawIndex (5 ms)
+      ✓ getDataExtent (2 ms)
+      ✓ Data types (2 ms)
+      ✓ map (5 ms)
+      ✓ mapArray (1 ms)
+      ✓ filterSelf (1 ms)
+      ✓ dataProvider (2 ms)
+    Data store
+      ✓ should guess ordinal correctly (5 ms)
+      ✓ SeriesData can still get other dims value from store when only part of dims are given. (30 ms)
+      ✓ SeriesData#cloneShallow should share store (1 ms)
+    id_and_name
+      only_name_declared
+        ✓ sourceFormatOriginal (4 ms)
+        ✓ sourceFormatArrayRows (3 ms)
+      id_name_declared_sourceFormat_original
+        ✓ sourceFormatOriginal (7 ms)
+      id_name_declared_sourceFormat_arrayRows
+        ✓ no_ordinalMeta (7 ms)
+        ✓ has_ordinalMeta (8 ms)
+
+PASS test/ut/spec/model/componentDependency.test.ts
+  componentDependency
+    ✓ topologicalTravel_base (7 ms)
+    ✓ topologicalTravel_a1IsAbsent (2 ms)
+    ✓ topologicalTravel_empty (1 ms)
+    ✓ topologicalTravel_isolate (2 ms)
+    ✓ topologicalTravel_diamond (2 ms)
+    ✓ topologicalTravel_loop (42 ms)
+    ✓ topologicalTravel_multipleEchartsInstance (2 ms)
+    ✓ topologicalTravel_missingSomeNodeButHasDependencies (27 ms)
+    ✓ topologicalTravel_subType (3 ms)
+
+PASS test/ut/spec/util/layout.test.ts
+  util/number
+    mergeLayoutParam
+      ✓ all (49 ms)
+
+PASS test/ut/spec/util/time.test.ts
+  util/time
+    format
+      ✓ should format year (3 ms)
+      ✓ should format quarter
+      ✓ should format month (2 ms)
+      ✓ should format day (1 ms)
+      ✓ should format day of week (2 ms)
+      ✓ should format hour (3 ms)
+      ✓ should format hour (1 ms)
+      ✓ should format minute (1 ms)
+      ✓ should format second (1 ms)
+      ✓ should format millisecond (1 ms)
+      ✓ should format millisecond (1 ms)
+      ✓ should format meridian (2 ms)
+      ✓ should format meridian in uppercase (1 ms)
+    roundTime
+      ✓ roundTime_UTC (2 ms)
+      ✓ roundTime_locale (3 ms)
+
+PASS test/ut/spec/util/graphic.test.ts
+  util/graphic
+    subPixelOptimize
+      ✓ subPixelOptimize_base (3 ms)
+      ✓ subPixelOptimize_line (3 ms)
+      ✓ subPixelOptimize_rect (1 ms)
+    lineLineIntersect
+      ✓ extreme (1 ms)
+      ✓ parallel and colinear (9 ms)
+      ✓ intersect (1 ms)
+    expandOrShrinkRect
+      ✓ expandOrShrinkRect (5 ms)
+
+PASS test/ut/spec/data/createDimensions.test.ts
+  createDimensions
+    ✓ namesMoreThanDimCount (6 ms)
+    ✓ differentData (4 ms)
+    ✓ differentSysDims (28 ms)
+    ✓ dimsDef (3 ms)
+    ✓ encodeDef (3 ms)
+
+PASS test/ut/spec/util/number.test.ts
+  util/number
+    linearMap
+      ✓ accuracyError (1 ms)
+      ✓ clamp (26 ms)
+      ✓ noClamp (3 ms)
+      ✓ normal (2 ms)
+      ✓ zeroInterval (1 ms)
+    parseDate
+      ✓ parseDate (8 ms)
+    reformIntervals
+      ✓ basic (3 ms)
+    getPrecision
+      ✓ getPrecision_basisc (4 ms)
+      ✓ getPrecisionSafe_basisc (4 ms)
+      ✓ getPrecision_equal_random (97 ms)
+    getPrecisionSafe
+      ✓ basic (4 ms)
+    addSafe
+      ✓ basic (69 ms)
+    getPercentWithPrecision
+      ✓ basic (3 ms)
+      ✓ NaN data (2 ms)
+    quantityExponent
+      ✓ basic (1 ms)
+      ✓ decimals (1 ms)
+      ✓ large number (1 ms)
+      ✓ zero
+    quantity
+      ✓ basic (2 ms)
+      ✓ decimals (1 ms)
+      ✓ large number
+      ✓ zero
+    nice
+      ✓ extreme (2 ms)
+
+PASS test/ut/spec/component/helper/sliderMove.test.ts
+  component/helper/sliderMove
+    sliderMove
+      ✓ normalize (3 ms)
+      ✓ rigid_move (1 ms)
+      ✓ cross (1 ms)
+      ✓ minSpan_push (6 ms)
+      ✓ maxSpan_pull (1 ms)
+
+PASS test/ut/spec/util/model.test.ts
+  util/model
+    compressBatches
+      ✓ base (15 ms)
+
+PASS test/ut/spec/model/componentMissing.test.ts
+  model_componentMissing
+    ✓ Should report grid component missing error (109 ms)
+    ✓ Should report dataZoom component missing error (10 ms)
+    ✓ Should not report title component missing error (43 ms)
+    ✓ Should report funnel series missing error (11 ms)
+    ✓ Should not report pie series missing error (41 ms)
+    ✓ Should not report visualMap component missing error when using theme (7 ms)
+
+PASS test/ut/spec/series/aria-columns-exclude.test.ts
+  aria, omit data
+    ✓ specified columns should be omitted from Aria (geolocation and name) (151 ms)
+    ✓ should not modify the data of the chart (21 ms)
+
+PASS test/ut/spec/api/converter.test.ts
+  api/converter
+    ✓ geo (201 ms)
+    ✓ map (30 ms)
+    ✓ cartesian (97 ms)
+    ✓ graph (33 ms)
+
+PASS test/ut/spec/series/custom.test.ts
+  custom_series
+    ✓ visual_palette (198 ms)
+    ✓ should pass user defined data to event handlers (40 ms)
+
+PASS test/ut/spec/api/getVisual.test.ts
+  api/getVisual
+    ✓ scatter (222 ms)
+    ✓ dataZoom (63 ms)
+
+PASS test/ut/spec/data/dataTransform.test.ts
+  dataTransform
+    ✓ forbid_seriesLayoutBy_row (211 ms)
+    ✓ seriesLayoutBy_changed_no_transform (92 ms)
+    ✓ seriesLayoutBy_changed_transform_detection_0 (40 ms)
+    ✓ seriesLayoutBy_changed_transform_detection_1 (20 ms)
+    ✓ seriesLayoutBy_changed_transform_non_detection_0 (21 ms)
+    ✓ seriesLayoutBy_changed_transform_non_detection_1 (23 ms)
+    ✓ inherit_detected_dimensions_0 (18 ms)
+    ✓ inherit_detected_dimensions_1 (17 ms)
+
+PASS test/ut/spec/api/containPixel.test.ts
+  api/containPixel
+    ✓ geo (200 ms)
+    ✓ map (45 ms)
+    ✓ cartesian (100 ms)
+    ✓ graph (43 ms)
+
+PASS test/ut/spec/component/dataZoom/helper.test.ts
+  dataZoom/helper
+    findLinkedNodes
+      ✓ findLinkedNodes_base (236 ms)
+      ✓ findLinkedNodes_crossXY (67 ms)
+      ✓ findLinkedNodes_emptySourceModel (58 ms)
+
+PASS test/ut/spec/data/dataValueHelper.test.ts
+  data/helper/dataValueHelper
+    filter_relational_comparison
+      ✓ lt_filter_comparator (297 ms)
+      ✓ lte_filter_comparator (211 ms)
+      ✓ gt_filter_comparator (178 ms)
+      ✓ gte_filter_comparator (174 ms)
+      ✓ eq_filter_comparator (115 ms)
+      ✓ ne_filter_comparator (80 ms)
+    sort_relational_comparison
+      ✓ asc_incmprmin_sort_comparator (53 ms)
+      ✓ asc_incmprmax_sort_comparator (58 ms)
+      ✓ desc_incmprmin_sort_comparator (84 ms)
+      ✓ desc_incmprmax_sort_comparator (65 ms)
+
+PASS test/ut/spec/component/graphic/setOption.test.ts
+  graphic_setOption
+    option
+      ✓ optionFlatten (169 ms)
+      ✓ groupSetOptionGetOption (48 ms)
+      ✓ onlyOneGraphicComponentAvailable (19 ms)
+      ✓ replace (22 ms)
+      ✓ deleteBy$action (19 ms)
+      ✓ deleteBySetOptionNotMerge (17 ms)
+      ✓ deleteByClear (12 ms)
+      ✓ mergeTroughFlatForamt (29 ms)
+    groupLRTB
+      ✓ getAndGet (44 ms)
+      ✓ modifyAndCenter (38 ms)
+      ✓ resize (36 ms)
+    boundingAndRotation
+      ✓ bounding (167 ms)
+
+PASS test/ut/spec/model/timelineMediaOptions.test.ts
+  timelineMediaOptions
+    parse_timeline_media_option
+      ✓ parse_media_has_baseOption_has_default (302 ms)
+      ✓ parse_media_no_baseOption_has_default (42 ms)
+      ✓ parse_media_no_baseOption_no_default (37 ms)
+      ✓ parse_timeline_media_has_baseOption (90 ms)
+      ✓ parse_timeline_media_no_baseOption (64 ms)
+      ✓ parse_timeline_has_baseOption (31 ms)
+      ✓ parse_timeline_has_baseOption_compat (35 ms)
+      ✓ parse_timeline_has_baseOption_compat (32 ms)
+      ✓ parse_timeline_no_baseOption (29 ms)
+    timeline_onceMore
+      ✓ timeline_setOptionOnceMore_baseOption (43 ms)
+      ✓ timeline_setOptionOnceMore_substitudeTimelineOptions (53 ms)
+
+PASS test/ut/spec/component/visualMap/setOption.test.ts
+  vsiaulMap_setOption
+    ✓ defaultTargetController (277 ms)
+    ✓ ec2ColorCompatiable (53 ms)
+    ✓ remainVisualProp (116 ms)
+    ✓ eraseAllVisualProps_notRelative (59 ms)
+    ✓ eraseAllVisualProps_reletive (96 ms)
+    ✓ setOpacityWhenUseColor (32 ms)
+    ✓ normalizeVisualRange (48 ms)
+
+PASS test/ut/spec/model/Global.test.ts
+  modelAndOptionMapping
+    idNoNameNo
+      ✓ sameTypeNotMerge (231 ms)
+      ✓ sameTypeMergeFull (66 ms)
+      ✓ sameTypeMergePartial (57 ms)
+      ✓ differentTypeMerge (47 ms)
+    idSpecified
+      ✓ sameTypeNotMerge (34 ms)
+      ✓ sameTypeMerge (31 ms)
+      ✓ differentTypeNotMerge (28 ms)
+      ✓ differentTypeMergeFull (31 ms)
+      ✓ differentTypeMergePartial1 (27 ms)
+      ✓ differentTypeMergePartial2 (22 ms)
+      ✓ mergePartialDoNotMapToOtherId (20 ms)
+      ✓ idDuplicate (73 ms)
+      ✓ nameTheSameButIdNotTheSame (16 ms)
+    noIdButNameExists
+      ✓ sameTypeNotMerge (32 ms)
+      ✓ sameTypeMerge (22 ms)
+      ✓ differentTypeNotMerge (23 ms)
+      ✓ differentTypeMergePartialOneMapTwo (30 ms)
+      ✓ differentTypeMergePartialTwoMapOne (20 ms)
+      ✓ mergePartialCanMapToOtherName (18 ms)
+    ohters
+      ✓ aBugCase (28 ms)
+      ✓ color (14 ms)
+      ✓ innerId (63 ms)
+
+PASS test/ut/spec/scale/interval.test.ts
+  scale_interval
+    extreme
+      ✓ ticks_min_max (229 ms)
+      ✓ ticks_small_value (58 ms)
+    ticks
+      ✓ cases (21 ms)
+      ✓ randomCover (1021 ms)
+
+Test Suites: 23 passed, 23 total
+Tests:       184 passed, 184 total
+Snapshots:   0 total
+Time:        6.463 s, estimated 73 s
+Ran all test suites.

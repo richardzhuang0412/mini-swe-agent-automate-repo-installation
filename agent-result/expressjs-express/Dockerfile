@@ -1,29 +1,21 @@
 FROM node:18-slim
 
-# Install git for cloning the repository
-RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
+# Install minimal tools needed to clone the repo
+RUN apt-get update && apt-get install -y --no-install-recommends git ca-certificates && rm -rf /var/lib/apt/lists/*
 
-# Set working directory
-WORKDIR /app
+WORKDIR /workspace
 
-# Clone the Express.js repository
+# Clone the repository into the image
 RUN git clone https://github.com/expressjs/express.git .
 
-# Install dependencies
-RUN npm install
+# Show tool versions for diagnostics
+RUN node -v && npm -v
 
-# Set environment variables for testing
-ENV NODE_ENV=test
-ENV NO_DEPRECATION=body-parser,express
+# Install dependencies (prefer lockfile if present)
+RUN npm ci || npm install --no-audit --no-fund
 
 # Run tests to verify the build
 RUN npm test
 
-# Reset environment for runtime
-ENV NODE_ENV=production
-
-# Expose common Express port
-EXPOSE 3000
-
-# Default command to start an interactive bash shell
+# Default to an interactive shell for development/CI usage
 CMD ["/bin/bash"]

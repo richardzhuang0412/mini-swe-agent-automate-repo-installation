@@ -1,0 +1,5 @@
+{
+  "test_command": "npm run test -- --verbose",
+  "test_framework": "jest",
+  "language": "javascript"
+}
