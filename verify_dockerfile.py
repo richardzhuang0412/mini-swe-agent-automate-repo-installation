@@ -11,6 +11,8 @@ import subprocess
 import argparse
 from pathlib import Path
 from typing import Tuple, Optional
+import threading
+import time
 
 def run_command(cmd: list, cwd: Optional[Path] = None, timeout: int = 300) -> Tuple[int, str]:
     """Run a command and return exit code and output."""
@@ -28,7 +30,42 @@ def run_command(cmd: list, cwd: Optional[Path] = None, timeout: int = 300) -> Tu
     except Exception as e:
         return -1, f"Error running command: {e}"
 
-def verify_dockerfile(dockerfile_path: Path, repo_path: Path, image_name: str = None) -> bool:
+def run_command_with_progress(cmd: list, cwd: Optional[Path] = None, timeout: int = 300) -> Tuple[int, str]:
+    """Run a command with real-time output streaming."""
+    try:
+        process = subprocess.Popen(
+            cmd,
+            cwd=cwd,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            bufsize=1,
+            universal_newlines=True
+        )
+        
+        output_lines = []
+        
+        # Read output line by line and print in real-time
+        while True:
+            line = process.stdout.readline()
+            if not line:
+                break
+            print(line.rstrip())  # Print without extra newline
+            output_lines.append(line)
+            sys.stdout.flush()  # Ensure immediate output
+        
+        # Wait for process to complete
+        process.wait(timeout=timeout)
+        
+        return process.returncode, ''.join(output_lines)
+        
+    except subprocess.TimeoutExpired:
+        process.kill()
+        return -1, f"Command timed out after {timeout} seconds"
+    except Exception as e:
+        return -1, f"Error running command: {e}"
+
+def verify_dockerfile(dockerfile_path: Path, image_name: str = None, show_progress: bool = True) -> bool:
     """Verify that a Dockerfile builds successfully."""
     
     if not dockerfile_path.exists():
@@ -36,29 +73,37 @@ def verify_dockerfile(dockerfile_path: Path, repo_path: Path, image_name: str = 
         return False
     
     if not image_name:
-        image_name = f"{repo_path.name.lower()}-test"
+        # Use the directory name where the Dockerfile is located
+        image_name = f"{dockerfile_path.parent.name.lower()}-test"
     
     print(f"🔍 Verifying Dockerfile: {dockerfile_path}")
-    print(f"📁 Repository path: {repo_path}")
     print(f"🏷️  Image name: {image_name}")
     
     # Step 1: Build the Docker image
     print("\n1️⃣  Building Docker image...")
+    
     build_cmd = [
         "docker", "build", 
         "-f", str(dockerfile_path),
         "-t", image_name,
-        str(repo_path)
+        str(dockerfile_path.parent)  # Use the directory containing the Dockerfile as build context
     ]
     
-    exit_code, output = run_command(build_cmd, timeout=600)  # 10 minute timeout for build
+    if show_progress:
+        print("📦 Build progress (real-time):")
+        print("=" * 50)
+        exit_code, output = run_command_with_progress(build_cmd, timeout=600)  # 10 minute timeout for build
+        print("=" * 50)
+    else:
+        exit_code, output = run_command(build_cmd, timeout=600)  # 10 minute timeout for build
     
     if exit_code == 0:
         print("✅ Docker build successful!")
     else:
         print("❌ Docker build failed!")
-        print("Build output:")
-        print(output)
+        if not show_progress:
+            print("Build output:")
+            print(output)
         return False
     
     # Step 2: Test running the container
@@ -116,26 +161,20 @@ def main():
     parser = argparse.ArgumentParser(
         description="Verify generated Dockerfiles build and run correctly"
     )
-    parser.add_argument("repo_path", help="Path to repository directory")
-    parser.add_argument("--dockerfile", help="Path to Dockerfile (default: repo/agent-result/Dockerfile)")
+    parser.add_argument("dockerfile_path", help="Path to Dockerfile")
     parser.add_argument("--image-name", help="Docker image name for testing")
     parser.add_argument("--cleanup", action="store_true", help="Remove test image after verification")
+    parser.add_argument("--no-progress", action="store_true", help="Disable real-time progress output")
     
     args = parser.parse_args()
     
-    repo_path = Path(args.repo_path).resolve()
-    if not repo_path.exists():
-        print(f"❌ Repository path not found: {repo_path}")
+    dockerfile_path = Path(args.dockerfile_path).resolve()
+    if not dockerfile_path.exists():
+        print(f"❌ Dockerfile not found: {dockerfile_path}")
         sys.exit(1)
     
-    # Determine Dockerfile path
-    if args.dockerfile:
-        dockerfile_path = Path(args.dockerfile).resolve()
-    else:
-        dockerfile_path = repo_path / "agent-result" / "Dockerfile"
-    
     # Generate image name if not provided
-    image_name = args.image_name or f"{repo_path.name.lower()}-verification-test"
+    image_name = args.image_name or f"{dockerfile_path.parent.name.lower()}-verification-test"
     
     try:
         # Check if Docker is available
@@ -148,7 +187,8 @@ def main():
         print(f"🐳 Using Docker: {output.strip()}")
         
         # Verify the Dockerfile
-        success = verify_dockerfile(dockerfile_path, repo_path, image_name)
+        show_progress = not args.no_progress
+        success = verify_dockerfile(dockerfile_path, image_name, show_progress)
         
         if success:
             print(f"\n🎉 Verification successful! Your Dockerfile works correctly.")

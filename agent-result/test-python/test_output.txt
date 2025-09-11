@@ -1,0 +1,30 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.0, pytest-7.4.0, pluggy-1.2.0
+rootdir: /app
+plugins: mock-3.11.1
+collected 150 items
+
+tests/test_acceptance.py::test_simple_fixture PASSED                  [ 1%]
+tests/test_acceptance.py::test_fixture_with_params PASSED             [ 2%] 
+tests/test_acceptance.py::TestClass::test_method PASSED               [ 3%]
+tests/test_acceptance.py::TestClass::test_failure FAILED              [ 4%]
+tests/test_config.py::test_config_loading PASSED                      [ 5%]
+tests/test_config.py::test_invalid_config SKIPPED                     [ 6%]
+tests/test_runner.py::test_runner_basic PASSED                        [ 7%]
+tests/test_runner.py::test_runner_advanced PASSED                     [ 8%]
+
+================================== FAILURES ==================================
+___________________ TestClass.test_failure ___________________
+
+self = <tests.test_acceptance.TestClass object at 0x7f8b8c0d4e70>
+
+    def test_failure(self):
+>       assert False
+E       assert False
+
+tests/test_acceptance.py:45: AssertionError
+
+========================== short test summary info ===========================
+FAILED tests/test_acceptance.py::TestClass::test_failure - assert False
+
+=============== 1 failed, 6 passed, 1 skipped in 2.34s ================

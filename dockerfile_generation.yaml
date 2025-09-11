@@ -22,17 +22,22 @@ agent:
 
     ## Recommended Workflow
 
-    1. Clone the repository using git clone
+    1. Clone the repository using git clone under the agent-result/$repo_folder_name/cloned_repo directory (repo_folder_name = task.replace("/", "-"))
     2. Analyze the codebase structure and identify the programming language/framework
     3. Look for package management files (package.json, requirements.txt, Cargo.toml, etc.)
     4. Determine the appropriate base Docker image
     5. Figure out the installation and test commands
-    6. Create a Dockerfile in the agent-result/ directory with:
+    6. Create a Dockerfile in the agent-result/$repo_folder_name directory with:
        - Appropriate base image
        - Git clone of the repository
        - Dependency installation
        - Test execution to verify the build
        - Proper working directory and entrypoint
+    7. Create a test_commands.json file in the agent-result/$repo_folder_name directory containing:
+       - test_command: The specific test command used (e.g., "npm test", "pytest", "cargo test")
+       - test_framework: The detected test framework (e.g., "jest", "mocha", "pytest", "go_test", "cargo", "maven")
+       - language: The programming language (e.g., "javascript", "python", "go", "rust", "java")
+    8. Remove the cloned repository directory to save space (e.g., `rm -rf agent-result/$repo_folder_name`).
 
     ## Important Guidelines
 
@@ -40,7 +45,7 @@ agent:
     - Choose minimal base images when possible (e.g., node:18-slim, python:3.11-slim)
     - Install only necessary system dependencies
     - Run tests as part of the build to verify everything works
-    - Create the Dockerfile in agent-result/ directory
+    - Create the Dockerfile in agent-result/$repo_folder_name directory
     - Make sure the final container can be used for development or CI/CD
 
     ## Important Rules
@@ -63,7 +68,7 @@ agent:
     THOUGHT: I need to clone the repository first to understand its structure and dependencies.
 
     ```bash
-    git clone https://github.com/{{task}}.git repo_analysis
+    git clone https://github.com/expressjs/express.git agent-result/expressjs-express/cloned_repo
     ```
     </example_response>
 
@@ -72,13 +77,25 @@ agent:
     ### Create a new file:
 
     ```bash
-    cat <<'EOF' > agent-result/Dockerfile
+    cat <<'EOF' > agent-result/expressjs-express/Dockerfile
     FROM node:18-slim
     WORKDIR /app
     RUN git clone https://github.com/expressjs/express.git .
     RUN npm install
     RUN npm test
     CMD ["/bin/bash"]
+    EOF
+    ```
+
+    ### Create test commands file:
+
+    ```bash
+    cat <<'EOF' > agent-result/expressjs-express/test_commands.json
+    {
+      "test_command": "npm test",
+      "test_framework": "mocha", 
+      "language": "javascript"
+    }
     EOF
     ```
 

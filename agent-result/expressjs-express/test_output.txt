@@ -1,0 +1,46 @@
+
+> express@4.21.1 test
+> npm run test-unit
+
+> express@4.21.1 test-unit
+> mocha --require test/support/env --reporter spec --bail --check-leaks test/ test/acceptance/
+
+
+  express
+    ✓ should expose the application constructor
+    ✓ should expose the Router constructor 
+    ✓ should expose the mime property
+
+  Application
+    app.delete()
+      ✓ should delete a route
+    
+    app.get()
+      ✓ should respond with proper mime type
+      ✓ should respond with json
+      1) should fail when invalid json provided
+
+    app.post()
+      ✓ should create new resource
+      - should skip disabled middleware
+
+  Router
+    ✓ should create new router
+    ✓ should handle nested routes
+    ✓ should catch async errors
+
+
+  1) Application app.get() should fail when invalid json provided
+
+      AssertionError: expected 200 to equal 400
+      + expected - actual
+
+      -200
+      +400
+      
+      at Context.<anonymous> (test/app.get.js:45:10)
+
+
+  15 passing (42ms)
+  1 pending
+  1 failing

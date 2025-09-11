@@ -1,0 +1,27 @@
+{
+  "test_command": "make test",
+  "test_framework": "jest",
+  "language": "javascript",
+  "build_command": "make build",
+  "package_manager": "yarn",
+  "node_version": "20",
+  "env_vars": {
+    "BABEL_ENV": "test"
+  },
+  "test_scripts": {
+    "test": "make test",
+    "test-only": "make test-only",
+    "test-ci": "BABEL_ENV=test yarn jest --maxWorkers=100% --ci",
+    "lint": "make lint"
+  },
+  "structured_output_flags": {
+    "json_flag": "--json",
+    "junit_flag": "--outputFile=test-results.xml --testResultsProcessor=jest-junit"
+  },
+  "additional_info": {
+    "description": "Babel is a JavaScript compiler monorepo with complex Makefile-based build system",
+    "workspaces": true,
+    "monorepo": true,
+    "test_runner_script": "./scripts/test.sh"
+  }
+}

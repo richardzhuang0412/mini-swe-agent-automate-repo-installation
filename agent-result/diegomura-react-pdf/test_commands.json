@@ -1,0 +1,21 @@
+{
+  "test_command": "yarn test",
+  "test_framework": "vitest",
+  "language": "javascript/typescript",
+  "package_manager": "yarn",
+  "build_command": "yarn build",
+  "env_vars": {
+    "NODE_ENV": "test",
+    "FORCE_COLOR": "2"
+  },
+  "structured_output_flags": {
+    "json_flag": "--reporter=json",
+    "junit_flag": "--reporter=junit"
+  },
+  "additional_info": {
+    "monorepo": true,
+    "monorepo_tool": "lerna",
+    "node_version": "18",
+    "react_versions_tested": ["16", "17", "18"]
+  }
+}

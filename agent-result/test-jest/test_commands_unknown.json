@@ -1,0 +1,5 @@
+{
+  "test_command": "npm test",
+  "test_framework": "unknown_framework", 
+  "language": "javascript"
+}
