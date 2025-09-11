@@ -10,7 +10,7 @@ test case to status mapping.
 import json
 import sys
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 
 from parsers.jest import parse_log_jest
 from parsers.mocha import parse_log_mocha
@@ -72,8 +72,8 @@ def load_test_output(dockerfile_dir: Path) -> Optional[str]:
         return None
 
 
-def try_parsers(log_content: str, parser_names: List[str]) -> Optional[Dict[str, str]]:
-    """Try multiple parsers and return the first one that produces results."""
+def try_parsers(log_content: str, parser_names: List[str]) -> Optional[Tuple[Dict[str, str], str]]:
+    """Try multiple parsers and return the first one that produces results along with parser name."""
     for parser_name in parser_names:
         if parser_name not in PARSERS:
             continue
@@ -83,7 +83,7 @@ def try_parsers(log_content: str, parser_names: List[str]) -> Optional[Dict[str,
             result = parser_func(log_content)
             if result:  # Parser returned some results
                 print(f"Successfully parsed with {parser_name} parser")
-                return result
+                return result, parser_name
         except Exception as e:
             print(f"Parser {parser_name} failed with error: {e}")
             continue
@@ -91,7 +91,24 @@ def try_parsers(log_content: str, parser_names: List[str]) -> Optional[Dict[str,
     return None
 
 
-def parse_test_log(dockerfile_path: str) -> Optional[Dict[str, str]]:
+def save_parsed_result(result: Dict[str, str], parser_name: str, dockerfile_dir: Path) -> None:
+    """Save parsed test results to parsed_test_status.json."""
+    output_path = dockerfile_dir / "parsed_test_status.json"
+    
+    output_data = {
+        "parser": parser_name,
+        "parsed_test_status": result,
+    }
+    
+    try:
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(output_data, f, indent=2, ensure_ascii=False)
+        print(f"Saved parsed test results to: {output_path}")
+    except IOError as e:
+        print(f"Error saving parsed test results: {e}")
+
+
+def parse_test_log(dockerfile_path: str) -> Optional[Tuple[Dict[str, str], str]]:
     """
     Main parsing function.
     
@@ -99,7 +116,7 @@ def parse_test_log(dockerfile_path: str) -> Optional[Dict[str, str]]:
         dockerfile_path: Path to the Dockerfile
         
     Returns:
-        Dictionary mapping test case names to status (PASSED/FAILED/SKIPPED)
+        Tuple of (Dictionary mapping test case names to status (PASSED/FAILED/SKIPPED), parser_name)
     """
     dockerfile_path = Path(dockerfile_path)
     
@@ -128,9 +145,10 @@ def parse_test_log(dockerfile_path: str) -> Optional[Dict[str, str]]:
     # Priority 1: Try exact framework match
     if test_framework in PARSERS:
         print(f"Trying exact framework match: {test_framework}")
-        result = try_parsers(log_content, [test_framework])
-        if result:
-            return result
+        parser_result = try_parsers(log_content, [test_framework])
+        if parser_result:
+            result, parser_name = parser_result
+            return result, parser_name
         print(f"Framework parser {test_framework} produced no results")
     
     # Priority 2: Try all parsers for the language
@@ -141,9 +159,10 @@ def parse_test_log(dockerfile_path: str) -> Optional[Dict[str, str]]:
         
         if framework_list:
             print(f"Trying language-based parsers for {language}: {framework_list}")
-            result = try_parsers(log_content, framework_list)
-            if result:
-                return result
+            parser_result = try_parsers(log_content, framework_list)
+            if parser_result:
+                result, parser_name = parser_result
+                return result, parser_name
             print(f"No language-based parsers for {language} produced results")
     
     # Priority 3: Report error if language not found
@@ -165,9 +184,11 @@ def main():
     
     dockerfile_path = sys.argv[1]
     
-    result = parse_test_log(dockerfile_path)
+    parse_result = parse_test_log(dockerfile_path)
     
-    if result:
+    if parse_result:
+        result, parser_name = parse_result
+        
         # Summary first
         total = len(result)
         passed = sum(1 for status in result.values() if status == "PASSED")
@@ -188,6 +209,10 @@ def main():
         
         if total > 10:
             print(f"... and {total - 10} more tests")
+        
+        # Save parsed results at the very end
+        dockerfile_dir = Path(dockerfile_path).parent
+        save_parsed_result(result, parser_name, dockerfile_dir)
         
         # Exit with non-zero code if there were failures
         if failed > 0:
