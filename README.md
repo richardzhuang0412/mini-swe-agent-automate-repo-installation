@@ -1,4 +1,4 @@
-# Mini-SWE-Agent: Automated Repository Profile Generation Pipeline
+# Automating Repository Profile Generation using Mini-SWE-Agent
 
 A sophisticated 3-stage automated pipeline that converts GitHub repositories into SWE-smith compatible profile classes using mini-swe-agent for repository analysis and intelligent test framework detection.
 
