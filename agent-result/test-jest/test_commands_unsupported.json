@@ -1,5 +1,0 @@
-{
-  "test_command": "make test",
-  "test_framework": "unknown_framework", 
-  "language": "unsupported_language"
-}

@@ -1,5 +1,0 @@
-{
-  "test_command": "cargo test --all -- --nocapture",
-  "test_framework": "cargo",
-  "language": "rust"
-}

@@ -10,8 +10,11 @@ import sys
 import subprocess
 import argparse
 import json
+import re
+import os
+import shutil
 from pathlib import Path
-from typing import Tuple, Optional
+from typing import Tuple, Optional, Dict, Any
 import threading
 import time
 
@@ -43,9 +46,9 @@ def run_command_with_progress(cmd: list, cwd: Optional[Path] = None, timeout: in
             bufsize=1,
             universal_newlines=True
         )
-        
+
         output_lines = []
-        
+
         # Read output line by line and print in real-time
         while True:
             line = process.stdout.readline()
@@ -54,42 +57,386 @@ def run_command_with_progress(cmd: list, cwd: Optional[Path] = None, timeout: in
             print(line.rstrip())  # Print without extra newline
             output_lines.append(line)
             sys.stdout.flush()  # Ensure immediate output
-        
+
         # Wait for process to complete
         process.wait(timeout=timeout)
-        
+
         return process.returncode, ''.join(output_lines)
-        
+
     except subprocess.TimeoutExpired:
         process.kill()
         return -1, f"Command timed out after {timeout} seconds"
     except Exception as e:
         return -1, f"Error running command: {e}"
 
-def verify_dockerfile(dockerfile_path: Path, image_name: str = None, show_progress: bool = True) -> bool:
-    """Verify that a Dockerfile builds successfully."""
-    
+def parse_test_results(output: str, test_framework: str = None) -> Dict[str, Any]:
+    """Parse test output to determine actual test results."""
+
+    # Initialize result dictionary
+    result = {
+        'tests_run': False,
+        'passed': 0,
+        'failed': 0,
+        'skipped': 0,
+        'errors': 0,
+        'total': 0,
+        'success': False,
+        'framework_detected': test_framework
+    }
+
+    # Try to detect test framework if not provided
+    if not test_framework:
+        if 'mocha' in output.lower() or '✔' in output or '✓' in output:
+            test_framework = 'mocha'
+        elif 'jest' in output.lower() or 'PASS' in output or 'FAIL' in output:
+            test_framework = 'jest'
+        elif 'pytest' in output.lower() or 'passed' in output.lower():
+            test_framework = 'pytest'
+        elif 'npm test' in output.lower():
+            test_framework = 'npm'
+
+    # Parse based on framework
+    if test_framework in ['mocha', 'npm']:
+        # Look for mocha-style output: "X passing"
+        passing_match = re.search(r'(\d+)\s+passing', output)
+        failing_match = re.search(r'(\d+)\s+failing', output)
+        pending_match = re.search(r'(\d+)\s+pending', output)
+
+        if passing_match:
+            result['tests_run'] = True
+            result['passed'] = int(passing_match.group(1))
+
+        if failing_match:
+            result['failed'] = int(failing_match.group(1))
+
+        if pending_match:
+            result['skipped'] = int(pending_match.group(1))
+
+        # Count checkmarks as alternative
+        if not result['tests_run']:
+            checkmarks = len(re.findall(r'[✔✓]', output))
+            crosses = len(re.findall(r'[✗✖×]', output))
+            if checkmarks > 0 or crosses > 0:
+                result['tests_run'] = True
+                result['passed'] = checkmarks
+                result['failed'] = crosses
+
+    elif test_framework == 'jest':
+        # Look for jest-style output
+        pass_match = re.search(r'Tests:\s+(\d+)\s+passed', output)
+        fail_match = re.search(r'Tests:\s+(\d+)\s+failed', output)
+        total_match = re.search(r'Tests:.*?(\d+)\s+total', output)
+
+        if pass_match:
+            result['tests_run'] = True
+            result['passed'] = int(pass_match.group(1))
+
+        if fail_match:
+            result['failed'] = int(fail_match.group(1))
+
+        if total_match:
+            result['total'] = int(total_match.group(1))
+
+    elif test_framework == 'pytest':
+        # Look for pytest-style output
+        summary_match = re.search(r'(\d+)\s+passed', output.lower())
+        failed_match = re.search(r'(\d+)\s+failed', output.lower())
+        error_match = re.search(r'(\d+)\s+error', output.lower())
+        skipped_match = re.search(r'(\d+)\s+skipped', output.lower())
+
+        if summary_match:
+            result['tests_run'] = True
+            result['passed'] = int(summary_match.group(1))
+
+        if failed_match:
+            result['failed'] = int(failed_match.group(1))
+
+        if error_match:
+            result['errors'] = int(error_match.group(1))
+
+        if skipped_match:
+            result['skipped'] = int(skipped_match.group(1))
+
+    # Calculate total and success
+    result['total'] = result['passed'] + result['failed'] + result['skipped'] + result['errors']
+    result['success'] = result['tests_run'] and result['failed'] == 0 and result['errors'] == 0
+
+    return result
+
+def cleanup_conda_env(env_name: str = "testbed") -> None:
+    """Clean up conda environment if it exists."""
+    try:
+        # Check if environment exists
+        env_list = subprocess.run(
+            "conda env list",
+            check=True,
+            shell=True,
+            text=True,
+            capture_output=True
+        ).stdout
+
+        if env_name in env_list:
+            print(f"🧹 Removing conda environment '{env_name}'...")
+            subprocess.run(
+                f"conda env remove -n {env_name} -y",
+                shell=True,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL
+            )
+            print(f"✅ Conda environment removed")
+    except Exception as e:
+        print(f"⚠️  Could not remove conda environment: {e}")
+
+def verify_python_installation_swe_smith_style(repo_dir: Path, show_progress: bool = True) -> Tuple[bool, bool]:
+    """
+    Verify Python installation using SWE-smith inspired workflow.
+    Returns (installation_success, testing_success) tuple.
+    """
+
+    print(f"🔍 Verifying Python installation in: {repo_dir}")
+
+    # Load metadata
+    metadata_path = repo_dir / "repo_metadata.json"
+    if not metadata_path.exists():
+        print(f"❌ No repo_metadata.json found at {metadata_path}")
+        return False, False
+
+    try:
+        with open(metadata_path, 'r') as f:
+            metadata = json.load(f)
+
+        # Get owner/repo from metadata
+        owner = metadata.get('owner')
+        repo = metadata.get('repo')
+
+        if not owner or not repo:
+            print("❌ Owner/repo fields missing from metadata")
+            return False, False
+        commit_hash = metadata.get('commit_hash', 'HEAD')
+        test_commands = metadata.get('test_commands', [])
+        test_framework = metadata.get('test_framework', 'pytest')
+
+        print(f"📦 Repository: {owner}/{repo}")
+        print(f"📌 Commit: {commit_hash}")
+        print(f"🧪 Test framework: {test_framework}")
+
+    except Exception as e:
+        print(f"❌ Error reading metadata: {e}")
+        return False, False
+
+    # Find installation script
+    install_scripts = list(repo_dir.glob("*_install.sh"))
+    if not install_scripts:
+        print(f"❌ No installation script (*_install.sh) found")
+        return False, False
+
+    install_script = install_scripts[0]
+    print(f"📜 Found installation script: {install_script.name}")
+
+    # Step 1: Clone repository
+    clone_dir = repo_dir / "cloned_repo"
+    if clone_dir.exists():
+        print(f"🧹 Removing existing cloned repository...")
+        shutil.rmtree(clone_dir)
+
+    print(f"\n1️⃣  Cloning repository {owner}/{repo}...")
+    clone_cmd = [
+        "git", "clone",
+        f"https://github.com/{owner}/{repo}.git",
+        str(clone_dir)
+    ]
+
+    exit_code, output = run_command(clone_cmd, timeout=300)
+    if exit_code != 0:
+        print(f"❌ Failed to clone repository: {output}")
+        return False, False
+
+    print(f"✅ Repository cloned successfully")
+
+    # Step 2: Checkout specific commit
+    if commit_hash and commit_hash != 'HEAD':
+        print(f"📌 Checking out commit {commit_hash}...")
+        checkout_cmd = ["git", "checkout", commit_hash]
+        exit_code, output = run_command(checkout_cmd, cwd=clone_dir, timeout=60)
+
+        if exit_code != 0:
+            print(f"⚠️  Could not checkout commit {commit_hash}, using HEAD")
+
+    # Step 3: Make installation script executable
+    print("\n2️⃣  Setting up conda installation...")
+    chmod_cmd = ["chmod", "+x", str(install_script)]
+    run_command(chmod_cmd, timeout=10)
+
+    # Step 4: Run installation in the cloned repository
+    print("\n3️⃣  Running conda installation script in cloned repository...")
+
+    # Create a wrapper script that runs installation in the cloned repo
+    wrapper_script = repo_dir / "install_wrapper.sh"
+    wrapper_content = f"""#!/bin/bash
+set -e
+cd {clone_dir}
+source {install_script}
+"""
+
+    with open(wrapper_script, 'w') as f:
+        f.write(wrapper_content)
+
+    os.chmod(wrapper_script, 0o755)
+
+    if show_progress:
+        print("🐍 Installation progress (real-time):")
+        print("=" * 50)
+        exit_code, output = run_command_with_progress([str(wrapper_script)], cwd=clone_dir, timeout=900)
+        print("=" * 50)
+    else:
+        exit_code, output = run_command([str(wrapper_script)], cwd=clone_dir, timeout=900)
+
+    installation_success = (exit_code == 0)
+
+    if installation_success:
+        print("✅ Installation completed successfully!")
+    else:
+        print("❌ Installation failed!")
+        if not show_progress:
+            print("Installation output:")
+            print(output[:5000])  # Show first 5000 chars
+        # Clean up and return
+        if clone_dir.exists():
+            shutil.rmtree(clone_dir)
+        return False, False
+
+    # Step 5: Export conda environment (SWE-smith style)
+    print("\n4️⃣  Exporting conda environment...")
+    env_yml_path = repo_dir / f"sweenv_{repo}.yml"
+
+    export_cmd = f"conda env export -n testbed > {env_yml_path}"
+    exit_code, output = run_command(["bash", "-c", export_cmd], timeout=60)
+
+    if exit_code == 0:
+        print(f"✅ Exported conda environment to {env_yml_path.name}")
+
+        # Edit YAML to exclude the package itself (SWE-smith style)
+        try:
+            with open(env_yml_path, 'r') as f:
+                lines = f.readlines()
+
+            with open(env_yml_path, 'w') as f:
+                for line in lines:
+                    # Exclude the package by repository name
+                    if line.strip().startswith(f"- {repo}==") or \
+                       line.strip().startswith(f"- {repo.lower()}=="):
+                        continue
+                    f.write(line)
+        except Exception as e:
+            print(f"⚠️  Could not edit environment YAML: {e}")
+    else:
+        print(f"⚠️  Could not export conda environment")
+
+    # Step 6: Run tests in the cloned repository
+    print("\n5️⃣  Running tests in cloned repository...")
+    test_output_path = repo_dir / "test_output.txt"
+    all_output = []
+    testing_success = True
+
+    if not test_commands:
+        print("⚠️  No test commands found, skipping tests")
+        testing_success = True
+    else:
+        for i, test_command in enumerate(test_commands, 1):
+            if len(test_commands) > 1:
+                print(f"   Running test {i}/{len(test_commands)}: {test_command}")
+            else:
+                print(f"   Running test: {test_command}")
+
+            # Run test in conda environment within cloned repo
+            test_wrapper = f"""#!/bin/bash
+source /opt/miniconda3/bin/activate || source ~/miniconda3/bin/activate || source /root/miniconda3/bin/activate
+conda activate testbed
+cd {clone_dir}
+{test_command}
+"""
+
+            test_wrapper_script = repo_dir / f"test_wrapper_{i}.sh"
+            with open(test_wrapper_script, 'w') as f:
+                f.write(test_wrapper)
+
+            os.chmod(test_wrapper_script, 0o755)
+
+            exit_code, output = run_command([str(test_wrapper_script)], timeout=900)
+
+            # Collect output
+            if len(test_commands) > 1:
+                all_output.append(f"=== Command {i}: {test_command} ===")
+                all_output.append(f"Exit code: {exit_code}")
+
+            all_output.append(output)
+            all_output.append("")  # Empty line
+
+            # Parse test results
+            test_results = parse_test_results(output, test_framework)
+
+            if test_results['tests_run']:
+                print(f"   📊 Test results: {test_results['passed']} passed, {test_results['failed']} failed")
+                if not test_results['success']:
+                    testing_success = False
+                    print(f"   ❌ Tests failed!")
+                else:
+                    print(f"   ✅ All tests passed!")
+            else:
+                if exit_code == 0:
+                    print(f"   ✅ Command completed (exit code 0)")
+                else:
+                    print(f"   ⚠️  Command exited with code {exit_code}")
+                    # If no tests detected but command failed, consider it a test failure
+                    if 'no test' not in output.lower() and 'not found' not in output.lower():
+                        testing_success = False
+
+    # Save test output
+    combined_output = '\n'.join(all_output)
+    with open(test_output_path, 'w', encoding='utf-8') as f:
+        f.write(combined_output)
+
+    print(f"💾 Test output saved to {test_output_path.name}")
+
+    # Step 7: Clean up
+    print("\n6️⃣  Cleaning up...")
+    if clone_dir.exists():
+        shutil.rmtree(clone_dir)
+        print("✅ Removed cloned repository")
+
+    # Clean up wrapper scripts
+    for script in repo_dir.glob("*_wrapper*.sh"):
+        script.unlink()
+
+    return installation_success, testing_success
+
+def verify_dockerfile(dockerfile_path: Path, image_name: str = None, show_progress: bool = True) -> Tuple[bool, bool]:
+    """
+    Verify that a Dockerfile builds successfully and tests pass.
+    Returns (installation_success, testing_success) tuple.
+    """
+
     if not dockerfile_path.exists():
         print(f"❌ Dockerfile not found: {dockerfile_path}")
-        return False
-    
+        return False, False
+
     if not image_name:
         # Use the directory name where the Dockerfile is located
         image_name = f"{dockerfile_path.parent.name.lower()}-test"
-    
+
     print(f"🔍 Verifying Dockerfile: {dockerfile_path}")
     print(f"🏷️  Image name: {image_name}")
-    
-    # Step 1: Build the Docker image
-    print("\n1️⃣  Building Docker image...")
-    
+
+    # Step 1: Build the Docker image (Installation Check)
+    print("\n1️⃣  Building Docker image (Installation Check)...")
+
     build_cmd = [
-        "docker", "build", 
+        "docker", "build",
         "-f", str(dockerfile_path),
         "-t", image_name,
         str(dockerfile_path.parent)  # Use the directory containing the Dockerfile as build context
     ]
-    
+
     if show_progress:
         print("📦 Build progress (real-time):")
         print("=" * 50)
@@ -97,203 +444,270 @@ def verify_dockerfile(dockerfile_path: Path, image_name: str = None, show_progre
         print("=" * 50)
     else:
         exit_code, output = run_command(build_cmd, timeout=600)  # 10 minute timeout for build
-    
-    if exit_code == 0:
-        print("✅ Docker build successful!")
+
+    installation_success = (exit_code == 0)
+
+    if installation_success:
+        print("✅ Docker build successful! (Installation Check: PASSED)")
     else:
-        print("❌ Docker build failed!")
+        print("❌ Docker build failed! (Installation Check: FAILED)")
         if not show_progress:
             print("Build output:")
             print(output)
-        return False
-    
+        return False, False
+
     # Step 2: Test running the container
     print("\n2️⃣  Testing container execution...")
     run_cmd = [
-        "docker", "run", "--rm", 
-        image_name, 
+        "docker", "run", "--rm",
+        image_name,
         "echo", "Container is working"
     ]
-    
+
     exit_code, output = run_command(run_cmd, timeout=60)
-    
+
     if exit_code == 0:
         print("✅ Container runs successfully!")
-        print(f"Output: {output.strip()}")
     else:
         print("❌ Container failed to run!")
         print(f"Output: {output}")
-        return False
-    
-    # Step 3: Check if we can run basic commands
-    print("\n3️⃣  Testing basic commands in container...")
-    basic_tests = [
-        ["ls", "/app"],  # Check working directory
-        ["pwd"],         # Check current directory
-    ]
-    
-    for test_cmd in basic_tests:
-        docker_cmd = ["docker", "run", "--rm", image_name] + test_cmd
-        exit_code, output = run_command(docker_cmd, timeout=30)
-        
-        if exit_code == 0:
-            print(f"✅ Command '{' '.join(test_cmd)}' successful")
-        else:
-            print(f"⚠️  Command '{' '.join(test_cmd)}' failed (this may be expected)")
-    
-    # Step 4: Run tests and collect output
-    print("\n4️⃣  Running tests and collecting output...")
-    test_success = run_tests_and_collect_output(dockerfile_path, image_name)
-    
-    print(f"\n🎉 Dockerfile verification completed successfully!")
-    print(f"🐳 Image '{image_name}' is ready to use")
-    
-    return True
+        return installation_success, False
 
-def run_tests_and_collect_output(dockerfile_path: Path, image_name: str) -> bool:
-    """Run tests from test_commands.json and save output to test_output.txt."""
+    # Step 3: Run tests and evaluate results (Testing Check)
+    print("\n3️⃣  Running tests and evaluating results (Testing Check)...")
+
     dockerfile_dir = dockerfile_path.parent
-    test_commands_path = dockerfile_dir / "test_commands.json"
+    metadata_path = dockerfile_dir / "repo_metadata.json"
     test_output_path = dockerfile_dir / "test_output.txt"
-    
-    # Check if test_commands.json exists
-    if not test_commands_path.exists():
-        print(f"⚠️  No test_commands.json found at {test_commands_path}")
-        print("   Skipping test output collection")
-        return True
-    
+
+    if not metadata_path.exists():
+        print("⚠️  No repo_metadata.json found, skipping test execution")
+        return installation_success, True
+
+    testing_success = True
+
     try:
-        # Load test configuration
-        with open(test_commands_path, 'r') as f:
-            test_config = json.load(f)
-        
-        test_command = test_config.get('test_command', '')
-        test_framework = test_config.get('test_framework', '')
-        language = test_config.get('language', '')
-        
-        if not test_command:
-            print("⚠️  No test_command found in test_commands.json")
-            print("   Skipping test output collection")
-            return True
-            
-        print(f"🧪 Found test configuration:")
-        print(f"   Command: {test_command}")
+        with open(metadata_path, 'r') as f:
+            metadata = json.load(f)
+
+        test_commands = metadata.get('test_commands', [])
+        test_framework = metadata.get('test_framework', '')
+        language = metadata.get('language', '')
+
+        if not test_commands:
+            print("⚠️  No test commands found, skipping tests")
+            return installation_success, True
+
+        print(f"🧪 Test configuration:")
+        print(f"   Commands: {test_commands}")
         print(f"   Framework: {test_framework}")
         print(f"   Language: {language}")
-        
-        # Run the test command in the Docker container
-        print(f"🔄 Running test command in container...")
-        
-        # Split the command into parts for Docker execution
-        test_cmd_parts = test_command.split()
-        docker_cmd = ["docker", "run", "--rm", image_name] + test_cmd_parts
-        
-        print(f"   Executing: {' '.join(docker_cmd)}")
-        
-        # Run with extended timeout for tests
-        exit_code, output = run_command(docker_cmd, timeout=600)  # 10 minutes
-        
-        # Save the output regardless of success/failure
-        print(f"💾 Saving test output to {test_output_path}")
+
+        all_output = []
+
+        for i, test_command in enumerate(test_commands, 1):
+            if len(test_commands) > 1:
+                print(f"\n   Running test {i}/{len(test_commands)}: {test_command}")
+            else:
+                print(f"\n   Running test: {test_command}")
+
+            # For npm test, use shell form to handle npm scripts properly
+            if test_command.startswith('npm'):
+                docker_cmd = ["docker", "run", "--rm", image_name, "sh", "-c", test_command]
+            else:
+                # Split the command for direct execution
+                test_cmd_parts = test_command.split()
+                docker_cmd = ["docker", "run", "--rm", image_name] + test_cmd_parts
+
+            print(f"   Executing: {' '.join(docker_cmd)}")
+
+            # Run with extended timeout for tests
+            exit_code, output = run_command(docker_cmd, timeout=600)
+
+            # Collect output
+            if len(test_commands) > 1:
+                all_output.append(f"=== Command {i}: {test_command} ===")
+                all_output.append(f"Exit code: {exit_code}")
+
+            all_output.append(output)
+            all_output.append("")  # Empty line
+
+            # Parse test results to determine actual success/failure
+            test_results = parse_test_results(output, test_framework)
+
+            if test_results['tests_run']:
+                print(f"   📊 Test results detected:")
+                print(f"      ✅ Passed: {test_results['passed']}")
+                print(f"      ❌ Failed: {test_results['failed']}")
+                if test_results['skipped'] > 0:
+                    print(f"      ⏭️  Skipped: {test_results['skipped']}")
+
+                if test_results['success']:
+                    print(f"   ✅ All tests passed! (Testing Check: PASSED)")
+                else:
+                    print(f"   ❌ Some tests failed! (Testing Check: FAILED)")
+                    testing_success = False
+            else:
+                # No test results detected, check exit code
+                if exit_code == 0:
+                    print(f"   ✅ Command completed successfully (exit code 0)")
+                else:
+                    print(f"   ⚠️  Command exited with code {exit_code}")
+                    # Check if this is just npm noise or actual failure
+                    if 'npm' in test_command and 'npm notice' in output and 'failing' not in output.lower():
+                        print(f"   ℹ️  Ignoring npm notices, no test failures detected")
+                    else:
+                        print(f"   ❌ Command failed (Testing Check: FAILED)")
+                        testing_success = False
+
+        # Save test output
+        combined_output = '\n'.join(all_output)
         with open(test_output_path, 'w', encoding='utf-8') as f:
-            f.write(output)
-        
-        if exit_code == 0:
-            print("✅ Tests completed successfully")
-        else:
-            print(f"⚠️  Tests completed with exit code {exit_code}")
-            print("   (This may be expected if there are test failures)")
-        
-        print(f"📊 Test output captured ({len(output)} characters)")
-        
-        # Show a preview of the output
-        lines = output.split('\n')
-        preview_lines = lines[:5] + (['...'] if len(lines) > 10 else []) + lines[-5:]
-        print("📋 Test output preview:")
-        for line in preview_lines:
-            print(f"   {line}")
-            
-        return True
-        
-    except json.JSONDecodeError as e:
-        print(f"❌ Error parsing test_commands.json: {e}")
-        return False
+            f.write(combined_output)
+
+        print(f"\n💾 Test output saved to {test_output_path.name}")
+
+        # Show summary
+        lines = combined_output.split('\n')
+        if len(lines) > 20:
+            print("\n📋 Test output preview (last 10 lines):")
+            for line in lines[-10:]:
+                if line.strip():
+                    print(f"   {line}")
+
     except Exception as e:
         print(f"❌ Error running tests: {e}")
-        return False
+        testing_success = False
+
+    return installation_success, testing_success
 
 def cleanup_image(image_name: str) -> None:
     """Remove the test Docker image."""
     print(f"\n🧹 Cleaning up image: {image_name}")
     cleanup_cmd = ["docker", "rmi", image_name]
     exit_code, output = run_command(cleanup_cmd, timeout=60)
-    
+
     if exit_code == 0:
         print("✅ Image removed successfully")
     else:
         print("⚠️  Could not remove image (it may not exist)")
 
 def main():
-    """Main CLI interface for Dockerfile verification."""
+    """Main CLI interface for Dockerfile and Python installation verification."""
     parser = argparse.ArgumentParser(
-        description="Verify generated Dockerfiles build and run correctly, and collect test output"
+        description="Verify generated Dockerfiles or conda installation scripts, build/install and run tests correctly"
     )
-    parser.add_argument("dockerfile_path", help="Path to Dockerfile")
-    parser.add_argument("--image-name", help="Docker image name for testing")
-    parser.add_argument("--cleanup", action="store_true", help="Remove test image after verification")
+    parser.add_argument("path", help="Path to Dockerfile (non-Python) or directory containing installation script (Python)")
+    parser.add_argument("--python-repo", action="store_true", help="Treat as Python repository with conda installation script")
+    parser.add_argument("--image-name", help="Docker image name for testing (non-Python repos only)")
+    parser.add_argument("--cleanup", action="store_true", help="Remove test image/environment after verification")
     parser.add_argument("--no-progress", action="store_true", help="Disable real-time progress output")
-    
+
     args = parser.parse_args()
-    
-    dockerfile_path = Path(args.dockerfile_path).resolve()
-    if not dockerfile_path.exists():
-        print(f"❌ Dockerfile not found: {dockerfile_path}")
+
+    input_path = Path(args.path).resolve()
+    if not input_path.exists():
+        print(f"❌ Path not found: {input_path}")
         sys.exit(1)
-    
-    # Generate image name if not provided
-    image_name = args.image_name or f"{dockerfile_path.parent.name.lower()}-verification-test"
-    
+
     try:
-        # Check if Docker is available
-        exit_code, output = run_command(["docker", "--version"], timeout=10)
-        if exit_code != 0:
-            print("❌ Docker is not available or not running")
-            print("Please ensure Docker is installed and the daemon is running")
-            sys.exit(1)
-        
-        print(f"🐳 Using Docker: {output.strip()}")
-        
-        # Verify the Dockerfile
-        show_progress = not args.no_progress
-        success = verify_dockerfile(dockerfile_path, image_name, show_progress)
-        
-        if success:
-            print(f"\n🎉 Verification successful! Your Dockerfile works correctly.")
-            
-            # Show usage instructions
-            print(f"\n📋 Usage instructions:")
-            print(f"   docker run --rm -it {image_name}")
-            print(f"   docker run --rm {image_name} <your-command-here>")
-            
+        if args.python_repo:
+            # Python repository verification
+            if not input_path.is_dir():
+                print(f"❌ Python repos require a directory path, got: {input_path}")
+                sys.exit(1)
+
+            print(f"🐍 Verifying Python installation script in: {input_path}")
+            installation_success, testing_success = verify_python_installation_swe_smith_style(
+                input_path, not args.no_progress
+            )
+
+            # Clean up conda environment if requested
+            if args.cleanup:
+                cleanup_conda_env("testbed")
+
+        else:
+            # Non-Python (Dockerfile) verification
+            if input_path.is_dir():
+                dockerfile_path = input_path / "Dockerfile"
+                if not dockerfile_path.exists():
+                    print(f"❌ Dockerfile not found in directory: {dockerfile_path}")
+                    sys.exit(1)
+            else:
+                dockerfile_path = input_path
+                if not dockerfile_path.exists():
+                    print(f"❌ Dockerfile not found: {dockerfile_path}")
+                    sys.exit(1)
+
+            # Check if Docker is available for non-Python repos
+            exit_code, output = run_command(["docker", "--version"], timeout=10)
+            if exit_code != 0:
+                print("❌ Docker is not available or not running")
+                print("Please ensure Docker is installed and the daemon is running")
+                sys.exit(1)
+
+            print(f"🐳 Using Docker: {output.strip()}")
+
+            # Generate image name if not provided
+            image_name = args.image_name or f"{dockerfile_path.parent.name.lower()}-verification-test"
+
+            # Verify the Dockerfile
+            show_progress = not args.no_progress
+            installation_success, testing_success = verify_dockerfile(
+                dockerfile_path, image_name, show_progress
+            )
+
+            if installation_success:
+                # Show usage instructions for Docker
+                print(f"\n📋 Docker usage instructions:")
+                print(f"   docker run --rm -it {image_name}")
+                print(f"   docker run --rm {image_name} <your-command-here>")
+
             if args.cleanup:
                 cleanup_image(image_name)
-                
+
+        # Final summary
+        print("\n" + "=" * 60)
+        print("📊 VERIFICATION SUMMARY")
+        print("=" * 60)
+
+        if args.python_repo:
+            print(f"🐍 Python Repository Verification:")
+        else:
+            print(f"🐳 Docker Repository Verification:")
+
+        print(f"   ✅ Installation Check: {'PASSED' if installation_success else 'FAILED'}")
+        print(f"   {'✅' if testing_success else '❌'} Testing Check: {'PASSED' if testing_success else 'FAILED'}")
+
+        overall_success = installation_success and testing_success
+
+        if overall_success:
+            print(f"\n🎉 OVERALL RESULT: VERIFICATION PASSED")
+            print(f"   Both installation and testing completed successfully!")
             sys.exit(0)
         else:
-            print(f"\n❌ Verification failed. Check the Dockerfile and try again.")
-            if args.cleanup:
-                cleanup_image(image_name)
+            print(f"\n❌ OVERALL RESULT: VERIFICATION FAILED")
+            if not installation_success:
+                print(f"   Installation/build failed")
+            if not testing_success:
+                print(f"   Tests failed or did not run properly")
             sys.exit(1)
-            
+
     except KeyboardInterrupt:
         print(f"\n⏹️  Verification interrupted by user")
         if args.cleanup:
-            cleanup_image(image_name)
+            if args.python_repo:
+                cleanup_conda_env("testbed")
+            else:
+                cleanup_image(image_name)
         sys.exit(1)
     except Exception as e:
         print(f"\n❌ Unexpected error: {e}")
         if args.cleanup:
-            cleanup_image(image_name)
+            if args.python_repo:
+                cleanup_conda_env("testbed")
+            else:
+                cleanup_image(image_name)
         sys.exit(1)
 
 if __name__ == "__main__":

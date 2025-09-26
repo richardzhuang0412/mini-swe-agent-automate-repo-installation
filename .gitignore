@@ -2,3 +2,4 @@ __pycache__/
 */__pycache__/workspace/express/
 .claude
 CLAUDE.md
+agent-result/

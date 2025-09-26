@@ -27,18 +27,22 @@ agent:
     3. Look for package management files (package.json, requirements.txt, Cargo.toml, etc.)
     4. Determine the appropriate base Docker image
     5. Figure out the installation and test commands
-    6. Create a Dockerfile in the agent-result/$repo_folder_name directory with:
+    6. Get the latest commit hash from the repository (required for metadata)
+    7. Create a Dockerfile in the agent-result/$repo_folder_name directory with:
        - Appropriate base image
        - Git clone of the repository
-       - Dependency installation
-       - Test execution to verify the build (use verbose mode for detailed test output)
+       - Dependency installation ONLY (NO test execution)
        - Proper working directory and entrypoint
-    7. Create a test_commands.json file in the agent-result/$repo_folder_name directory containing:
-       - test_command: The specific test command used in verbose mode (e.g., "npm test -- --verbose", "pytest -v", "cargo test -- --nocapture")
+    8. Create a repo_metadata.json file in the agent-result/$repo_folder_name directory containing:
+       - owner: Repository owner (e.g., "expressjs")
+       - repo: Repository name (e.g., "express")
+       - install_commands: List of installation commands used (e.g., ["npm install", "pip install -e ."])
+       - test_commands: List of test commands in verbose mode (e.g., ["npm test -- --verbose", "pytest -v", "cargo test -- --nocapture"])
+       - language: The programming language (e.g., "javascript", "python", "go", "rust", "java")
        - test_framework: The detected test framework (e.g., "jest", "mocha", "pytest", "go_test", "cargo", "maven")
           - If unable to determine the test framework, set it to "unknown"
-       - language: The programming language (e.g., "javascript", "python", "go", "rust", "java")
-    8. Remove the cloned repository directory to save space (e.g., `rm -rf agent-result/$repo_folder_name`).
+       - commit_hash: Latest commit hash from the repository
+    9. Remove the cloned repository directory to save space (e.g., `rm -rf agent-result/$repo_folder_name/cloned_repo`).
 
     ## Important Guidelines
 
@@ -47,7 +51,9 @@ agent:
     - Install only necessary system dependencies
     - Create the Dockerfile in agent-result/$repo_folder_name directory
     - Make sure the final container can be used for development or CI/CD
-    - Always use verbose mode for test commands to show detailed test output and low-level details
+    - Dockerfile should ONLY install dependencies, NOT run tests
+    - Test commands should be stored in metadata for separate execution in verbose mode
+    - Always specify verbose flags for test commands (--verbose, -v, --nocapture, etc.) to get detailed output
 
     ## Important Rules
 
@@ -83,19 +89,29 @@ agent:
     WORKDIR /app
     RUN git clone https://github.com/expressjs/express.git .
     RUN npm install
-    RUN npm test -- --verbose
     CMD ["/bin/bash"]
     EOF
     ```
 
-    ### Create test commands file:
+    ### Get commit hash from repository:
 
     ```bash
-    cat <<'EOF' > agent-result/expressjs-express/test_commands.json
+    # Get the latest commit hash (REQUIRED for metadata)
+    cd agent-result/expressjs-express/cloned_repo && git rev-parse HEAD
+    ```
+
+    ### Create repository metadata file:
+
+    ```bash
+    cat <<'EOF' > agent-result/expressjs-express/repo_metadata.json
     {
-      "test_command": "npm test -- --verbose",
-      "test_framework": "mocha", 
-      "language": "javascript"
+      "owner": "expressjs",
+      "repo": "express",
+      "install_commands": ["npm install"],
+      "test_commands": ["npm test -- --verbose"],
+      "language": "javascript",
+      "test_framework": "mocha",
+      "commit_hash": "70c3acf62950be5dfb28743c7a719bfdecebcd84"
     }
     EOF
     ```

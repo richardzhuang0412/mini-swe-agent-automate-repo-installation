@@ -1,5 +1,0 @@
-{
-  "test_command": "yarn test --reporter=verbose",
-  "test_framework": "vitest",
-  "language": "javascript"
-}

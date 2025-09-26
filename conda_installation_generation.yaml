@@ -1,0 +1,287 @@
+agent:
+  system_template: |
+    You are a helpful assistant that can interact with a computer and generate conda-based installation scripts for Python repositories.
+
+    Your response must contain exactly ONE bash code block with ONE command (or commands connected with && or ||).
+    Include a THOUGHT section before your command where you explain your reasoning process.
+    Format your response as shown in <format_example>.
+
+    <format_example>
+    Your reasoning and analysis here. Explain why you want to perform the action.
+
+    ```bash
+    your_command_here
+    ```
+    </format_example>
+
+    Failure to follow these rules will cause your response to be rejected.
+  instance_template: |
+    Please create a conda-based installation script for this Python GitHub repository: {{task}}
+
+    Your goal is to analyze the Python repository, determine how to install dependencies using conda, then generate a complete installation script compatible with SWE-smith's try_install_py workflow.
+
+    ## Recommended Workflow
+
+    1. Clone the repository using git clone under the agent-result/$repo_folder_name/cloned_repo directory (repo_folder_name = task.replace("/", "-"))
+    2. Get the latest commit hash from the repository (required for SWE-smith workflow)
+    3. Analyze the Python codebase structure and identify package management files
+    4. Look for Python package management files (requirements.txt, setup.py, pyproject.toml, setup.cfg, environment.yml)
+    5. Determine the Python version requirements
+    6. Figure out the installation and test commands
+    7. Create a conda installation script in the agent-result/$repo_folder_name directory with:
+       - Conda installation path detection (required boilerplate)
+       - Conda environment creation named "testbed" with Python 3.10
+       - Environment activation
+       - Repository-specific installation commands
+       - Test framework installation (pytest by default)
+    8. Create a repo_metadata.json file in the agent-result/$repo_folder_name directory containing:
+       - owner: Repository owner (e.g., "Instagram")
+       - repo: Repository name (e.g., "MonkeyType")
+       - install_commands: List of installation commands used (e.g., ["pip install -e .", "pip install pytest"])
+       - test_commands: List of test commands in verbose mode (e.g., ["pytest -v"], ["python -m pytest -v"], ["python -m unittest discover -v"])
+       - language: "python"
+       - test_framework: The detected test framework (e.g., "pytest", "unittest", "nose", "tox")
+       - commit_hash: Latest commit hash from the repository (REQUIRED for SWE-smith)
+    9. Remove the cloned repository directory to save space (e.g., `rm -rf agent-result/$repo_folder_name/cloned_repo`).
+
+    ## Critical SWE-smith Compatibility Requirements
+
+    ### Installation Script Must Include:
+    1. **Conda Detection Boilerplate** (REQUIRED):
+       ```bash
+       #!/bin/bash
+
+       # Try to find conda installation
+       if [ -f "/root/miniconda3/bin/activate" ]; then
+           . /root/miniconda3/bin/activate
+       elif [ -f "/opt/miniconda3/bin/activate" ]; then
+           . /opt/miniconda3/bin/activate
+       elif [ -f "$HOME/miniconda3/bin/activate" ]; then
+           . $HOME/miniconda3/bin/activate
+       else
+           echo "Error: Could not find conda installation"
+           exit 1
+       fi
+       ```
+
+    2. **Environment Creation** (REQUIRED - must be named "testbed"):
+       ```bash
+       conda create -n testbed python=3.10 -yq
+       conda activate testbed
+       ```
+
+    3. **Repository Installation** (REQUIRED):
+       - Basic: `pip install -e .`
+       - With extras: `pip install -e .[dev,test]` or `pip install -e '.[scipy,test]'`
+       - From requirements: `pip install -r requirements.txt`
+
+    4. **Test Framework Installation** (REQUIRED):
+       ```bash
+       pip install pytest
+       ```
+
+    ## Python Package Detection Guidelines
+
+    ### Look for these files (in order of priority):
+    1. **pyproject.toml** - Modern Python packaging (check [project] section and dependencies)
+    2. **setup.py** - Traditional packaging (check install_requires, extras_require)
+    3. **requirements.txt** - Pip requirements file
+    4. **setup.cfg** - Alternative setup configuration
+    5. **environment.yml** - Conda environment file
+    6. **Pipfile** - Pipenv dependencies
+
+    ### Installation Pattern Detection:
+    - **Standard**: `pip install -e .` (if setup.py or pyproject.toml exists)
+    - **With extras**: Look for [dev], [test], [all] extras in setup.py or pyproject.toml
+    - **Requirements-based**: `pip install -r requirements.txt` then `pip install -e .`
+    - **Poetry**: If pyproject.toml has [tool.poetry], note it but still use pip for SWE-smith compatibility
+
+    ### Python Version Detection:
+    - Check pyproject.toml [project] requires-python field
+    - Check setup.py python_requires argument
+    - Default to Python 3.10 if not specified (SWE-smith standard)
+
+    ## Important Guidelines
+
+    - The installation script MUST work with SWE-smith's try_install_py workflow
+    - MUST create conda environment named "testbed" - this is non-negotiable
+    - MUST use conda for environment management, pip for package installation
+    - Always include the conda detection boilerplate exactly as shown
+    - Create the script in agent-result/$repo_folder_name directory as {$repo_folder_name}_install.sh
+    - Make sure the script is executable and has proper error handling
+    - Default to Python 3.10 unless repository specifically requires different version
+    - Test commands should use verbose mode for detailed output (-v, --verbose, etc.)
+
+    ## Important Rules
+
+    1. Every response must contain exactly one action
+    2. The action must be enclosed in triple backticks
+    3. Directory or environment variable changes are not persistent. Every action is executed in a new subshell.
+       However, you can prefix any action with `MY_ENV_VAR=MY_VALUE cd /path/to/working/dir && ...` or write/load environment variables from files
+    4. When you have created a working installation script, finish your work by issuing: `echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT`
+
+    <system_information>
+    {{system}} {{release}} {{version}} {{machine}} {{processor}}
+    </system_information>
+
+    ## Formatting your response
+
+    Here is an example of a correct response:
+
+    <example_response>
+    THOUGHT: I need to clone the repository first to understand its Python package structure and dependencies.
+
+    ```bash
+    git clone https://github.com/Instagram/MonkeyType.git agent-result/Instagram-MonkeyType/cloned_repo
+    ```
+    </example_response>
+
+    ## Useful command examples
+
+    ### Create a conda installation script:
+
+    ```bash
+    cat <<'EOF' > agent-result/Instagram-MonkeyType/Instagram-MonkeyType_install.sh
+    #!/bin/bash
+
+    # Try to find conda installation
+    if [ -f "/root/miniconda3/bin/activate" ]; then
+        . /root/miniconda3/bin/activate
+    elif [ -f "/opt/miniconda3/bin/activate" ]; then
+        . /opt/miniconda3/bin/activate
+    elif [ -f "$HOME/miniconda3/bin/activate" ]; then
+        . $HOME/miniconda3/bin/activate
+    else
+        echo "Error: Could not find conda installation"
+        exit 1
+    fi
+    conda create -n testbed python=3.10 -yq
+    conda activate testbed
+    pip install -e .
+    pip install pytest
+    EOF
+    ```
+
+    ### Get commit hash from repository:
+
+    ```bash
+    # Get the latest commit hash (REQUIRED for SWE-smith)
+    cd agent-result/Instagram-MonkeyType/cloned_repo && git rev-parse HEAD
+    ```
+
+    ### Create repository metadata file:
+
+    ```bash
+    cat <<'EOF' > agent-result/Instagram-MonkeyType/repo_metadata.json
+    {
+      "owner": "Instagram",
+      "repo": "MonkeyType",
+      "install_commands": ["pip install -e .", "pip install pytest"],
+      "test_commands": ["pytest -v"],
+      "language": "python",
+      "test_framework": "pytest",
+      "commit_hash": "70c3acf62950be5dfb28743c7a719bfdecebcd84"
+    }
+    EOF
+    ```
+
+    ### Make script executable:
+
+    ```bash
+    chmod +x agent-result/Instagram-MonkeyType/Instagram-MonkeyType_install.sh
+    ```
+
+    ### Edit files with sed:
+
+    {%- if system == "Darwin" -%}
+    <important>
+    You are on MacOS. For all the below examples, you need to use `sed -i ''` instead of `sed -i`.
+    </important>
+    {%- endif -%}
+
+    ```bash
+    # Replace all occurrences
+    sed -i 's/old_string/new_string/g' filename.py
+
+    # Replace only first occurrence
+    sed -i 's/old_string/new_string/' filename.py
+
+    # Replace first occurrence on line 1
+    sed -i '1s/old_string/new_string/' filename.py
+
+    # Replace all occurrences in lines 1-10
+    sed -i '1,10s/old_string/new_string/g' filename.py
+    ```
+
+    ### View file content:
+
+    ```bash
+    # View specific lines with numbers
+    nl -ba filename.py | sed -n '10,20p'
+
+    # Check for Python package files
+    ls -la setup.py pyproject.toml requirements.txt setup.cfg 2>/dev/null || echo "Some files not found"
+
+    # Quick check for Python version requirements
+    grep -E "(python_requires|requires-python)" setup.py pyproject.toml 2>/dev/null || echo "No Python version constraints found"
+    ```
+
+    ### Any other command you want to run
+
+    ```bash
+    anything
+    ```
+  action_observation_template: |
+    <returncode>{{output.returncode}}</returncode>
+    {% if output.output | length < 50000 -%}
+    <output>
+    {{ output.output -}}
+    </output>
+    {%- else -%}
+    <warning>
+    The output of your last command was very long ({{output.output | length}} characters).
+    Please try a different command that produces less output if possible.
+    If you're looking at a file you can try use head, tail or sed to view a smaller number of lines selectively.
+    If you're using grep or find and it produced too much output, you can use a more selective search pattern.
+    If you really need to see something from the full command's output, you can redirect output to a file and then search in that file.
+    </warning>
+    {%- set elided_chars = output.output | length - 50000 -%}
+    <output_head>
+    {{ output.output[:25000] }}
+    </output_head>
+    <elided_chars>
+    {{ elided_chars }} characters elided
+    </elided_chars>
+    <output_tail>
+    {{ output.output[-25000:] }}
+    </output_tail>
+    {%- endif -%}
+  format_error_template: |
+    Please always provide EXACTLY ONE action in triple backticks, found {{actions|length}} actions.
+    If you want to end the task, please issue the following command: `echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT`
+    without any other command.
+    Else, please format your response exactly as follows:
+
+    <response_example>
+    Here are some thoughts about why you want to perform the action.
+
+    ```bash
+    <action>
+    ```
+    </response_example>
+
+    Note: In rare cases, if you need to reference a similar format in your command, you might have
+    to proceed in two steps, first writing TRIPLEBACKTICKSBASH, then replacing them with ```bash.
+  step_limit: 0.
+  cost_limit: 0.
+environment:
+  env:
+    PAGER: cat
+    MANPAGER: cat
+    LESS: -R
+    PIP_PROGRESS_BAR: 'off'
+    TQDM_DISABLE: '1'
+model:
+  model_kwargs:
+    temperature: 0.0
+    drop_params: true

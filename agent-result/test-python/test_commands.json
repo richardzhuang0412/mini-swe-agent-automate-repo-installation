@@ -1,5 +1,0 @@
-{
-  "test_command": "pytest tests/",
-  "test_framework": "pytest",
-  "language": "python"
-}
