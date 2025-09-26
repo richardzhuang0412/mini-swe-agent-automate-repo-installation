@@ -12,8 +12,8 @@ python generate_profile.py Instagram/MonkeyType --python-repo --model claude-son
 # JavaScript repository with Docker environment
 python generate_profile.py expressjs/express --model claude-sonnet-4-20250514
 
-# Rust repository
-python generate_profile.py BurntSushi/ripgrep --model claude-sonnet-4-20250514
+# Rust repository with livestreaming agent action
+python generate_profile.py BurntSushi/ripgrep --livestream --model claude-sonnet-4-20250514
 ```
 
 **Output:** Ready-to-integrate SWE-smith profile classes in `agent-result/owner-repo/generated_profiles/`
