@@ -147,11 +147,11 @@ python generate_profile.py owner/repo --json
 | `--model` | Model to use for analysis | `claude-sonnet-4-20250514` |
 | `--output` | Save profile to file | Print to stdout |
 | `--json` | Output JSON instead of Python class | False |
-| `--livestream` | Enable real-time Stage 1 output | True |
+| `--livestream` | Enable real-time output | True |
 
 ### Pipeline Features
 
-- **🔴 Livestream Mode:** See mini-swe-agent working in real-time during Stage 1
+- **🔴 Livestream Mode:** See mini-swe-agent working in real-time
 - **🛑 Failure Handling:** Pipeline stops if previous stage fails (Stage 1→2→3)
 - **📋 Complete Logging:** Full pipeline output saved to `pipeline_full_log.txt`
 - **⚡ Smart Verification:** Separate installation and testing checks
@@ -256,8 +256,8 @@ python simple_repo_to_dockerfile.py Instagram/MonkeyType --python-repo --model_n
 # JavaScript repository
 python simple_repo_to_dockerfile.py expressjs/express --model_name claude-sonnet-4-20250514
 
-# With livestream disabled
-python simple_repo_to_dockerfile.py owner/repo --no-livestream
+# With livestream enabled
+python simple_repo_to_dockerfile.py owner/repo --livestream
 ```
 
 ### Stage 2: Verification Only
